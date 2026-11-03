@@ -6,7 +6,8 @@
   "scripts": {
     "crawl": "node tools/local_spider.js",
     "pack": "node tools/build_pack.js",
-    "build": "node tools/local_spider.js && node tools/build_pack.js",
+    "remote": "node tools/build_remote.js",
+    "build": "node tools/local_spider.js && node tools/build_pack.js && node tools/build_remote.js",
     "sync": "node scripts/push_to_cloud.js",
     "sync:all": "node scripts/push_to_cloud.js --all",
     "upload": "node scripts/upload_ci.js"

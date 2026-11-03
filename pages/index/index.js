@@ -7,6 +7,7 @@ const ads = require('../../utils/ads.js')
 const filter = require('../../utils/filter.js')
 
 const FROM_TEXT = {
+  remote: '数据已同步',
   cloud: '实时数据',
   cache: '离线缓存',
   local: '本月更新'
@@ -85,7 +86,7 @@ Page({
     this.setData({ loading: true })
     api.getList({ force: force }).then(function (r) {
       self._loaded = true
-      self.build(r.list, r.from, r.at)
+      self.build(r.list, r.from, r.at, r.dataUpdatedAt)
       self.setData({ loading: false, from: r.from, fromText: (r.from === 'local') ? '本地数据 · 未连接云端' : (FROM_TEXT[r.from] || '') })
       wx.stopPullDownRefresh()
     }).catch(function () {
@@ -99,7 +100,7 @@ Page({
   },
 
   // 把原始数据展开成卡片所需的全部字段（卡片要能自证「跟我有关」）
-  build (raw, from, at) {
+  build (raw, from, at, dataUpdatedAt) {
     const live = []
     const past = []
 
@@ -182,10 +183,13 @@ Page({
       past: past,
       stats: { week: week, month: month, total: live.length, mine: 0 },
       // 本地模式显示「数据整理于 X」：优先用每日自动抓取的整理日（每天都在变），
-      // 没接自动数据时退回人工整理的日期常量
-      updatedAt: (from === 'local')
-        ? (lib.AUTO_UPDATED_AT || lib.DATA_UPDATED_AT)
-        : D.stampLabel(at || lib.FETCHED_AT)
+      // 没接自动数据时退回人工整理的日期常量。
+      // 远程模式直接用数据文件自己带的 updatedAt —— 服务器更新到哪天，界面就显示哪天。
+      updatedAt: (from === 'remote')
+        ? (dataUpdatedAt || D.stampLabel(at || Date.now()))
+        : (from === 'local')
+          ? (lib.AUTO_UPDATED_AT || lib.DATA_UPDATED_AT)
+          : D.stampLabel(at || lib.FETCHED_AT)
     }, this.applyFilter)
   },
 

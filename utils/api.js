@@ -1,13 +1,15 @@
 // utils/api.js
-// 数据层：优先读云开发数据库，失败或未配置时退回家里的演示数据。
-// 页面只跟这里打交道，不直接碰 wx.cloud，方便以后换后端。
+// 数据层：远程静态数据（GitHub Pages）→ 云开发数据库 → 本地缓存 → 包内数据。
+// 页面只跟这里打交道，不直接碰 wx.request / wx.cloud，方便以后换后端。
 
 const CFG = require('./config.js')
 const local = require('./notices.js')
 const confInfo = require('./conf_info.js')
+const remote = require('./remote.js')
 
 const KEY_CACHE = 'pc_cache_list'
 const KEY_CACHE_AT = 'pc_cache_at'
+const KEY_CACHE_META = 'pc_cache_meta'
 
 let inited = false
 let cloudOK = false
@@ -108,17 +110,40 @@ function readCache () {
     const at = wx.getStorageSync(KEY_CACHE_AT) || 0
     const list = wx.getStorageSync(KEY_CACHE)
     if (!list || !list.length) return null
-    return { at: at, list: list }
+    let meta = {}
+    try {
+      meta = wx.getStorageSync(KEY_CACHE_META) || {}
+    } catch (e) {}
+    return { at: at, list: list, from: meta.from || '', dataUpdatedAt: meta.dataUpdatedAt || '' }
   } catch (e) {
     return null
   }
 }
 
-function writeCache (list) {
+function writeCache (list, meta) {
   try {
     wx.setStorageSync(KEY_CACHE, list)
     wx.setStorageSync(KEY_CACHE_AT, Date.now())
+    wx.setStorageSync(KEY_CACHE_META, meta || {})
   } catch (e) {}
+}
+
+// 远程数据在前（最新的），包内数据补齐 id 不重复的部分。
+// 用「合并」而不是「替换」：远程万一少了几条，用户也不会突然看不到东西。
+function mergeWithLocal (remoteItems) {
+  const out = []
+  const seen = {}
+  for (let i = 0; i < remoteItems.length; i++) {
+    const m = mapLocal(remoteItems[i])
+    if (seen[m.id]) continue
+    seen[m.id] = 1
+    out.push(m)
+  }
+  const loc = localList()
+  for (let i = 0; i < loc.length; i++) {
+    if (!seen[loc[i].id]) out.push(loc[i])
+  }
+  return out
 }
 
 async function fetchCloudList () {
@@ -142,31 +167,54 @@ async function fetchCloudList () {
 
 /**
  * 取列表
+ * 顺序：远程静态数据(GitHub Pages) → 云数据库 → 缓存 → 包内数据
  * @param {{force?:boolean}} opts
- * @returns {Promise<{list:Array, from:'cloud'|'cache'|'local', at:number}>}
+ * @returns {Promise<{list:Array, from:'remote'|'cloud'|'cache'|'local', at:number, dataUpdatedAt?:string}>}
  */
 async function getList (opts) {
   const force = !!(opts && opts.force)
   const cache = readCache()
+  const age = cache ? Date.now() - cache.at : Infinity
+  const ttl = (CFG.remoteTTL || 30 * 60 * 1000)
 
-  if (!force && cache && Date.now() - cache.at < CFG.cacheTTL) {
-    return { list: cache.list, from: 'cache', at: cache.at }
+  // ① 远程静态数据：这就是“不用重新发版也能换内容”的那一层。
+  //    单独用一个短有效期，不受 cacheTTL 的 6 小时限制。
+  if (CFG.enableRemote && (force || age > ttl)) {
+    try {
+      const r = await remote.load()
+      const list = mergeWithLocal(r.items)
+      if (list.length) {
+        const meta = { from: 'remote', dataUpdatedAt: r.updatedAt || '' }
+        writeCache(list, meta)
+        return { list: list, from: 'remote', at: Date.now(), dataUpdatedAt: r.updatedAt || '', remoteUrl: r.url || '' }
+      }
+    } catch (e) {
+      // 静默降级：域名没配好 / 断网 / 文件路径错，都继续往下走
+    }
+  }
+
+  if (!force && cache && age < CFG.cacheTTL) {
+    return { list: cache.list, from: cache.from || 'cache', at: cache.at, dataUpdatedAt: cache.dataUpdatedAt || '' }
   }
 
   if (initCloud()) {
     try {
       const list = await fetchCloudList()
       if (list.length) {
-        writeCache(list)
+        writeCache(list, { from: 'cloud' })
         return { list: list, from: 'cloud', at: Date.now() }
       }
       // 云端为空：可能是还没导入数据，退回缓存或本地，别给用户看空页面
-      if (cache && cache.list.length) return { list: cache.list, from: 'cache', at: cache.at }
+      if (cache && cache.list.length) return { list: cache.list, from: cache.from || 'cache', at: cache.at, dataUpdatedAt: cache.dataUpdatedAt || '' }
       return { list: localList(), from: 'local', at: Date.now() }
     } catch (e) {
-      if (cache && cache.list.length) return { list: cache.list, from: 'cache', at: cache.at }
+      if (cache && cache.list.length) return { list: cache.list, from: cache.from || 'cache', at: cache.at, dataUpdatedAt: cache.dataUpdatedAt || '' }
       return { list: localList(), from: 'local', at: Date.now() }
     }
+  }
+
+  if (cache && cache.list.length) {
+    return { list: cache.list, from: cache.from || 'cache', at: cache.at, dataUpdatedAt: cache.dataUpdatedAt || '' }
   }
 
   return { list: localList(), from: 'local', at: Date.now() }

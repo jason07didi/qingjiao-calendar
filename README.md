@@ -16,19 +16,26 @@ GitHub Actions（每天 07:30 北京时间）
    ↓
 tools/local_spider.js   抓 8 个官方源的列表页
    ↓                    （自然资源部 / 住建部 / 科技部 / 生态环境部 / 中国科协 / 陕西省科技厅 / 陕西省自然资源厅）
-tools/build_pack.js     去重、过滤、生成小程序包内数据
+tools/build_pack.js     去重、过滤 → 包内数据 utils/data_crawl.js
+tools/build_remote.js   导出 → docs/data/notices.json（GitHub Pages 发布）
    ↓
-utils/data_crawl.js     小程序 require 的静态数据（不需要域名、不需要云开发、零费用）
+小程序 wx.request 直连 Pages 上的 JSON → 每天自动更新，不用发版、不用审核
    ↓
 miniprogram-ci          自动上传体验版（可选，需配置上传密钥）
 ```
 
-### 为什么不用接口直连
+### 数据怎么到用户手机上
 
-小程序正式版的 `wx.request` 只能请求**白名单内且已 ICP 备案**的域名，
-GitHub Pages / raw.githubusercontent.com 都不在其中。
-所以这里不玩"实时拉取"，改成**数据打进包**：Actions 每天生成 `utils/data_crawl.js`，
-随版本一起上传。代价是更新要过一次审核，好处是**完全免费、无域名、无云开发**。
+**主路径 —— GitHub Pages 静态 JSON。** 把 `jason07didi.github.io` 加进
+「开发管理 → 开发设置 → 服务器域名 → request 合法域名」，小程序就能直连
+`https://jason07didi.github.io/<仓库名>/data/notices.json`。
+Actions 每天重新生成这个文件，Pages 自动发布，用户下次打开就是新数据。
+详见 `docs/REMOTE_DATA.md`。
+
+**兜底路径 —— 包内数据。** `utils/data_crawl.js` 随版本打包。远程拉不到
+（域名被拦 / 断网 / 文件路径错）时**静默降级**到它，不会白屏、不弹错。
+
+**可选 —— 云开发。** 填了 `cloudEnv` 就走云数据库，见 `docs/CLOUD_SETUP.md`。
 
 ### 截止日铁律
 
