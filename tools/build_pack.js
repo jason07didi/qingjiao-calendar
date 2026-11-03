@@ -28,6 +28,23 @@ function argLimit () {
   return 60
 }
 
+// 保鲜期：上一版自动条目超过这么多天就自然淘汰
+function argFresh () {
+  const a = process.argv.find(function (x) { return x.indexOf('--fresh=') === 0 })
+  if (a) {
+    const n = parseInt(a.split('=')[1], 10)
+    if (n > 0) return n
+  }
+  return 120
+}
+
+function daysAgo (dateStr) {
+  if (!dateStr) return 99999
+  const t = new Date(String(dateStr).replace(/\//g, '-')).getTime()
+  if (isNaN(t)) return 99999
+  return Math.floor((Date.now() - t) / 86400000)
+}
+
 // 与 notices.js 的 normKey 保持一致，用于跨文件去重
 function normKey (title) {
   return String(title || '')
@@ -79,6 +96,10 @@ function main () {
       try { arr.push.apply(arr, lib.getAll()) } catch (e) {}
     }
     arr.forEach(function (n) {
+      // 只把「人工核实」的条目当去重基准。
+      // notices.js 的 getAll() 里已经混入了往期自动条目，
+      // 若一起算进来，会把本期抓到的同标题项全部误杀（踩过）。
+      if (!n || n.auto === true || n.source === 'auto') return
       const k = normKey(n && n.title)
       if (k) manualKeys[k] = true
     })
@@ -110,12 +131,45 @@ function main () {
     return (b._score || 0) - (a._score || 0)
   })
 
-  const limit = argLimit()
-  const finalList = kept.slice(0, limit)
+  // ---- 3.5 与上一版合并（只增不减）----
+  // 原因：GitHub Actions 跑在境外机房，部分 .gov.cn 源会偶发不可达，
+  // 单次抓取量会明显波动。若直接用本次结果覆盖，线上条目会莫名变少。
+  // 所以把上一版里仍在保鲜期内的自动条目并进来，本次抓到的同标题项优先。
+  const freshDays = argFresh()
+  const prevLib = safeRequire(path.join(ROOT, 'utils', 'data_crawl.js'))
+  const prevItems = (prevLib && Array.isArray(prevLib.ITEMS)) ? prevLib.ITEMS : []
+  const merged = {}
+  let carried = 0
+  let expired = 0
 
-  // ---- 4. 生成小程序数据文件 ----
-  const outItems = finalList.map(function (n) {
-    return {
+  prevItems.forEach(function (it) {
+    if (!it || !it.title || !it.sourceUrl) return
+    const k = normKey(it.title)
+    if (!k || manualKeys[k]) return
+    if (daysAgo(it.publishedAt) > freshDays) { expired++; return }
+    merged[k] = {
+      id: it.id,
+      type: it.type || 'project',
+      title: it.title,
+      org: it.org || '',
+      region: it.region || '国家',
+      level: it.level || '国家级',
+      disciplines: it.disciplines || [],
+      deadline: '',
+      deadlineText: it.deadlineText || ('通知发布日 ' + (it.publishedAt || '') + '（截止日待核实）'),
+      publishedAt: it.publishedAt || '',
+      sourceUrl: it.sourceUrl,
+      sourceName: it.sourceName || it.org || '',
+      summary: '',
+      _carried: true
+    }
+    carried++
+  })
+
+  kept.forEach(function (n) {
+    const k = normKey(n.title)
+    if (!k) return
+    merged[k] = {
       id: hashId(n.sourceUrl),
       type: n.type || 'project',
       title: n.title,
@@ -123,7 +177,6 @@ function main () {
       region: n.region || '国家',
       level: n.level || '国家级',
       disciplines: n.disciplines || [],
-      // 铁律：截止日留空
       deadline: '',
       deadlineText: n.deadlineText || ('通知发布日 ' + (n.publishedAt || '') + '（截止日待核实）'),
       publishedAt: n.publishedAt || '',
@@ -131,6 +184,35 @@ function main () {
       sourceName: n.sourceName || n.org || '',
       summary: ''
     }
+  })
+
+  const unionList = Object.keys(merged).map(function (k) { return merged[k] })
+  unionList.sort(function (a, b) {
+    return String(b.publishedAt || '').localeCompare(String(a.publishedAt || ''))
+  })
+
+  const limit = argLimit()
+  const finalList = unionList.slice(0, limit)
+
+  // ---- 4. 生成小程序数据文件 ----
+  // finalList 已是输出结构，去掉内部标记即可
+  const outItems = finalList.map(function (n) {
+    const o = {
+      id: n.id,
+      type: n.type,
+      title: n.title,
+      org: n.org,
+      region: n.region,
+      level: n.level,
+      disciplines: n.disciplines,
+      deadline: '',
+      deadlineText: n.deadlineText,
+      publishedAt: n.publishedAt,
+      sourceUrl: n.sourceUrl,
+      sourceName: n.sourceName,
+      summary: ''
+    }
+    return o
   })
 
   const today = new Date()
@@ -164,6 +246,9 @@ function main () {
   console.log('与人工重复 :', dupManual)
   console.log('自身重复   :', dupSelf)
   console.log('可入库     :', kept.length)
+  console.log('上版沿用   :', carried, '（保鲜期内）')
+  console.log('上版淘汰   :', expired, '（超过 ' + freshDays + ' 天）')
+  console.log('合并后合计 :', unionList.length)
   console.log('实际写入   :', outItems.length, '(上限 ' + limit + ')')
   console.log('输出文件   : utils/data_crawl.js')
   console.log('整理日期   :', stamp)

@@ -68,8 +68,13 @@ jobs:
           node -e "const d=require('./utils/data_crawl.js');console.log('整理日期',d.UPDATED_AT,'条目',(d.ITEMS||[]).length)"
           node -e "const j=require('./docs/data/notices.json');console.log('远程文件 v'+j.v,'更新于',j.updatedAt,'条目',j.count,'有截止日',j.datedCount)"
 
+      - name: 数据质量守卫
+        id: guard
+        run: node tools/guard_remote.js
+
       - name: 同步到云数据库
         id: tcb
+        if: steps.guard.outputs.degraded != 'true'
         run: |
           if [ -z "${{ secrets.TCB_ENV }}" ] || [ -z "${{ secrets.TCB_SECRET_ID }}" ] || [ -z "${{ secrets.TCB_SECRET_KEY }}" ]; then
             echo "has_tcb=false" >> "$GITHUB_OUTPUT"
@@ -85,6 +90,7 @@ jobs:
           node scripts/push_to_cloud.js
 
       - name: 提交数据变更
+        if: steps.guard.outputs.degraded != 'true'
         run: |
           git config user.name "qingjiao-bot"
           git config user.email "qingjiao-bot@users.noreply.github.com"
