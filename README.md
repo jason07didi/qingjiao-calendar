@@ -28,9 +28,11 @@ miniprogram-ci          自动上传体验版（可选，需配置上传密钥�
 
 **主路径 —— GitHub Pages 静态 JSON。** 把 `jason07didi.github.io` 加进
 「开发管理 → 开发设置 → 服务器域名 → request 合法域名」，小程序就能直连
-`https://jason07didi.github.io/<仓库名>/data/notices.json`。
+`https://jason07didi.github.io/qingjiao-calendar/data/notices.json`。
 Actions 每天重新生成这个文件，Pages 自动发布，用户下次打开就是新数据。
 详见 `docs/REMOTE_DATA.md`。
+
+数据仓库：<https://github.com/jason07didi/qingjiao-calendar>（Pages 源 = `main` 分支 `/docs` 目录）
 
 **兜底路径 —— 包内数据。** `utils/data_crawl.js` 随版本打包。远程拉不到
 （域名被拦 / 断网 / 文件路径错）时**静默降级**到它，不会白屏、不弹错。
