@@ -1,0 +1,9 @@
+{
+  "name": "spider",
+  "version": "1.0.0",
+  "description": "青椒的日历 - 定时爬取科研通知写入云数据库",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}

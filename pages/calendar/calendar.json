@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "申报日历",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "backgroundColor": "#F4F6F8"
+}

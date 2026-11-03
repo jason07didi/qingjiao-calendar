@@ -1,0 +1,45 @@
+<view class="page">
+
+  <view class="tabs">
+    <view class="tab {{tab === 'fav' ? 'on' : ''}}" data-tab="fav" bindtap="switchTab">
+      已收藏 <text class="tab-num">{{favCount}}</text>
+    </view>
+    <view class="tab {{tab === 'applied' ? 'on' : ''}}" data-tab="applied" bindtap="switchTab">
+      已申报 <text class="tab-num">{{appliedCount}}</text>
+    </view>
+  </view>
+
+  <view class="list">
+    <view
+      class="item {{item.closed ? 'closed' : ''}}"
+      wx:for="{{list}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="goDetail"
+    >
+      <view class="cd cd-{{item.level}}">
+        <block wx:if="{{!item.closed}}">
+          <text class="cd-num">{{item.days}}</text>
+          <text class="cd-unit">天</text>
+        </block>
+        <text class="cd-closed" wx:else>已截止</text>
+      </view>
+
+      <view class="body">
+        <view class="row-top">
+          <text class="tag tag-{{item.type}}">{{item.typeName}}</text>
+          <text class="org ell">{{item.org}}</text>
+        </view>
+        <view class="title ell2">{{item.title}}</view>
+        <view class="meta">{{item.deadlineShort}} 截止</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="empty" wx:if="{{list.length === 0}}">
+    <view class="empty-icon">⭐</view>
+    <view>{{tab === 'fav' ? '还没有收藏的申报' : '还没有标记的申报'}}</view>
+    <view class="empty-tip" bindtap="goIndex">去首页看看 ›</view>
+  </view>
+
+</view>

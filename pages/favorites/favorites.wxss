@@ -1,0 +1,147 @@
+.page {
+  background: #F4F6F8;
+  min-height: 100vh;
+  padding-bottom: 160rpx;
+}
+
+/* 顶部切换 */
+.tabs {
+  display: flex;
+  background: #FFFFFF;
+  padding: 0 26rpx;
+  border-bottom: 1rpx solid #EDF0F4;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 28rpx 0 24rpx;
+  font-size: 27rpx;
+  color: #8B98A5;
+  position: relative;
+}
+
+.tab.on {
+  color: #123B5B;
+  font-weight: 600;
+}
+
+.tab.on::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 56rpx;
+  height: 4rpx;
+  border-radius: 2rpx;
+  background: #123B5B;
+}
+
+.tab-num {
+  font-size: 22rpx;
+  color: #A7B2BE;
+  margin-left: 4rpx;
+}
+
+/* 列表 */
+.list {
+  padding: 22rpx 26rpx 0;
+}
+
+.item {
+  display: flex;
+  background: #FFFFFF;
+  border-radius: 20rpx;
+  padding: 24rpx;
+  margin-bottom: 18rpx;
+  box-shadow: 0 2rpx 10rpx rgba(18, 59, 91, 0.04);
+}
+
+.item.closed {
+  opacity: 0.6;
+}
+
+.cd {
+  flex: 0 0 96rpx;
+  height: 96rpx;
+  border-radius: 16rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 22rpx;
+}
+
+.cd-num {
+  font-size: 40rpx;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.cd-unit {
+  font-size: 19rpx;
+  opacity: 0.78;
+  margin-top: 2rpx;
+}
+
+.cd-closed {
+  font-size: 20rpx;
+  color: #8B98A5;
+}
+
+.cd-urgent { background: #FBE9E9; color: #C0392B; }
+.cd-soon   { background: #FDF0E3; color: #C07617; }
+.cd-normal { background: #E9EFF5; color: #123B5B; }
+.cd-later  { background: #F1F4F7; color: #7C8B99; }
+
+.body {
+  flex: 1;
+  min-width: 0;
+}
+
+.row-top {
+  display: flex;
+  align-items: center;
+}
+
+.org {
+  font-size: 22rpx;
+  color: #8B98A5;
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #1B2733;
+  line-height: 1.45;
+  margin-top: 10rpx;
+}
+
+.meta {
+  font-size: 22rpx;
+  color: #7C8B99;
+  margin-top: 10rpx;
+}
+
+/* 空态 */
+.empty {
+  padding: 130rpx 0;
+  text-align: center;
+  color: #93A1AF;
+  font-size: 26rpx;
+}
+
+.empty-icon {
+  font-size: 70rpx;
+  margin-bottom: 20rpx;
+  opacity: 0.5;
+}
+
+.empty-tip {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #123B5B;
+}

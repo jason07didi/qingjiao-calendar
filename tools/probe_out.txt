@@ -1,0 +1,64 @@
+﻿
+=== 鍥藉鑷劧绉戝鍩洪噾濮?  鉁?https://www.nsfc.gov.cn/publish/portal0/tab442/   fetch failed
+  鉁?https://www.nsfc.gov.cn/publish/portal0/tab434/   fetch failed
+  鉁?https://www.nsfc.gov.cn/publish/portal0/tab440/   fetch failed
+  鉁?https://www.nsfc.gov.cn/p86/index.html   fetch failed
+
+=== 鍏ㄥ浗绀剧宸ヤ綔鍔?  鉁?200   84閾炬帴 閫氱煡鍏憡- 鍏ㄥ浗鍝插绀句細绉戝宸ヤ綔鍔炲叕瀹? <- http://www.nopss.gov.cn/GB/219469/index.html
+  鉁?200  145閾炬帴 鍏ㄥ浗鍝插绀句細绉戝宸ヤ綔鍔炲叕瀹? 鍏ㄥ浗鍝插绀句細绉戝宸ヤ綔鍔炲叕瀹? <- http://www.nopss.gov.cn/
+
+=== 鏁欒偛閮?  ? 200   87閾炬帴 宸ヤ綔鍔ㄦ€?- 涓崕浜烘皯鍏卞拰鍥芥暀鑲查儴鏀垮簻闂ㄦ埛缃戠珯  <- http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/
+  ? 200   47閾炬帴 淇℃伅鎻愮ず - 涓崕浜烘皯鍏卞拰鍥芥暀鑲查儴鏀垮簻闂ㄦ埛缃戠珯  <- http://www.moe.gov.cn/srcsite/
+  鉁?200   93閾炬帴 涓ぎ鏂囦欢 - 涓崕浜烘皯鍏卞拰鍥芥暀鑲查儴鏀垮簻闂ㄦ埛缃戠珯  <- http://www.moe.gov.cn/jyb_xxgk/moe_1777/moe_1778/
+
+=== 绉戞妧閮?  ? 200   22閾炬帴 涓崕浜烘皯鍏卞拰鍥界瀛︽妧鏈儴  <- https://www.most.gov.cn/tztg/
+  鉁?200   57閾炬帴 涓崕浜烘皯鍏卞拰鍥界瀛︽妧鏈儴  <- https://www.most.gov.cn/xxgk/xinxifenlei/fdzdgknr/qtwj/
+
+=== 浣忓缓閮?  鉁?404    0閾炬帴 404 Not Found  <- https://www.mohurd.gov.cn/gongkai/zhengce/zhengcefilelib/index.html
+  鉁?404    0閾炬帴 404 Not Found  <- https://www.mohurd.gov.cn/gongkai/fdzdgknr/tzgg/index.html
+  鉁?200  191閾炬帴 涓崕浜烘皯鍏卞拰鍥戒綇鎴垮拰鍩庝埂寤鸿閮? <- https://www.mohurd.gov.cn/
+
+=== 涓浗绉戝崗
+  鉁?404    0閾炬帴 404 Not Found  <- https://www.cast.org.cn/col/col1186/index.html
+  鉁?200  157閾炬帴 涓浗绉戝鎶€鏈崗浼? <- https://www.cast.org.cn/
+
+=== 鏂囨梾閮ㄧ鎶€鏁欒偛鍙?  鉁?200  106閾炬帴 涓崕浜烘皯鍏卞拰鍥芥枃鍖栧拰鏃呮父閮? <- https://www.mct.gov.cn/whzx/bnsj/whkjs/
+  鉁?200  231閾炬帴 涓崕浜烘皯鍏卞拰鍥芥枃鍖栧拰鏃呮父閮? <- https://www.mct.gov.cn/
+
+=== 闄曡タ鐪佺鎶€鍘?  鉁?200   70閾炬帴 閫氱煡鍏憡_闄曡タ鐪佺瀛︽妧鏈巺  <- https://kjt.shaanxi.gov.cn/kjdt/tzgg/
+  鉁?200   91閾炬帴 闄曡タ鐪佺瀛︽妧鏈巺  <- https://kjt.shaanxi.gov.cn/
+
+=== 闄曡タ鐪佹暀鑲插巺
+  鉁?200   73閾炬帴 鍏ず鍏憡_闄曡タ鐪佹暀鑲插巺  <- http://jyt.shaanxi.gov.cn/gk/fdnr/gsgggk/ => https://jyt.shaanxi.gov.cn/gk/fdnr/gsgggk/
+  鉁?200  135閾炬帴 闄曡タ鐪佹暀鑲插巺  <- http://jyt.shaanxi.gov.cn/ => https://jyt.shaanxi.gov.cn/
+
+=== 闄曡タ鐪佺ぞ绉戣仈
+  ? 200   32閾炬帴 闄曡タ鐪佺ぞ绉戣仈  <- http://www.sxsskw.org.cn/sy2/tzgg2/
+  鉁?200   75閾炬帴 闄曡タ鐪佺ぞ绉戣仈  <- http://www.sxsskw.org.cn/
+
+=== 涓浗寤虹瓚瀛︿細
+  ? 200  141閾炬帴 锟斤拷锟脚讹拷态 / 通知锟斤拷锟斤拷_锟叫癸拷锟斤拷锟斤拷学锟斤拷  <- https://www.chinaasc.org.cn/news/tongzhigonggao/
+  ? 200  222閾炬帴 锟叫癸拷锟斤拷锟斤拷学锟斤拷  <- https://www.chinaasc.org.cn/ => https://www.chinaasc.org.cn/index.html
+
+=== 涓浗鍩庡競瑙勫垝瀛︿細
+  ? 200    0閾炬帴   <- https://www.planning.org.cn/news/tzgg
+  鉁?200  119閾炬帴 瀛︿細璧勮-涓浗鍩庡競瑙勫垝缃? <- https://www.planning.org.cn/news/
+  鉁?https://www.planning.cn/   fetch failed
+
+=== 涓浗椋庢櫙鍥灄瀛︿細
+  鉁?404    0閾炬帴 椤甸潰涓嶅瓨鍦? <- https://www.chsla.org.cn/news/tzgg
+  鉁?200  157閾炬帴 涓浗椋庢櫙鍥灄瀛︿細  <- https://www.chsla.org.cn/
+
+=== 涓浗鐜绉戝瀛︿細
+  鉁?403    0閾炬帴   <- https://www.chinacses.org.cn/tzgg => https://www.chinacses.org/tzgg
+  鉁?403    0閾炬帴   <- https://www.chinacses.org/
+
+=== 涓浗鍩庡競绉戝鐮旂┒浼?  鉁?404    0閾炬帴 璇锋眰鏃犳晥  <- http://www.chinasus.org/news/ => https://www.chinasus.org/news/
+  鉁?200  986閾炬帴 涓浗鍩庡競绉戝鐮旂┒浼? <- http://www.chinasus.org/ => https://www.chinasus.org/
+
+=== 涓浗鍦熸湪宸ョ▼瀛︿細
+  鉁?404    0閾炬帴 Apache Tomcat/7.0.47 - Error report  <- http://www.cces.net.cn/html/tzgg/
+  ? 200    0閾炬帴 cces.net.cn  <- http://www.cces.net.cn/
+
+=== 鏁欒偛閮ㄥ浣嶄腑蹇?  鉁?412    0閾炬帴   <- https://www.cdgdc.edu.cn/
+  鉁?412    0閾炬帴   <- https://www.cdgdc.edu.cn/xwyyjsjyxx/

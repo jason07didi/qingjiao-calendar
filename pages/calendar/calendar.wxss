@@ -1,0 +1,306 @@
+.page {
+  background: #F4F6F8;
+  min-height: 100vh;
+  padding-bottom: 160rpx;
+}
+
+/* 月份头 */
+.cal-head {
+  background: #123B5B;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26rpx 40rpx 30rpx;
+}
+
+.nav {
+  width: 70rpx;
+  height: 70rpx;
+  line-height: 64rpx;
+  text-align: center;
+  font-size: 46rpx;
+  opacity: 0.75;
+}
+
+.month-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.month {
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+.month-sub {
+  font-size: 21rpx;
+  opacity: 0.65;
+  margin-top: 4rpx;
+}
+
+/* 星期 */
+.week-row {
+  display: flex;
+  background: #FFFFFF;
+  padding: 18rpx 12rpx 10rpx;
+}
+
+/* 筛选同步提示：告诉用户日历已按「我的」偏好过滤 */
+.filter-hint {
+  background: #EAF1F7;
+  color: #4A6B86;
+  font-size: 22rpx;
+  text-align: center;
+  padding: 14rpx 24rpx;
+  margin: 0;
+}
+
+.week-cell {
+  flex: 1;
+  text-align: center;
+  font-size: 22rpx;
+  color: #93A1AF;
+}
+
+/* 图例：解释日历里的颜色紧急度与数字含义，做到「清晰明确」 */
+.legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: #FFFFFF;
+  padding: 16rpx 20rpx 20rpx;
+  font-size: 20rpx;
+  color: #6B7884;
+}
+
+.lg {
+  display: flex;
+  align-items: center;
+  margin: 0 14rpx;
+}
+
+.lg-dot {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  margin-right: 7rpx;
+}
+
+.lg-dot.lv-urgent { background: #E54D42; }
+.lg-dot.lv-soon   { background: #F2820A; }
+.lg-dot.lv-normal { background: #2E6DB4; }
+.lg-dot.lv-later  { background: #B0BAC4; }
+
+.lg-note {
+  width: 100%;
+  text-align: center;
+  margin-top: 10rpx;
+  font-size: 19rpx;
+  color: #A7B2BE;
+}
+
+/* 图例：解释日历里的颜色紧急度与数字含义，做到「清晰明确」 */
+.legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: #FFFFFF;
+  padding: 16rpx 20rpx 20rpx;
+  font-size: 20rpx;
+  color: #6B7884;
+}
+
+.lg {
+  display: flex;
+  align-items: center;
+  margin: 0 14rpx;
+}
+
+.lg-dot {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  margin-right: 7rpx;
+}
+
+.lg-dot.lv-urgent { background: #E54D42; }
+.lg-dot.lv-soon   { background: #F2820A; }
+.lg-dot.lv-normal { background: #2E6DB4; }
+.lg-dot.lv-later  { background: #B0BAC4; }
+
+.lg-note {
+  width: 100%;
+  text-align: center;
+  margin-top: 10rpx;
+  font-size: 19rpx;
+  color: #A7B2BE;
+}
+
+/* 日格 */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  background: #FFFFFF;
+  padding: 0 12rpx 20rpx;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  box-shadow: 0 4rpx 14rpx rgba(18, 59, 91, 0.05);
+}
+
+.cell {
+  width: 14.285%;
+  height: 92rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14rpx;
+  margin: 2rpx 0;
+}
+
+.cell-day {
+  font-size: 27rpx;
+  color: #1B2733;
+  line-height: 1.2;
+}
+
+.cell.out .cell-day {
+  color: #D2D9E0;
+}
+
+.cell.today {
+  background: #EAF2FA;
+  border: 2rpx solid #2E6FA8;
+}
+
+.cell.today {
+  background: #EAF2FA;
+  border: 2rpx solid #2E6FA8;
+}
+
+.cell.today .cell-day {
+  color: #123B5B;
+  font-weight: 700;
+}
+
+.cell.sel {
+  background: #123B5B;
+}
+
+.cell.sel .cell-day {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* 底部数量角标：直接显示当天截止条数，替代原来不易看清的小圆点。
+   颜色按当天最紧急级别：红=3天内、橙=7天内、蓝=30天内、灰=更远期。 */
+.badge {
+  margin-top: 4rpx;
+  min-width: 30rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  padding: 0 7rpx;
+  border-radius: 14rpx;
+  font-size: 18rpx;
+  color: #FFFFFF;
+  text-align: center;
+  background: #B0BAC4;
+}
+
+.badge.lv-urgent { background: #E54D42; }
+.badge.lv-soon   { background: #F2820A; }
+.badge.lv-normal { background: #2E6DB4; }
+.badge.lv-later  { background: #B0BAC4; }
+
+/* 选中当天：蓝底上用白底深字反色，保证清晰 */
+.cell.sel .badge {
+  background: #FFFFFF;
+  color: #123B5B;
+}
+
+/* 当日清单 */
+.day-panel {
+  margin: 24rpx 26rpx 0;
+  background: #FFFFFF;
+  border-radius: 20rpx;
+  padding: 24rpx;
+  box-shadow: 0 2rpx 10rpx rgba(18, 59, 91, 0.04);
+}
+
+.day-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 16rpx;
+  border-bottom: 1rpx solid #EDF0F4;
+}
+
+.day-title {
+  font-size: 27rpx;
+  font-weight: 600;
+  color: #123B5B;
+}
+
+.day-count {
+  font-size: 22rpx;
+  color: #93A1AF;
+}
+
+/* 日历「看全部」入口：可点击，呼应首页主色，给足点按区（≥44px 触控） */
+.day-go {
+  color: #2E6FA8;
+  font-weight: 600;
+  background: #EAF2FA;
+  padding: 8rpx 18rpx;
+  border-radius: 999rpx;
+  margin-left: 12rpx;
+}
+
+.day-item {
+  display: flex;
+  align-items: center;
+  padding: 22rpx 0;
+  border-bottom: 1rpx solid #F2F5F8;
+}
+
+.day-item:last-child {
+  border-bottom: none;
+}
+
+.di-left {
+  flex: 0 0 70rpx;
+}
+
+.di-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.di-title {
+  font-size: 27rpx;
+  color: #1B2733;
+  line-height: 1.45;
+}
+
+.di-org {
+  font-size: 21rpx;
+  color: #93A1AF;
+  margin-top: 6rpx;
+}
+
+.di-arrow {
+  color: #C6CFD8;
+  font-size: 32rpx;
+  margin-left: 10rpx;
+}
+
+.day-empty {
+  padding: 50rpx 0;
+  text-align: center;
+  color: #A7B2BE;
+  font-size: 24rpx;
+}

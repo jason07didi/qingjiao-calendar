@@ -1,0 +1,62 @@
+
+=== 生态环境部
+  ?  200    0L 0KB   <- https://www.mee.gov.cn/xxgk2018/xxgk/xxgk06/
+  ?  200    0L 0KB   <- https://www.mee.gov.cn/xxgk2018/xxgk/
+  OK 200  639L 199KB 中华人民共和国生态环境部  <- https://www.mee.gov.cn/
+
+=== 陕西省生态环境厅
+  OK 200   84L 35KB 政策文件_陕西省生态环境厅  <- https://sthjt.shaanxi.gov.cn/xxgk/fdnr/zcwj/
+  ?  200    0L 0KB   <- https://sthjt.shaanxi.gov.cn/xxgk/fdnr/
+  OK 200  125L 75KB 陕西省生态环境厅  <- https://sthjt.shaanxi.gov.cn/
+
+=== 共青团陕西省委
+  OK 200  302L 80KB 陕西共青团  <- https://www.sxgqt.org.cn/
+  ?  404    0L 0KB 404 Not Found  <- https://www.sxgqt.org.cn/home/news/list.html
+
+=== 陕西省人社厅
+  ?  404    0L 1KB 404 Not Found  <- https://rst.shaanxi.gov.cn/zfxxgk/fdzdgknr/tzgg/
+  OK 200  247L 112KB 陕西省人力资源和社会保障厅  <- https://rst.shaanxi.gov.cn/
+
+=== 陕西省住建厅
+  ?  404    0L 1KB 404 Not Found  <- https://js.shaanxi.gov.cn/zfxxgk/fdzdgknr/tzgg/
+  OK 200   97L 52KB 陕西省住房和城乡建设厅  <- https://js.shaanxi.gov.cn/
+
+=== 陕西省自然资源厅
+  ?  404    0L 1KB 404 Not Found  <- https://zrzyt.shaanxi.gov.cn/zwgk/tzgg/
+  OK 200  217L 85KB 陕西省自然资源厅  <- https://zrzyt.shaanxi.gov.cn/
+
+=== 中国园林
+  OK 200  407L 116KB 中国园林  <- http://www.jchla.com/ => http://www.jchla.com/ch/index.aspx
+  x https://www.jchla.com/   fetch failed
+
+=== 国际城市规划
+  x https://www.upiizheng.com/   fetch failed
+  x http://www.upiizheng.com/   fetch failed
+
+=== 景观设计学LAF
+  OK 200 1888L 1778KB JRS直播_NBA直播免费看_足球比赛在线观看无插件_足球直播_24直播网  <- https://www.lafrontiers.com/
+  OK 200 1888L 1778KB JRS直播_NBA直播免费看_足球比赛在线观看无插件_足球直播_24直播网  <- http://www.lafrontiers.com/
+
+=== 城市规划学刊
+  OK 200  392L 87KB 中国城市规划学会  <- https://www.planning.org.cn/
+  OK 200  140L 57KB 同济大学建筑与城市规划学院中文版  <- https://caup.tongji.edu.cn/
+
+=== 中国环境科学学会
+  ?  403    0L 0KB   <- https://www.chinacses.org/
+  ?  403    0L 0KB   <- https://www.chinacses.org/cn/index.html
+
+=== 中国气象学会
+  OK 200   80L 19KB 中国气象学会  <- http://www.cms1924.org/ => https://www.cms1924.org/
+  OK 200   80L 19KB 中国气象学会  <- https://www.cms1924.org/
+
+=== 中国地理学会
+  OK 200  358L 195KB 首页--中国地理学会  <- http://www.gsc.org.cn/ => https://www.gsc.org.cn/
+  OK 200  358L 195KB 首页--中国地理学会  <- https://www.gsc.org.cn/
+
+=== 中国生态学学会
+  OK 200  197L 58KB 中国生态学学会  <- http://www.esc.org.cn/ => https://www.esc.org.cn/
+  OK 200  197L 58KB 中国生态学学会  <- https://www.esc.org.cn/
+
+=== 中国风景园林学会
+  OK 200  157L 163KB 中国风景园林学会  <- https://www.chsla.org.cn/
+  ?  404    0L 4KB 页面不存在  <- https://www.chsla.org.cn/index

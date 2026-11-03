@@ -1,0 +1,17 @@
+
+=== 中国建筑装饰协会
+  OK 200    0L 中装新网 - 安全验证  <- http://www.cbda.cn/
+  x https://www.cbda.cn/  fetch failed
+
+=== 光华设计基金会
+  x http://www.ddfd.org.cn/  fetch failed
+  x http://www.ddfchina.org/  fetch failed
+  x https://www.ddfd.org.cn/  fetch failed
+
+=== 装饰杂志
+  OK 200   47L 首页 - 《装饰》杂志社  <- http://www.izhsh.com.cn/
+  OK 200   47L 首页 - 《装饰》杂志社  <- https://www.izhsh.com.cn/
+
+=== 中国美术家协会
+  OK 200  228L 中国美术家协会  <- https://www.caanet.org.cn/
+  x http://www.caanet.org.cn/  fetch failed

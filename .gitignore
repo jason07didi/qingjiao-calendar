@@ -1,0 +1,17 @@
+# 依赖
+node_modules/
+
+# 小程序代码上传密钥（绝不能提交）
+*.key
+private.*.key
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 爬虫产物（每次运行/每次 Actions 重新生成，不入库）
+data/crawl_candidates.json
+data/crawl_report.md
+
+# 微信开发者工具本地私有配置
+project.private.config.json

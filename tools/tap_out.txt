@@ -1,0 +1,27 @@
+[1] 附件点击（101 条逐条打）
+  OK  点击全部有反馈   [0 条无反应]
+  OK  复制内容全部非空   [0 条为空]
+  OK  复制内容全部是 http 地址
+  抽样：
+    r7 → http://kjt.fujian.gov.cn/xxgk/tzgg/202610/t20261022_7239079.htm
+    r8 → https://kjt.yn.gov.cn/xwdt/tzgg/202610/t20261009_4341826.html
+    r9 → https://kjt.yn.gov.cn/xwdt/tzgg/202610/t20261008_4341732.html
+    r10 → https://kjt.hubei.gov.cn/kjdt/tzgg/202610/t20261019_6035490.shtml
+    r11 → https://kjt.hebei.gov.cn/hebkjt/xwzx15/tzgg35/sttz15/2026102017360386027
+    r12 → https://kjt.sc.gov.cn/kjt/gstz/2026/10/27/a6a0b16bed084a7a98c8840dcc647c
+
+[2] 其它按钮
+  OK  复制原文链接有内容   [https://www.nsfc.gov.cn]
+  OK  复制官方来源有内容   [https://www.nsfc.gov.cn]
+  OK  复制检索式可用（无原文时）   [https://www.baidu.com/s?wd=site%3Awww.nsfc.gov.cn%202027%E5%]
+  OK  收藏切换有反馈   [已收藏]
+  OK  取消收藏有反馈   [已取消收藏]
+  OK  标记申报有反馈   [已标记为已申报]
+  ✗✗  提醒走日历或弹窗   [无]
+  OK  无截止日条目点提醒有提示   [这条还没确认截止时间]
+  OK  同类推荐可跳转   [/pages/detail/detail?id=q09]
+
+[3] 官方来源出口
+  OK  每条都能落到一个可复制地址   [0 条无出口]
+
+===== 1 项未通过 =====

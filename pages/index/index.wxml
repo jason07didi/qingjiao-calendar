@@ -1,0 +1,206 @@
+<view class="page">
+
+  <!-- 顶部：把「有多少事、几件急」压缩成一个可点击的漏斗 -->
+  <view class="hero">
+    <image class="hero-deco" src="/images/hero.png" mode="aspectFit" />
+    <view class="brand-small">科研申报 · 截止日历</view>
+    <view class="brand-title">青椒的日历</view>
+    <view class="brand-desc">14 类科研机会 · 一个截止日清单</view>
+
+    <view class="stats">
+      <view class="stat {{range === 'week' ? 'stat-on' : ''}}" data-r="week" bindtap="onRange">
+        <text class="stat-num {{stats.week > 0 ? 'num-hot' : ''}}">{{stats.week}}</text>
+        <text class="stat-lab">7 天内</text>
+      </view>
+      <view class="stat-div"></view>
+      <view class="stat {{range === 'month' ? 'stat-on' : ''}}" data-r="month" bindtap="onRange">
+        <text class="stat-num">{{stats.month}}</text>
+        <text class="stat-lab">30 天内</text>
+      </view>
+      <view class="stat-div"></view>
+      <view class="stat {{range === 'all' ? 'stat-on' : ''}}" data-r="all" bindtap="onRange">
+        <text class="stat-num">{{stats.total}}</text>
+        <text class="stat-lab">在申报</text>
+      </view>
+    </view>
+
+    <view class="src-line" wx:if="{{fromText}}">
+      <text class="src-dot src-{{from}}"></text>
+      <text>{{fromText}}</text>
+      <text class="src-tip" wx:if="{{updatedAt}}">· {{from === 'local' ? '整理于' : '更新于'}} {{updatedAt}}</text>
+    </view>
+  </view>
+
+  <!-- 最近的那一个截止，单独拎出来说 -->
+  <view class="alert" wx:if="{{alert}}" data-id="{{alert.id}}" bindtap="goDetail">
+    <text class="alert-badge">最近截止</text>
+    <view class="alert-body">
+      <text class="alert-title">{{alert.title}}</text>
+      <text class="alert-org">{{alert.org}}</text>
+    </view>
+    <text class="alert-days">{{alert.days <= 0 ? '今天' : alert.days + ' 天'}}</text>
+  </view>
+
+  <!-- 从日历点「看全部」跳过来时，顶部给一个可退回的横幅（导航明确：我在看哪天、怎么回去） -->
+  <view class="day-banner" wx:if="{{dayBanner}}" bindtap="clearDay">
+    <text class="day-b-ico">📅</text>
+    <text class="day-b-txt">{{dayBanner.date}} 截止 · {{dayBanner.count}} 条</text>
+    <text class="day-b-act">返回全部 ›</text>
+  </view>
+
+  <view class="search-box">
+    <text class="search-icon">🔍</text>
+    <input
+      class="search-input"
+      placeholder="搜项目名称、发布机构、学科"
+      placeholder-class="search-ph"
+      value="{{keyword}}"
+      bindinput="onSearch"
+      confirm-type="search"
+    />
+  </view>
+
+  <view class="chips">
+    <view class="chip {{curType === 'all' ? 'on' : ''}}" data-t="all" bindtap="onType">全部</view>
+    <view
+      wx:for="{{types}}"
+      wx:key="key"
+      wx:if="{{!item.secondary}}"
+      class="chip {{curType === item.key ? 'on' : ''}}"
+      data-t="{{item.key}}"
+      bindtap="onType"
+    >{{item.name}}</view>
+    <view
+      class="chip chip-more {{moreOpen || isSubType ? 'on' : ''}}"
+      bindtap="toggleMore"
+    >{{moreOpen ? '收起 ▴' : '更多 ▾'}}</view>
+    <view
+      wx:for="{{types}}"
+      wx:key="key"
+      wx:if="{{(moreOpen || isSubType) && item.secondary}}"
+      class="chip chip-sub {{curType === item.key ? 'on' : ''}}"
+      data-t="{{item.key}}"
+      bindtap="onType"
+    >{{item.name}}</view>
+    <view
+      class="chip {{curType === 'open' ? 'on' : ''}}"
+      data-t="open"
+      bindtap="onType"
+    >开放</view>
+  </view>
+
+  <!-- 分组切换：只有设置过学科才出现 -->
+  <view class="toolbar" wx:if="{{hasPrefs || hidden > 0 || sections.length > 0}}">
+    <view class="seg">
+      <view class="seg-item {{groupBy === 'time' ? 'seg-on' : ''}}" data-g="time" bindtap="onGroup">按时间</view>
+      <view class="seg-item {{groupBy === 'rank' ? 'seg-on' : ''}}" data-g="rank" bindtap="onGroup">按等级</view>
+      <view class="seg-item {{groupBy === 'dis' ? 'seg-on' : ''}}" data-g="dis" bindtap="onGroup" wx:if="{{hasPrefs}}">按学科</view>
+    </view>
+    <view class="hidden-tip" wx:if="{{hidden > 0}}" bindtap="clearPrefsFilter">
+      <text>{{hiddenTip}}</text>
+      <text class="hidden-act">显示全部 ›</text>
+    </view>
+  </view>
+
+  <!-- 分段列表 -->
+  <view class="sec" wx:for="{{sections}}" wx:key="key" wx:for-item="s">
+    <view class="sec-head">
+      <text class="sec-dot dot-{{s.tone}}"></text>
+      <text class="sec-title">{{s.title}}</text>
+      <text class="sec-count">{{s.count}}</text>
+      <text class="sec-sub">{{s.sub}}</text>
+    </view>
+
+    <view
+      class="item"
+      wx:for="{{s.list}}"
+      wx:key="id"
+      wx:for-item="item"
+      data-id="{{item.id}}"
+      bindtap="goDetail"
+    >
+      <view class="cd cd-{{item.cdLevel}}">
+        <text class="cd-num">{{item.days === 9999 ? '∞' : item.days}}</text>
+        <text class="cd-unit">{{item.days === 9999 ? item.tbdLabel : '天'}}</text>
+      </view>
+
+      <view class="body">
+        <view class="row-top">
+          <text class="tag tag-{{item.type}}">{{item.typeName}}</text>
+          <text class="rk rk-{{item.rankTone}}" wx:if="{{item.rankName}}">{{item.rankName}}</text>
+          <text class="fav" wx:if="{{item.isFav}}">★</text>
+          <text class="done" wx:if="{{item.isApplied}}">已申报</text>
+        </view>
+
+        <view class="title ell2">{{item.title}}</view>
+
+        <view class="row-org">
+          <text class="org ell">{{item.org}}</text>
+        </view>
+
+        <view class="row-conf" wx:if="{{item.confLine}}">
+          <text class="conf-mark">会</text>
+          <text class="conf-txt ell">{{item.confLine}}</text>
+        </view>
+
+        <view class="row-dis" wx:if="{{item.dis.length}}">
+          <text class="dis" wx:for="{{item.dis}}" wx:key="index" wx:for-item="d">{{d}}</text>
+          <text class="dis-more" wx:if="{{item.disAll.length > 2}}">+{{item.disAll.length - 2}}</text>
+        </view>
+
+        <view class="meta">
+          <text class="date" wx:if="{{item.days !== 9999}}">{{item.deadlineShort}} 截止</text>
+          <text class="date" wx:if="{{item.days === 9999 && item.estHint}}">{{item.estHint}}</text>
+          <text class="date" wx:elif="{{item.days === 9999}}">无固定截止</text>
+          <text class="open-tag" wx:if="{{item.openApply}}">开放·全国可申</text>
+          <text class="est" wx:if="{{item.estimated}}">参考日期</text>
+          <block wx:if="{{item.amountShort && !item.isConf}}">
+            <text class="sep">·</text>
+            <text class="amount ell">{{item.amountShort}}</text>
+          </block>
+          <block wx:if="{{item.fileCount}}">
+            <text class="sep">·</text>
+            <text class="files">{{item.fileCount}} 份材料</text>
+          </block>
+        </view>
+
+        <view class="row-match" wx:if="{{item.matchText}}">
+          <text class="match match-{{item.matchCls}}">{{item.matchCls === 'ok' ? '✓ ' : '· '}}{{item.matchText}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 已截止：不删除，只折叠。信息消失比过期更让人慌 -->
+  <view class="past" wx:if="{{past.length}}">
+    <view class="past-head" bindtap="togglePast">
+      <text class="past-title">已截止 {{past.length}} 条</text>
+      <text class="past-act">{{pastOpen ? '收起' : '展开查看'}}</text>
+    </view>
+    <view class="past-list" wx:if="{{pastOpen}}">
+      <view class="past-item" wx:for="{{past}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail">
+        <text class="past-name ell">{{item.title}}</text>
+        <text class="past-date">{{item.deadlineShort}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 数据口径说明：不能让人误以为每一条都是官方已发布的准确日期 -->
+  <view class="foot-note" wx:if="{{sections.length > 0}}">
+    <text>共 {{stats.total}} 条在申报。标「参考日期」的条目按往年发布规律推算，请以官方通知为准。</text>
+  </view>
+
+  <view class="loading" wx:if="{{loading && sections.length === 0}}">
+    <text class="loading-dot"></text>
+    <text>正在获取最新申报信息…</text>
+  </view>
+
+  <view class="empty" wx:if="{{!loading && sections.length === 0}}">
+    <image class="empty-img" src="/images/empty.png" mode="aspectFit" />
+    <view>{{ dayBanner ? (dayBanner.date + ' 没有符合条件的截止事项') : '当前条件下没有可申报信息' }}</view>
+    <view class="empty-tip" wx:if="{{dayBanner}}" bindtap="clearDay">点这里看全部日期</view>
+    <view class="empty-tip" wx:elif="{{hidden > 0}}" bindtap="clearPrefsFilter">还有 {{hidden}} 条被你的学科/条件筛掉了，点这里看全部</view>
+    <view class="empty-tip" wx:else>换个类型或关键词试试</view>
+  </view>
+
+</view>

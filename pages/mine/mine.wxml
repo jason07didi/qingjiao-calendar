@@ -1,0 +1,172 @@
+<view class="page">
+
+  <!-- 用户卡 -->
+  <view class="user-card">
+    <view class="avatar-box" bindtap="openAvatar">
+      <image wx:if="{{avatarIsImg}}" class="avatar-img" src="{{avatar}}" mode="aspectFill" />
+      <text wx:else class="avatar">{{avatar}}</text>
+    </view>
+
+    <view class="user-info">
+      <view class="name-row">
+        <text class="username ell" bindtap="changeName">{{username}}</text>
+        <!-- VIP 徽标：未开通是灰的、静止；开通后变金色并跑光 -->
+        <view class="vip-badge {{vip.on ? 'is-on' : 'is-off'}}" catchtap="onVipBadge">
+          <view class="vip-gem"></view>
+          <text class="vip-label">VIP</text>
+        </view>
+      </view>
+      <text class="bio" bindtap="changeBio">{{bio}}</text>
+    </view>
+
+    <view class="user-stats">
+      <view class="us-item" bindtap="goFavorites">
+        <text class="us-num">{{favCount}}</text>
+        <text class="us-lab">收藏</text>
+      </view>
+      <view class="us-item" bindtap="goFavorites">
+        <text class="us-num">{{appliedCount}}</text>
+        <text class="us-lab">已申报</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 关注学科 -->
+  <view class="block">
+    <view class="block-head">
+      <text class="block-title">关注学科</text>
+      <text class="block-act" bindtap="clearDim" data-dim="dis" wx:if="{{prefs.disciplines.length > 0}}">清空</text>
+    </view>
+    <view class="block-hint">选择后首页按学科分组展示，可多选</view>
+
+    <view class="pick-row" bindtap="openPick" data-dim="dis">
+      <text class="cond-lab">学科</text>
+      <view class="pick-sel">
+        <text class="cond-text {{disText ? '' : 'cond-ph'}}">{{disText || '不限（点击选择）'}}</text>
+        <text class="cond-arrow">▾</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 关注地区 -->
+  <view class="block">
+    <view class="block-head">
+      <text class="block-title">关注地区</text>
+      <text class="block-act" bindtap="clearDim" data-dim="prov" wx:if="{{prefs.provinces.length > 0}}">清空</text>
+    </view>
+    <view class="block-hint">选择后首页只展示所选地区的申报，可多选</view>
+
+    <view class="pick-row" bindtap="openPick" data-dim="prov">
+      <text class="cond-lab">地区</text>
+      <view class="pick-sel">
+        <text class="cond-text {{provText ? '' : 'cond-ph'}}">{{provText || '不限（点击选择）'}}</text>
+        <text class="cond-arrow">▾</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 个人条件 -->
+  <view class="block">
+    <view class="block-head">
+      <text class="block-title">个人条件</text>
+      <text class="block-act" bindtap="clearCond" wx:if="{{prefs.age || prefs.title}}">清空</text>
+    </view>
+    <view class="block-hint">设置后首页只显示「你能申报」的信息；不设置则显示全部</view>
+
+    <view class="cond-row">
+      <text class="cond-lab">年龄</text>
+      <view class="cond-val">
+        <input
+          class="cond-input"
+          type="number"
+          placeholder="不限"
+          placeholder-class="cond-ph"
+          value="{{prefs.age}}"
+          bindinput="onAgeInput"
+        />
+        <text class="cond-unit" wx:if="{{prefs.age}}">周岁</text>
+      </view>
+    </view>
+
+    <view class="cond-row">
+      <text class="cond-lab">职称</text>
+      <picker mode="selector" range="{{titleOptions}}" bindchange="onTitleChange">
+        <view class="cond-val">
+          <text class="cond-input cond-text {{prefs.title ? '' : 'cond-ph'}}">{{prefs.title || '不限'}}</text>
+          <text class="cond-arrow">›</text>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <!-- 菜单 -->
+  <view class="menu">
+    <view class="menu-item" bindtap="feedback">
+      <text class="menu-icon">✉️</text>
+      <text class="menu-text">信息报错 / 补充（公众号）</text>
+      <text class="menu-arrow">›</text>
+    </view>
+
+    <view class="menu-item" bindtap="about">
+      <text class="menu-icon">ℹ️</text>
+      <text class="menu-text">关于本小程序</text>
+      <text class="menu-arrow">›</text>
+    </view>
+  </view>
+
+  <view class="footer">
+    <text class="meta-dot {{metaOk ? 'on' : ''}}"></text>
+    <text>{{metaText}}</text>
+  </view>
+
+  <!-- 学科/地区 下拉多选弹层 -->
+  <view class="fmask" wx:if="{{pickPanel}}" bindtap="closePick">
+    <view class="fpanel" catchtap="stopTap">
+      <view class="fp-head">
+        <text class="fp-title">{{pickPanel === 'dis' ? '选择关注学科' : '选择关注地区'}}</text>
+        <text class="fp-reset" bindtap="clearDim" data-dim="{{pickPanel}}">清空</text>
+      </view>
+      <view class="fp-hint">可多选；不选则显示全部</view>
+      <view class="fp-wrap">
+        <block wx:if="{{pickPanel === 'dis'}}">
+          <view
+            class="fp-chip {{disSel[item] ? 'on' : ''}}"
+            wx:for="{{disciplines}}"
+            wx:key="*this"
+            data-v="{{item}}"
+            bindtap="togglePick"
+          >{{item}}</view>
+        </block>
+        <block wx:else>
+          <view
+            class="fp-chip {{provSel[item] ? 'on' : ''}}"
+            wx:for="{{provinces}}"
+            wx:key="*this"
+            data-v="{{item}}"
+            bindtap="togglePick"
+          >{{item}}</view>
+        </block>
+      </view>
+      <view class="fp-done" bindtap="closePick">完成</view>
+    </view>
+  </view>
+
+  <!-- 头像弹窗 -->
+  <view class="mask" wx:if="{{showAvatar}}" bindtap="closeAvatar">
+    <view class="panel" catchtap="stopTap">
+      <text class="panel-title">选择头像</text>
+      <view class="avatar-upload" bindtap="chooseImage">📷 上传图片头像</view>
+      <view class="avatar-list">
+        <text
+          class="avatar-opt"
+          wx:for="{{avatars}}"
+          wx:key="*this"
+          data-v="{{item}}"
+          bindtap="selectAvatar"
+        >{{item}}</text>
+      </view>
+      <view class="panel-cancel" bindtap="closeAvatar">取消</view>
+    </view>
+  </view>
+
+</view>

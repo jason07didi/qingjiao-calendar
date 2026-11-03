@@ -1,0 +1,75 @@
+{
+  "compileType": "miniprogram",
+  "libVersion": "3.17.3",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "packOptions": {
+    "ignore": [
+      {
+        "value": "tools",
+        "type": "folder"
+      },
+      {
+        "value": "node_modules",
+        "type": "folder"
+      },
+      {
+        "value": "data",
+        "type": "folder"
+      },
+      {
+        "value": "docs",
+        "type": "folder"
+      },
+      {
+        "value": "scripts",
+        "type": "folder"
+      },
+      {
+        "value": "cloudfunctions",
+        "type": "folder"
+      },
+      {
+        "value": ".github",
+        "type": "folder"
+      },
+      {
+        "value": "README.md",
+        "type": "file"
+      },
+      {
+        "value": "package.json",
+        "type": "file"
+      },
+      {
+        "value": "package-lock.json",
+        "type": "file"
+      },
+      {
+        "value": ".gitignore",
+        "type": "file"
+      }
+    ],
+    "include": []
+  },
+  "setting": {
+    "coverView": true,
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "enhance": true,
+    "showShadowRootInWxmlPanel": true,
+    "packNpmRelationList": [],
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "condition": false
+  },
+  "condition": {},
+  "editorSetting": {
+    "tabIndent": "auto",
+    "tabSize": 2
+  },
+  "appid": "wxb0b73a71fced2201"
+}

@@ -1,0 +1,12 @@
+<view class="tabbar">
+  <view
+    class="tab-item"
+    wx:for="{{list}}"
+    wx:key="key"
+    data-key="{{item.key}}"
+    bindtap="goPage"
+  >
+    <text class="icon {{active === item.key ? 'on' : ''}}">{{item.icon}}</text>
+    <text class="name {{active === item.key ? 'on' : ''}}">{{item.name}}</text>
+  </view>
+</view>

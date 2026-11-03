@@ -1,0 +1,9 @@
+{
+  "name": "notify",
+  "version": "1.0.0",
+  "description": "青椒的日历 - 每日推送用户收藏的临近截止提醒",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}

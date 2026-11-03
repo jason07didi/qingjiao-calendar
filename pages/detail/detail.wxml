@@ -1,0 +1,260 @@
+<view class="page-loading" wx:if="{{loading}}">正在加载…</view>
+
+<view class="err-page" wx:if="{{!loading && err}}">
+  <view class="err-mark">!</view>
+  <view class="err-title">{{err}}</view>
+  <view class="err-tip">可能是这条信息已被撤回，或者链接来自旧版本。</view>
+  <view class="err-btn" bindtap="goBack">返回列表</view>
+</view>
+
+<view class="page" wx:if="{{!loading && !err && notice}}">
+
+  <view class="head">
+    <view class="head-tags">
+      <text class="tag tag-{{notice.type}} tag-solid">{{typeName}}</text>
+      <text class="rk-tag rk-{{rank.tone}}" wx:if="{{rank.name}}">{{rank.name}}</text>
+      <text class="region ell">{{notice.org}}</text>
+    </view>
+
+    <view class="head-title">{{notice.title}}</view>
+
+    <view class="countdown cd-{{level}}" wx:if="{{days >= 0}}">
+      <text class="cd-big">{{days}}</text>
+      <text class="cd-copy">天后截止</text>
+      <text class="cd-exact">{{notice.deadlineText}}</text>
+    </view>
+    <view class="countdown cd-unknown" wx:if="{{days < 0}}">
+      <text class="cd-big-sm">{{notice.deadlineText || '时间待公布'}}</text>
+      <text class="cd-copy">没有固定截止日，按公告随时启动</text>
+    </view>
+  </view>
+
+  <!-- 等级与用途：这条信息在你的评价体系里算几斤几两 -->
+  <view class="rank-card rk-bd-{{rank.tone}}" wx:if="{{rank.name}}">
+    <view class="rank-top">
+      <text class="rank-badge rk-{{rank.tone}}">{{rank.name}}</text>
+      <text class="rank-label" wx:if="{{rank.label}}">{{rank.label}}</text>
+    </view>
+    <view class="rank-use">{{rank.use}}</view>
+    <view class="rank-eg" wx:if="{{rank.eg}}">同类：{{rank.eg}}</view>
+    <view class="rank-more" bindtap="toggleLadder">
+      <text>{{ladderOpen ? '收起等级说明' : '这个等级在整个体系里的位置'}}</text>
+      <text class="rank-arrow">{{ladderOpen ? '︿' : '﹀'}}</text>
+    </view>
+    <view class="ladder" wx:if="{{ladderOpen}}">
+      <view class="lad-row {{item.active ? 'lad-on' : ''}}" wx:for="{{ladder}}" wx:key="key">
+        <text class="lad-name">{{item.name}}</text>
+        <text class="lad-use">{{item.use}}</text>
+      </view>
+      <view class="lad-note">各级认定以本校职称文件与科研奖励办法为准，各校口径不同。</view>
+    </view>
+  </view>
+
+  <!-- 关键信息：所有类目同一张卡，一条大字 + 几行要点 -->
+  <view class="block key-block" wx:if="{{keyInfo}}">
+    <view class="block-head">
+      <text class="block-bar bar-green"></text>
+      <text class="block-title">关键信息</text>
+      <text class="block-count" wx:if="{{keyInfo.sub}}">{{keyInfo.sub}}</text>
+    </view>
+
+    <view class="key-head">
+      <text class="key-label">{{keyInfo.headLabel}}</text>
+      <text class="key-value key-{{keyInfo.tone}}">{{keyInfo.head}}</text>
+      <text class="key-sub" wx:if="{{keyInfo.headSub}}">{{keyInfo.headSub}}</text>
+    </view>
+
+    <view class="rows">
+      <view class="row" wx:for="{{keyInfo.rows}}" wx:key="label">
+        <text class="row-label">{{item.label}}</text>
+        <text class="row-value">{{item.value}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="date-warn" wx:if="{{dateWarn}}">
+    <text class="warn-icon">⏱</text>
+    <text class="warn-text">{{dateWarn}}</text>
+  </view>
+
+  <view class="raw-tip" wx:if="{{isRaw}}">
+    <text class="raw-tag">自动抓取</text>
+    <text class="raw-text">资助额度与申报条件正在整理，以原文为准。</text>
+  </view>
+
+  <view class="block" wx:if="{{confTopics.length > 0 || confSessions.length > 0}}">
+    <view class="block-head">
+      <text class="block-bar bar-green"></text>
+      <text class="block-title">主题与分论坛</text>
+      <text class="block-count" wx:if="{{confSessions.length > 0}}">{{confSessions.length}} 个</text>
+    </view>
+
+    <view class="topics" wx:if="{{confTopics.length > 0}}">
+      <text class="topic" wx:for="{{confTopics}}" wx:key="index">{{item}}</text>
+    </view>
+
+    <view class="ses-line" wx:for="{{confSessions}}" wx:key="index">{{item}}</view>
+  </view>
+
+  <view class="block" wx:if="{{confWho.length > 0}}">
+    <view class="block-head">
+      <text class="block-bar bar-green"></text>
+      <text class="block-title">会有哪些单位来</text>
+    </view>
+
+    <view class="who-line" wx:for="{{confWho}}" wx:key="group">
+      <text class="who-group">{{item.group}}</text>
+      <text class="who-list">{{item.text}}</text>
+    </view>
+  </view>
+
+  <view class="block" wx:if="{{infoRows.length > 0}}">
+    <view class="block-head">
+      <text class="block-bar"></text>
+      <text class="block-title">你符合吗</text>
+    </view>
+    <view class="rows">
+      <view class="row" wx:for="{{infoRows}}" wx:key="label">
+        <text class="row-label">{{item.label}}</text>
+        <text class="row-value">{{item.value}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="block" wx:if="{{notice.conditions.length > 0}}">
+    <view class="block-head">
+      <text class="block-bar"></text>
+      <text class="block-title">{{labels.cond}}</text>
+      <text class="block-count">{{notice.conditions.length}} 条</text>
+    </view>
+
+    <view class="conds">
+      <view class="cond" wx:for="{{notice.conditions}}" wx:key="index">
+        <text class="cond-dot"></text>
+        <text class="cond-text">{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="block" wx:if="{{notice.files.length > 0}}">
+    <view class="block-head">
+      <text class="block-bar"></text>
+      <text class="block-title">{{labels.file}}</text>
+      <text class="block-count">{{notice.files.length}} 份</text>
+    </view>
+
+    <text class="file-tip">附件不在小程序内转载（避免版权问题与版本过期）。点任意一项即复制下载入口，粘贴到浏览器打开，附件在原文页底部。</text>
+
+    <view
+      class="file"
+      wx:for="{{notice.files}}"
+      wx:key="index"
+      data-name="{{item.name}}"
+      data-url="{{item.url}}"
+      bindtap="onFile"
+    >
+      <text class="file-icon">📄</text>
+      <text class="file-name ell">{{item.name}}</text>
+      <text class="file-act">复制链接</text>
+    </view>
+  </view>
+
+  <view class="block" wx:if="{{notice.conditions.length === 0 && notice.files.length === 0}}">
+    <view class="block-head">
+      <text class="block-bar"></text>
+      <text class="block-title">{{labels.cond}}与{{labels.file}}</text>
+    </view>
+    <view class="detail-hint">这条由官网自动抓取。申报条件、材料清单、申请书模板都在原文与附件里，点下面按钮复制链接，用浏览器或电脑打开查看。</view>
+    <view class="detail-btn" bindtap="copyLink">复制原文链接</view>
+    <text class="detail-url ell" wx:if="{{notice.sourceUrl}}">{{notice.sourceUrl}}</text>
+  </view>
+
+  <view class="block" wx:if="{{notice.summary}}">
+    <view class="block-head">
+      <text class="block-bar"></text>
+      <text class="block-title">一句话说明</text>
+    </view>
+    <text class="summary">{{notice.summary}}</text>
+  </view>
+
+  <view class="block note-block" wx:if="{{peerNote || confNote}}">
+    <view class="block-head">
+      <text class="block-bar bar-amber"></text>
+      <text class="block-title">圈内提醒</text>
+    </view>
+    <text class="note" wx:if="{{peerNote}}">{{peerNote}}</text>
+    <text class="note note-2" wx:if="{{confNote}}">{{confNote}}</text>
+  </view>
+
+  <view class="block" wx:if="{{related.length > 0}}">
+    <view class="block-head">
+      <text class="block-bar"></text>
+      <text class="block-title">同一赛道的其他机会</text>
+      <text class="block-count">{{related.length}} 条</text>
+    </view>
+    <view class="rel" wx:for="{{related}}" wx:key="id" data-id="{{item.id}}" bindtap="goRelated">
+      <view class="rel-main">
+        <text class="rel-tag">{{item.typeName}}</text>
+        <text class="rel-title ell">{{item.title}}</text>
+      </view>
+      <text class="rel-days" wx:if="{{item.days !== null}}">{{item.days}} 天</text>
+    </view>
+  </view>
+
+  <!-- 官方来源：三级，正文里说清这条链接通到哪一级，不拿首页冒充通知 -->
+  <view class="block official-block">
+    <view class="block-head">
+      <text class="block-bar bar-blue"></text>
+      <text class="block-title">官方来源</text>
+      <text class="block-count">{{official.level === 'notice' ? '原文' : (official.level === 'section' ? '栏目' : (official.level === 'home' ? '首页' : '未收录'))}}</text>
+    </view>
+
+    <text class="off-name">{{official.name}}</text>
+    <text class="off-path" wx:if="{{official.label}}">{{official.label}}</text>
+
+    <text class="off-url" wx:if="{{officialUrl}}" user-select="true" bindtap="copyOfficial">{{officialUrl}}</text>
+
+    <view class="off-btns">
+      <view class="off-btn" wx:if="{{official.level === 'notice' && officialUrl}}" bindtap="copyOfficial">复制原文链接</view>
+      <view class="off-btn" wx:if="{{official.level !== 'notice' && searchUrl}}" bindtap="copySearch">直达这篇（站内检索）</view>
+      <view class="off-btn off-btn-ghost" wx:if="{{officialUrl && official.level !== 'notice'}}" bindtap="copyOfficial">复制{{official.level === 'section' ? '栏目' : '官网'}}地址</view>
+    </view>
+
+    <text class="off-tip" wx:if="{{official.level === 'notice'}}">这是本条通知的原文页，额度、条件、附件都在里面。</text>
+    <text class="off-tip" wx:if="{{official.level === 'section'}}">这是该机构的通知栏目，这条就在列表里；下方检索式可一步定位到它。</text>
+    <text class="off-tip" wx:if="{{official.level === 'home'}}">这条只到机构首页，进入后点「通知公告」再找。下方检索式更快。</text>
+    <text class="off-tip" wx:if="{{!official.level}}">该机构没有稳定可收录的官网，建议在微信「搜一搜」搜机构全名。</text>
+    <text class="off-tip">小程序不能直接打开政府和学会网站（业务域名限制），复制后用浏览器或电脑打开。</text>
+  </view>
+
+  <view class="actions">
+    <view class="act act-ghost" bindtap="toggleFav">
+      <text class="act-icon">{{isFav ? '★' : '☆'}}</text>
+      <text>{{isFav ? '已收藏' : '收藏'}}</text>
+    </view>
+
+    <view class="act act-ghost {{isApplied ? 'act-on' : ''}}" bindtap="toggleApplied">
+      <text class="act-icon">✓</text>
+      <text>{{isApplied ? '已申报' : '标记申报'}}</text>
+    </view>
+
+    <view class="act act-main" bindtap="remind">提醒我</view>
+  </view>
+
+  <view class="remind-hint">{{remindText}}</view>
+
+  <view class="tip">
+    <text wx:if="{{freq}}">往年规律：{{freq}}</text>
+    <text wx:if="{{conf}}">主办、地点、注册费与分论坛按本届官方通知或往届惯例整理，报名前请到官网核对。</text>
+    <text>信息为结构化摘要，最终以官方通知原文为准。</text>
+  </view>
+
+  <view class="feedback-link" bindtap="onFeedback">信息有误或已过期？点此反馈公众号「创艺喵」</view>
+
+  <!-- 广告位：放在正文末尾随页面滚动，不遮挡上方任何按钮。
+       未配广告位、会员用户、加载失败时整块不渲染 -->
+  <view class="ad-slot" wx:if="{{adBanner}}">
+    <ad unit-id="{{adBanner}}" binderror="onAdError"></ad>
+  </view>
+
+</view>

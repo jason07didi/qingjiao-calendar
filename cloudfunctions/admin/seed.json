@@ -1,0 +1,1610 @@
+[
+ {
+  "hash": "e64f801a6aef21a25b9df5c4a449e7fe",
+  "type": "project",
+  "title": "2027年度国家自然科学基金项目申请",
+  "org": "国家自然科学基金委员会",
+  "region": "国家",
+  "disciplines": [
+   "城乡规划",
+   "建筑",
+   "城市气候",
+   "环境健康"
+  ],
+  "startAt": "2026-12-01",
+  "deadline": "2027-03-20",
+  "deadlineText": "2027年3月20日 16:00",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "面上项目约 50 万元/项，青年项目 30 万元/项",
+   "target": "依托单位在编科学技术人员",
+   "quota": "同年只能申请 1 项面上项目；同年申请和参与申请合计不超过 2 项",
+   "channel": "科学基金网络信息系统 isisn.nsfc.gov.cn"
+  },
+  "conditions": [
+   "具有高级专业技术职务（职称）或博士学位",
+   "青年项目：男性未满 35 周岁，女性未满 40 周岁",
+   "依托单位须为基金委注册单位，须有校内预申报审核环节"
+  ],
+  "files": [
+   {
+    "name": "2027年度项目指南.pdf"
+   },
+   {
+    "name": "申请书正文撰写提纲.docx"
+   },
+   {
+    "name": "依托单位承诺函模板.docx"
+   }
+  ],
+  "summary": "面上、青年、地区三类项目同时开放，建筑与城市研究方向建议报 E08 建筑环境或 D01 城市地理。",
+  "curated": "校内一般会提前 3 周组织预申报评审，实际提交节点比官方截止早 10 天左右，别只盯官方日期。",
+  "sourceUrl": "https://www.nsfc.gov.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-12-01",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "f65d65ce9bc09406b9d466fa83da7833",
+  "type": "project",
+  "title": "2027年度国家社会科学基金年度项目",
+  "org": "全国哲学社会科学工作办公室",
+  "region": "国家",
+  "disciplines": [
+   "城乡规划",
+   "建筑",
+   "风景园林"
+  ],
+  "startAt": "2026-12-20",
+  "deadline": "2027-02-25",
+  "deadlineText": "2027年2月25日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "重点项目 35 万元，一般项目 20 万元，青年项目 20 万元",
+   "target": "高校、党校、社科院等具备独立法人资格的单位",
+   "quota": "申请人同年度只能申报 1 项，且不能作为课题组成员参与他人申报",
+   "channel": "国家社科基金科研创新服务管理平台"
+  },
+  "conditions": [
+   "重点项目申请人须具有副高级以上职称",
+   "青年项目申请人年龄不超过 35 周岁",
+   "课题组成员须征得本人同意并签字"
+  ],
+  "files": [
+   {
+    "name": "课题指南.pdf"
+   },
+   {
+    "name": "申请书.doc"
+   },
+   {
+    "name": "活页.doc"
+   }
+  ],
+  "summary": "城乡规划与人居环境方向可报「应用经济」「社会学」或「交叉学科」学科分类。",
+  "curated": "活页必须匿名，正文里出现学校名、作者名会直接形式审查不通过，这是每年最常见的低级失误。",
+  "sourceUrl": "http://www.nopss.gov.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-12-20",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "e43265585952863457c17f4ac74f3af1",
+  "type": "project",
+  "title": "2027年度陕西省自然科学基础研究计划项目",
+  "org": "陕西省科学技术厅",
+  "region": "陕西省",
+  "disciplines": [
+   "城市气候",
+   "环境健康",
+   "建筑"
+  ],
+  "startAt": "2026-11-10",
+  "deadline": "2026-12-10",
+  "deadlineText": "2026年12月10日 17:00",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "面上项目 3–5 万元，青年项目 2–3 万元",
+   "target": "陕西省内注册的具有独立法人资格的单位",
+   "quota": "同一负责人限申报 1 项，在研项目未结题者不得申报",
+   "channel": "陕西省科技业务综合管理系统"
+  },
+  "conditions": [
+   "项目负责人须为在职人员，年龄不超过 57 周岁",
+   "青年项目负责人年龄不超过 35 周岁",
+   "需提供单位推荐意见并加盖公章"
+  ],
+  "files": [
+   {
+    "name": "申报指南.pdf"
+   },
+   {
+    "name": "项目申请书模板.docx"
+   },
+   {
+    "name": "申报汇总表.xlsx"
+   }
+  ],
+  "summary": "面向基础研究，城市气候、热环境、环境健康方向可归入「资源与环境」或「城乡建设」领域。",
+  "curated": "限项是硬约束：省科技厅系统里只要有 1 项在研未结题，系统直接拦截，先在系统里自查再准备材料。",
+  "sourceUrl": "https://kjt.shaanxi.gov.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-11-10",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "4dd12fe07f128f6e73475341be165c83",
+  "type": "project",
+  "title": "2027年度陕西省重点研发计划（社会发展领域）",
+  "org": "陕西省科学技术厅",
+  "region": "陕西省",
+  "disciplines": [
+   "城乡规划",
+   "环境健康",
+   "城市气候"
+  ],
+  "startAt": "2026-11-05",
+  "deadline": "2026-12-05",
+  "deadlineText": "2026年12月5日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "一般项目 20–50 万元，重点项目 100 万元以上",
+   "target": "省内企事业单位、高校院所",
+   "quota": "项目负责人同期只能申报 1 项省级科技计划项目",
+   "channel": "陕西省科技业务综合管理系统"
+  },
+  "conditions": [
+   "重点项目须有产学研联合体，企业参与比例不低于 30%",
+   "需提交查新报告或前期研究基础证明",
+   "项目实施周期一般 2–3 年"
+  ],
+  "files": [
+   {
+    "name": "申报指南-社会发展领域.pdf"
+   },
+   {
+    "name": "可行性研究报告提纲.docx"
+   },
+   {
+    "name": "合作协议模板.docx"
+   }
+  ],
+  "summary": "聚焦城镇化与城市治理、生态环保、公共健康，适合做城市热环境、健康影响评估的团队。",
+  "curated": "这类项目评审看「能不能落地」，纯机理研究容易被判不贴合重点研发定位，建议挂一个地方应用场景。",
+  "sourceUrl": "https://kjt.shaanxi.gov.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-11-05",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "3ebfa3b01258b7d21c1f5b61fbefd477",
+  "type": "project",
+  "title": "2027年度陕西省教育厅科学研究计划项目",
+  "org": "陕西省教育厅",
+  "region": "陕西省",
+  "disciplines": [
+   "城乡规划",
+   "建筑",
+   "风景园林",
+   "环境设计"
+  ],
+  "startAt": "2026-11-01",
+  "deadline": "2026-11-28",
+  "deadlineText": "2026年11月28日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "专项科研计划 2 万元/项，重点项目 5 万元/项",
+   "target": "省属高等学校",
+   "quota": "每校限额推荐，具体名额由学校分配",
+   "channel": "陕西省教育厅科研管理平台（校内先评审）"
+  },
+  "conditions": [
+   "项目负责人须为高校在职教师，年龄一般不超过 45 周岁",
+   "已承担教育厅项目未结题者不得申报",
+   "须由学校科研处统一推荐，不接受个人报送"
+  ],
+  "files": [
+   {
+    "name": "申报通知.pdf"
+   },
+   {
+    "name": "申请书.doc"
+   },
+   {
+    "name": "校内推荐排序表.xlsx"
+   }
+  ],
+  "summary": "省属高校教师最容易拿到的省级项目，适合作为后续申报国家级项目的前期基础。",
+  "curated": "关键在校内排序，不是省厅卡人。想拿到名额，最好提前跟学院科研秘书确认本院排序规则。",
+  "sourceUrl": "https://jyt.shaanxi.gov.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-11-01",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "edacb4a4f5e1eb4ade6bd3d8ae6ac037",
+  "type": "project",
+  "title": "2027年度西安市科技计划（软科学研究）",
+  "org": "西安市科学技术局",
+  "region": "西安市",
+  "disciplines": [
+   "城乡规划",
+   "城市气候",
+   "环境健康"
+  ],
+  "startAt": "2026-11-15",
+  "deadline": "2026-12-20",
+  "deadlineText": "2026年12月20日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "5–15 万元/项",
+   "target": "西安市行政区域内注册的独立法人单位",
+   "quota": "同一申报单位同一领域限报 2 项",
+   "channel": "西安市科技计划项目管理系统"
+  },
+  "conditions": [
+   "研究内容须围绕西安市实际需求，具备决策参考价值",
+   "需提供与政府部门或实际应用单位的合作意向",
+   "项目周期不超过 1 年"
+  ],
+  "files": [
+   {
+    "name": "软科学申报指南.pdf"
+   },
+   {
+    "name": "项目申报书.docx"
+   }
+  ],
+  "summary": "偏政策研究，城市体检、热岛治理、社区健康环境类选题命中率高。",
+  "curated": "软科学评审很看「给谁用」。有市住建局、资源规划局的实际需求函，通过率会明显高一截。",
+  "sourceUrl": "http://kjj.xa.gov.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-11-15",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "17341814eff073fae53dec742c36314e",
+  "type": "project",
+  "title": "2027年度教育部人文社会科学研究一般项目",
+  "org": "教育部社会科学司",
+  "region": "国家",
+  "disciplines": [
+   "城乡规划",
+   "建筑",
+   "风景园林",
+   "环境设计"
+  ],
+  "startAt": "2026-12-01",
+  "deadline": "2027-01-15",
+  "deadlineText": "2027年1月15日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "规划基金 10 万元，青年基金 8 万元，自筹经费项目不限",
+   "target": "全国普通高等学校",
+   "quota": "申请者同年度只能申报 1 项，且不能作为课题组成员参与其他项目",
+   "channel": "教育部人文社会科学研究管理平台"
+  },
+  "conditions": [
+   "规划基金：具有高级职称",
+   "青年基金：年龄不超过 40 周岁",
+   "连续两年申报未立项者，第三年停报一年"
+  ],
+  "files": [
+   {
+    "name": "项目申报通知.pdf"
+   },
+   {
+    "name": "申请评审书.doc"
+   }
+  ],
+  "summary": "设计学、城乡规划学可归入「艺术学」或「交叉学科/综合研究」门类。",
+  "curated": "连续两年没中的会被停报一年，这是很多人不知道的规则，申报前先查自己的申报记录。",
+  "sourceUrl": "http://www.moe.gov.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-12-01",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "951c53041e819a6f05fd6cf94e78db84",
+  "type": "project",
+  "title": "2027年度陕西省建设科技计划项目",
+  "org": "陕西省住房和城乡建设厅",
+  "region": "陕西省",
+  "disciplines": [
+   "建筑",
+   "城乡规划",
+   "城市气候"
+  ],
+  "startAt": "2026-10-25",
+  "deadline": "2026-11-06",
+  "deadlineText": "2026年11月6日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "10–30 万元/项",
+   "target": "省内建设行业企事业单位、高校",
+   "quota": "每家单位限报 3 项",
+   "channel": "陕西省住建厅科技项目管理系统"
+  },
+  "conditions": [
+   "选题须属于绿色建筑、建筑节能、城市更新等方向",
+   "须有明确的工程应用依托项目",
+   "需提供单位科研诚信承诺书"
+  ],
+  "files": [
+   {
+    "name": "建设科技项目申报指南.pdf"
+   },
+   {
+    "name": "立项申请书.docx"
+   }
+  ],
+  "summary": "建筑节能、既有建筑改造、绿色城区方向最契合，城市气候研究可挂「建筑环境」子方向。",
+  "curated": "住建厅项目周期短、钱不多，但对评职称的「横向到账」有帮助，性价比常被低估。",
+  "sourceUrl": "https://zjt.shaanxi.gov.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-10-25",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "4665d120ab919a575fd59438bb2e5187",
+  "type": "talent",
+  "title": "2027年度陕西省青年科技新星",
+  "org": "陕西省科学技术厅",
+  "region": "陕西省",
+  "disciplines": [
+   "城乡规划",
+   "建筑",
+   "城市气候",
+   "环境健康"
+  ],
+  "startAt": "2026-11-01",
+  "deadline": "2026-11-30",
+  "deadlineText": "2026年11月30日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "培养期 3 年，资助 15 万元",
+   "target": "陕西省内高校、科研院所、企业青年科技人员",
+   "quota": "同一人只能获得一次",
+   "channel": "陕西省科技业务综合管理系统"
+  },
+  "conditions": [
+   "年龄不超过 35 周岁",
+   "具有博士学位或中级以上职称",
+   "近 5 年主持过省级以上科研项目或发表高水平论文"
+  ],
+  "files": [
+   {
+    "name": "遴选通知.pdf"
+   },
+   {
+    "name": "推荐表.docx"
+   },
+   {
+    "name": "业绩证明材料清单.pdf"
+   }
+  ],
+  "summary": "省级青年人才称号，是后续申报省级人才计划和国家级人才项目的重要台阶。",
+  "curated": "这个称号在陕西省内评职称时认可度较高，且不占学校推荐名额的情况多，值得优先冲。",
+  "sourceUrl": "https://kjt.shaanxi.gov.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-11-01",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "e1db403973d9268621441f75e4723e6a",
+  "type": "talent",
+  "title": "陕西高校青年杰出人才支持计划",
+  "org": "陕西省教育厅",
+  "region": "陕西省",
+  "disciplines": [
+   "城乡规划",
+   "建筑",
+   "风景园林",
+   "环境设计"
+  ],
+  "startAt": "2026-11-08",
+  "deadline": "2026-12-08",
+  "deadlineText": "2026年12月8日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "支持期 3 年，自然科学类 30 万元",
+   "target": "陕西省属高校在编教师",
+   "quota": "每校限额推荐 2–3 名",
+   "channel": "校内遴选后报省教育厅"
+  },
+  "conditions": [
+   "年龄一般不超过 40 周岁",
+   "具有博士学位或副高以上职称",
+   "近 5 年主持国家级项目或取得标志性成果"
+  ],
+  "files": [
+   {
+    "name": "实施办法.pdf"
+   },
+   {
+    "name": "申报书.docx"
+   }
+  ],
+  "summary": "面向省属高校的青年人才支持，侧重科研潜力和学科贡献。",
+  "curated": "校内名额少，通常要走学院推荐 + 校学术委员会评审两道，提前一个学期准备材料才来得及。",
+  "sourceUrl": "https://jyt.shaanxi.gov.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-11-08",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "cc75f175f0a515d9b4111c1a99ff3492",
+  "type": "talent",
+  "title": "陕西省「三秦学者」岗位招聘与申报",
+  "org": "中共陕西省委组织部",
+  "region": "陕西省",
+  "disciplines": [
+   "城乡规划",
+   "建筑",
+   "风景园林",
+   "城市气候"
+  ],
+  "startAt": "2026-11-20",
+  "deadline": "2026-12-15",
+  "deadlineText": "2026年12月15日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "特聘教授岗位津贴 20 万元/年，团队配套经费另计",
+   "target": "省内外高层次人才",
+   "quota": "按岗位设置申报，一岗一人",
+   "channel": "陕西人才服务平台"
+  },
+  "conditions": [
+   "一般应具有正高级职称或海外知名高校终身教职",
+   "年龄原则上不超过 55 周岁",
+   "须全职到岗，聘期 5 年"
+  ],
+  "files": [
+   {
+    "name": "岗位设置方案.pdf"
+   },
+   {
+    "name": "候选人推荐表.docx"
+   },
+   {
+    "name": "聘期目标任务书.docx"
+   }
+  ],
+  "summary": "省级高层次人才计划，分特聘教授、讲座教授、青年学者三类岗位。",
+  "curated": "岗位是「按需设岗」，先看今年有没有你这个学科放出来的岗，没岗的话材料准备再漂亮也没用。",
+  "sourceUrl": "https://www.sx-dj.gov.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-11-20",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "1fe5622eefdffa14a4997922a9363562",
+  "type": "talent",
+  "title": "2027年度国家优秀青年科学基金项目",
+  "org": "国家自然科学基金委员会",
+  "region": "国家",
+  "disciplines": [
+   "城市气候",
+   "环境健康",
+   "建筑"
+  ],
+  "startAt": "2026-12-01",
+  "deadline": "2027-03-20",
+  "deadlineText": "2027年3月20日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "资助强度 200 万元/项（3 年）",
+   "target": "具有高级职称或博士学位的科研人员",
+   "quota": "同年度只能申请 1 项，申请时不限项",
+   "channel": "科学基金网络信息系统"
+  },
+  "conditions": [
+   "男性未满 38 周岁，女性未满 40 周岁",
+   "具有高级专业技术职务（职称）或博士学位",
+   "需有依托单位推荐意见"
+  ],
+  "files": [
+   {
+    "name": "优青项目指南.pdf"
+   },
+   {
+    "name": "申请书提纲.docx"
+   }
+  ],
+  "summary": "国家级青年人才项目，城市气候与环境健康方向竞争激烈但窗口明确。",
+  "curated": "优青看重「代表作 + 独立研究方向的辨识度」，堆论文数量反而扣分，四篇代表作要能串成一条线。",
+  "sourceUrl": "https://www.nsfc.gov.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-12-01",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "7f7ef062b373cb6993404b787546c52d",
+  "type": "talent",
+  "title": "中国科协青年人才托举工程",
+  "org": "中国科学技术协会",
+  "region": "国家",
+  "disciplines": [
+   "建筑",
+   "城乡规划",
+   "环境健康"
+  ],
+  "startAt": "2026-10-28",
+  "deadline": "2026-11-03",
+  "deadlineText": "2026年11月3日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "每人每年 10 万元，连续 3 年",
+   "target": "32 岁以下青年科技工作者",
+   "quota": "通过学会推荐，每个学会名额有限",
+   "channel": "所属全国学会推荐"
+  },
+  "conditions": [
+   "年龄不超过 32 周岁",
+   "在高校、科研院所或企业从事一线科研工作",
+   "须由全国学会或省级科协推荐"
+  ],
+  "files": [
+   {
+    "name": "托举工程实施办法.pdf"
+   },
+   {
+    "name": "被托举人推荐表.docx"
+   }
+  ],
+  "summary": "面向早期青年科技人才，建筑、规划类可通过中国建筑学会、中国城市规划学会推荐。",
+  "curated": "走学会渠道比走学校渠道成功率高，学会有名额但要提前跟学会秘书处打招呼。",
+  "sourceUrl": "https://www.cast.org.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-10-28",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "ba2dc6beb5320bb270471ec3c42847e4",
+  "type": "award",
+  "title": "2026年度陕西省科学技术奖",
+  "org": "陕西省科学技术厅",
+  "region": "陕西省",
+  "disciplines": [
+   "城乡规划",
+   "建筑",
+   "城市气候",
+   "环境健康"
+  ],
+  "startAt": "2026-11-10",
+  "deadline": "2026-12-25",
+  "deadlineText": "2026年12月25日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "奖金：一等奖 20 万元，二等奖 10 万元，三等奖 5 万元",
+   "target": "在陕完成并应用的科技成果",
+   "quota": "同一完成人同年限报 1 项，同一成果不得重复申报",
+   "channel": "陕西省科技奖励管理系统"
+  },
+  "conditions": [
+   "成果须应用满 2 年以上（自然科学奖可适当放宽）",
+   "完成人须提供知情同意与署名排序确认",
+   "需第三方评价或成果登记证明"
+  ],
+  "files": [
+   {
+    "name": "提名工作通知.pdf"
+   },
+   {
+    "name": "提名书.docx"
+   },
+   {
+    "name": "应用证明模板.docx"
+   }
+  ],
+  "summary": "分自然科学奖、技术发明奖、科技进步奖三类，规划与建筑类成果多走科技进步奖。",
+  "curated": "省奖现在实行提名制，不是自己报，要找到有提名资格的单位或专家，这一步最容易被忽略。",
+  "sourceUrl": "https://kjt.shaanxi.gov.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-11-10",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "8432baa85db79331662056ec5ee3921b",
+  "type": "award",
+  "title": "2026年度华夏建设科学技术奖",
+  "org": "中国建筑科学研究院",
+  "region": "国家",
+  "disciplines": [
+   "建筑",
+   "城乡规划",
+   "城市气候"
+  ],
+  "startAt": "2026-10-20",
+  "deadline": "2026-11-16",
+  "deadlineText": "2026年11月16日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "不设奖金，设一等奖、二等奖、三等奖",
+   "target": "全国建设行业企事业单位、高校",
+   "quota": "同一单位限报 3 项",
+   "channel": "华夏奖申报系统（住建部指导）"
+  },
+  "conditions": [
+   "成果须在建设领域应用满 1 年以上",
+   "需提供经济效益或社会效益证明",
+   "完成单位不超过 5 家，完成人不超过 15 人"
+  ],
+  "files": [
+   {
+    "name": "申报通知.pdf"
+   },
+   {
+    "name": "申报书.docx"
+   },
+   {
+    "name": "成果摘要模板.docx"
+   }
+  ],
+  "summary": "建设行业国家级社会力量奖，建筑节能、绿色建筑、城市更新方向命中率高。",
+  "curated": "社会力量奖在部分高校职称文件里按省部级对待，但各校口径不同，报之前先查本校认可目录。",
+  "sourceUrl": "https://www.cabr.com.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-10-20",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "2bee39f193c476dde2b63b3c8783a537",
+  "type": "award",
+  "title": "2026年度中国城市规划学会科技进步奖",
+  "org": "中国城市规划学会",
+  "region": "国家",
+  "disciplines": [
+   "城乡规划",
+   "城市气候"
+  ],
+  "startAt": "2026-11-01",
+  "deadline": "2027-01-08",
+  "deadlineText": "2027年1月8日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "设一等奖、二等奖、三等奖，颁发证书与奖牌",
+   "target": "从事城市规划科研、实践的单位与个人",
+   "quota": "同一申报人限报 2 项",
+   "channel": "中国城市规划学会奖励申报系统"
+  },
+  "conditions": [
+   "成果须完成并应用满 2 年",
+   "规划编制类项目须提供批复文件",
+   "需两名同行专家推荐"
+  ],
+  "files": [
+   {
+    "name": "奖励办法.pdf"
+   },
+   {
+    "name": "推荐书.docx"
+   }
+  ],
+  "summary": "规划学科内认可度最高的学会奖之一，规划编制、政策研究、技术方法类成果均可申报。",
+  "curated": "学会奖对「规划实践项目」更友好，纯理论文章建议走优秀论文奖而不是科技进步奖。",
+  "sourceUrl": "https://www.planning.org.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-11-01",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "0c98ad71415f896b5a52b3444ac205f4",
+  "type": "award",
+  "title": "2026年度中国建筑学会建筑创作奖",
+  "org": "中国建筑学会",
+  "region": "国家",
+  "disciplines": [
+   "建筑",
+   "环境设计"
+  ],
+  "startAt": "2026-10-15",
+  "deadline": "2026-12-12",
+  "deadlineText": "2026年12月12日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "设金奖、银奖、入围奖",
+   "target": "建成项目的设计单位与主创建筑师",
+   "quota": "同一主创建筑师限报 2 项",
+   "channel": "中国建筑学会创作奖申报平台"
+  },
+  "conditions": [
+   "项目须已建成并投入使用",
+   "须提供实景照片、图纸与业主证明",
+   "主创建筑师须为项目实际负责人"
+  ],
+  "files": [
+   {
+    "name": "申报章程.pdf"
+   },
+   {
+    "name": "项目申报表.docx"
+   },
+   {
+    "name": "图纸与照片提交规范.pdf"
+   }
+  ],
+  "summary": "国内建筑创作领域最有分量的奖项之一，看重建成品质而非论文。",
+  "curated": "这个奖对设计院和高校双身份的人特别有用，但高校教师如果没有实际建成项目，建议转投论文奖。",
+  "sourceUrl": "https://www.chinaasc.org.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-10-15",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "cd5a1b251f7c19299a747f932023f2f5",
+  "type": "award",
+  "title": "2026年度中国风景园林学会科学技术奖",
+  "org": "中国风景园林学会",
+  "region": "国家",
+  "disciplines": [
+   "风景园林",
+   "城乡规划"
+  ],
+  "startAt": "2026-10-25",
+  "deadline": "2026-12-18",
+  "deadlineText": "2026年12月18日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "设一等奖、二等奖、三等奖",
+   "target": "风景园林行业企事业单位、高校",
+   "quota": "同一单位限报 5 项",
+   "channel": "中国风景园林学会奖励系统"
+  },
+  "conditions": [
+   "成果须应用满 1 年",
+   "规划设计类须提供施工或落地证明",
+   "科技类须提供查新或评价报告"
+  ],
+  "files": [
+   {
+    "name": "奖励办法实施细则.pdf"
+   },
+   {
+    "name": "申报书.docx"
+   }
+  ],
+  "summary": "分科技进步奖、规划设计奖、优秀论文奖三类，园林与景观方向的主渠道。",
+  "curated": "规划设计奖和省优秀勘察设计奖有重合，同一项目两边报容易被判重复，选认可度高的那个。",
+  "sourceUrl": "https://www.chsla.org.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-10-25",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "926796df306ab0a30cf81192bde178f2",
+  "type": "conference",
+  "title": "2027中国城市规划年会征文",
+  "org": "中国城市规划学会",
+  "region": "国家",
+  "disciplines": [
+   "城乡规划",
+   "城市气候",
+   "环境健康"
+  ],
+  "startAt": "2026-11-15",
+  "deadline": "2027-02-28",
+  "deadlineText": "2027年2月28日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "不收注册费（学会会员），差旅自理",
+   "target": "规划行业从业者、高校师生",
+   "quota": "每作者限投 2 篇，第一作者限 1 篇",
+   "channel": "年会征文系统（planning.org.cn）"
+  },
+  "conditions": [
+   "未在公开刊物发表或未在其他会议交流过的原创论文",
+   "字数 6000–10000 字，含摘要、关键词、参考文献",
+   "需按年会主题与分论坛方向投稿"
+  ],
+  "files": [
+   {
+    "name": "征文通知.pdf"
+   },
+   {
+    "name": "论文格式模板.doc"
+   }
+  ],
+  "summary": "国内规划学科规模最大的年会，城市气候、健康城市方向近年设有专门分论坛。",
+  "curated": "年会论文被录用的价值主要在「交流与曝光」，不作为职称成果；但它是进入学会圈子的低成本入口。",
+  "sourceUrl": "https://www.planning.org.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-11-15",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "348b2cb94927078d0edbac599e1837bc",
+  "type": "conference",
+  "title": "2027中国建筑学会学术年会征文",
+  "org": "中国建筑学会",
+  "region": "国家",
+  "disciplines": [
+   "建筑",
+   "环境设计",
+   "城市气候"
+  ],
+  "startAt": "2026-11-10",
+  "deadline": "2027-01-31",
+  "deadlineText": "2027年1月31日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "注册费按学会标准，学生优惠",
+   "target": "建筑设计与研究从业者、高校师生",
+   "quota": "不限投，但同一作者录用不超过 2 篇",
+   "channel": "学会年会投稿系统"
+  },
+  "conditions": [
+   "原创未发表论文",
+   "中英文均可，中文需附英文摘要",
+   "需与年会主题相关"
+  ],
+  "files": [
+   {
+    "name": "征文通知.pdf"
+   },
+   {
+    "name": "论文模板.docx"
+   }
+  ],
+  "summary": "建筑学科年度学术会议，建筑物理与建筑环境方向有独立分会场。",
+  "curated": "建筑学会年会和规划年会时间常撞，两个都想投的话，先看哪个分论坛的点评人对你方向更对口。",
+  "sourceUrl": "https://www.chinaasc.org.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-11-10",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "ef414cfd1a09b8b18c55239383a691c1",
+  "type": "conference",
+  "title": "中国风景园林学会 2027 年会征文",
+  "org": "中国风景园林学会",
+  "region": "国家",
+  "disciplines": [
+   "风景园林",
+   "环境设计",
+   "环境健康"
+  ],
+  "startAt": "2026-12-01",
+  "deadline": "2027-03-15",
+  "deadlineText": "2027年3月15日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "注册费按学会标准",
+   "target": "风景园林从业者与高校师生",
+   "quota": "第一作者限投 1 篇",
+   "channel": "学会年会征文平台"
+  },
+  "conditions": [
+   "未公开发表的原创论文",
+   "字数 5000–8000 字",
+   "需符合年会主题方向"
+  ],
+  "files": [
+   {
+    "name": "征文通知.pdf"
+   },
+   {
+    "name": "格式要求.pdf"
+   }
+  ],
+  "summary": "园林学科年度会议，健康景观、蓝绿空间方向近年热度高。",
+  "curated": "录用论文会结集出版，有 ISBN 但不是正式期刊，评职称时一般不算成果，别被宣传话术误导。",
+  "sourceUrl": "https://www.chsla.org.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-12-01",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "d16c189d8cbe9377462f2b43b74cfc7b",
+  "type": "conference",
+  "title": "城市气候与城市环境国际研讨会（摘要征集）",
+  "org": "中国城市科学研究会",
+  "region": "国家",
+  "disciplines": [
+   "城市气候",
+   "环境健康",
+   "城乡规划"
+  ],
+  "startAt": "2026-10-20",
+  "deadline": "2026-12-05",
+  "deadlineText": "2026年12月5日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "注册费 1800 元，学生 900 元",
+   "target": "城市气候、热环境、空气质量的科研人员",
+   "quota": "每人限投 2 篇摘要",
+   "channel": "会议官网在线投稿系统"
+  },
+  "conditions": [
+   "英文摘要 300 词以内",
+   "接受口头报告与海报两种形式",
+   "录用后须至少一位作者注册参会"
+  ],
+  "files": [
+   {
+    "name": "Call for Abstracts.pdf"
+   },
+   {
+    "name": "摘要模板.docx"
+   }
+  ],
+  "summary": "与你研究方向最对口的会议，城市热岛、热暴露、微气候模拟类成果都可以投。",
+  "curated": "这个会议的审稿人圈子跟你方向高度重合，投摘要等于低成本让同行知道你在做什么。",
+  "sourceUrl": "https://www.csus.org.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-10-20",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "92f26e909730fee2bad61bb80bc02ad3",
+  "type": "conference",
+  "title": "健康城市与人居环境论坛征文",
+  "org": "中国城市科学研究会",
+  "region": "国家",
+  "disciplines": [
+   "城乡规划",
+   "环境健康",
+   "风景园林"
+  ],
+  "startAt": "2026-11-05",
+  "deadline": "2027-01-15",
+  "deadlineText": "2027年1月15日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "注册费 1200 元",
+   "target": "健康城市、人居环境研究与实践人员",
+   "quota": "不限投",
+   "channel": "论坛官方邮箱投稿"
+  },
+  "conditions": [
+   "中文全文 6000 字左右",
+   "需包含实证数据或案例",
+   "录用后择优推荐至合作期刊"
+  ],
+  "files": [
+   {
+    "name": "论坛征文通知.pdf"
+   }
+  ],
+  "summary": "交叉方向论坛，环境健康与规划结合的选题命中率高，且有机会被推荐到合作期刊。",
+  "curated": "「择优推荐至期刊」是这类论坛最实际的价值，比一张录用证书值钱，投稿时把质量做足。",
+  "sourceUrl": "https://www.csus.org.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-11-05",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "9030a858bc639d63af3bc25c104fac8b",
+  "type": "conference",
+  "title": "中国环境科学学会 2027 年学术年会",
+  "org": "中国环境科学学会",
+  "region": "国家",
+  "disciplines": [
+   "环境健康",
+   "城市气候"
+  ],
+  "startAt": "2026-11-20",
+  "deadline": "2027-02-20",
+  "deadlineText": "2027年2月20日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "注册费 1600 元，会员 1300 元",
+   "target": "环境领域科研与技术人员",
+   "quota": "每人限投 2 篇",
+   "channel": "学会年会投稿系统"
+  },
+  "conditions": [
+   "摘要 500 字以内",
+   "需选择对应分会场",
+   "录用后须注册参会"
+  ],
+  "files": [
+   {
+    "name": "年会征文通知.pdf"
+   },
+   {
+    "name": "摘要模板.doc"
+   }
+  ],
+  "summary": "环境健康方向的主场，大气污染、暴露评估、健康风险类研究对口。",
+  "curated": "分会场选错等于白投，投稿前先看去年分会场设置，挑跟你方法最接近的那个。",
+  "sourceUrl": "https://www.chinacses.org",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-11-20",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "d8b23c51fff0a051eb2e14468020a6ff",
+  "type": "special",
+  "title": "Landscape and Urban Planning 特刊：城市绿地与健康公平",
+  "org": "Elsevier",
+  "region": "国际",
+  "disciplines": [
+   "风景园林",
+   "城乡规划",
+   "环境健康"
+  ],
+  "startAt": "2026-11-01",
+  "deadline": "2026-12-31",
+  "deadlineText": "2026年12月31日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "开放获取 APC 约 3200 美元（可选传统订阅模式免费）",
+   "target": "面向全球学者公开征稿",
+   "quota": "同一作者限投 1 篇",
+   "channel": "Editorial Manager 投稿系统（选特刊栏目）"
+  },
+  "conditions": [
+   "原创未发表研究，英文撰写",
+   "篇幅 8000 词以内",
+   "需明确投稿至特刊而非常规栏目"
+  ],
+  "files": [
+   {
+    "name": "Call for Papers.pdf"
+   },
+   {
+    "name": "Author Guidelines.pdf"
+   }
+  ],
+  "summary": "关注绿地暴露、健康公平与空间正义，实证研究优先，纯综述需先与客座编辑沟通。",
+  "curated": "投稿系统里必须选对特刊栏目，选错会进常规审稿队列，白等三个月。",
+  "sourceUrl": "https://www.sciencedirect.com/journal/landscape-and-urban-planning",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-11-01",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "7dd0fb0c471a2302cb06daad128909ac",
+  "type": "special",
+  "title": "Building and Environment 特刊：城市热环境与建筑能耗",
+  "org": "Elsevier",
+  "region": "国际",
+  "disciplines": [
+   "建筑",
+   "城市气候"
+  ],
+  "startAt": "2026-11-15",
+  "deadline": "2027-01-31",
+  "deadlineText": "2027年1月31日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "开放获取 APC 约 3500 美元（可选订阅模式）",
+   "target": "建筑环境与城市气候研究者",
+   "quota": "不限投，但同主题系列文章需合并",
+   "channel": "Editorial Manager"
+  },
+  "conditions": [
+   "英文原创论文，含实测或模拟数据",
+   "需说明研究的工程或规划意义",
+   "图表须达到期刊分辨率要求"
+  ],
+  "files": [
+   {
+    "name": "Special Issue Flyer.pdf"
+   },
+   {
+    "name": "Guide for Authors.pdf"
+   }
+  ],
+  "summary": "城市热岛、建筑能耗耦合、微气候模拟方向的顶刊特刊，与你研究领域高度契合。",
+  "curated": "B&E 特刊审稿比常规快，但拒稿也快。投之前先看客座编辑是谁，方向不对口会直接 desk reject。",
+  "sourceUrl": "https://www.sciencedirect.com/journal/building-and-environment",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-11-15",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "486e59fbec77e2f459d467ab36c0e45b",
+  "type": "special",
+  "title": "Urban Climate 特刊：城市气候适应性规划",
+  "org": "Elsevier",
+  "region": "国际",
+  "disciplines": [
+   "城市气候",
+   "城乡规划"
+  ],
+  "startAt": "2026-12-01",
+  "deadline": "2027-02-15",
+  "deadlineText": "2027年2月15日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "开放获取 APC 约 2800 美元（可选订阅模式）",
+   "target": "城市气候与规划交叉研究者",
+   "quota": "不限投",
+   "channel": "Editorial Manager"
+  },
+  "conditions": [
+   "英文原创论文",
+   "需包含规划政策或设计干预的评估",
+   "鼓励跨城市比较研究"
+  ],
+  "files": [
+   {
+    "name": "Call for Papers.pdf"
+   }
+  ],
+  "summary": "偏规划应用的气候期刊，适合把热环境研究与规划策略结合的工作。",
+  "curated": "这个刊对「纯模拟无政策落点」的稿件不太友好，讨论部分一定要接规划语言。",
+  "sourceUrl": "https://www.sciencedirect.com/journal/urban-climate",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-12-01",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "8a207bdacf4cd6446ae1e641af583a3e",
+  "type": "special",
+  "title": "Sustainable Cities and Society 特刊：低碳城市形态",
+  "org": "Elsevier",
+  "region": "国际",
+  "disciplines": [
+   "城乡规划",
+   "建筑",
+   "城市气候"
+  ],
+  "startAt": "2026-11-10",
+  "deadline": "2026-12-20",
+  "deadlineText": "2026年12月20日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "开放获取 APC 约 3000 美元（可选订阅模式）",
+   "target": "可持续城市研究者",
+   "quota": "不限投",
+   "channel": "Editorial Manager"
+  },
+  "conditions": [
+   "英文原创论文",
+   "需有定量分析或建模",
+   "需讨论政策含义"
+  ],
+  "files": [
+   {
+    "name": "Special Issue Call.pdf"
+   }
+  ],
+  "summary": "城市形态与碳排放、能耗关联研究，城市尺度建模类稿件命中率较高。",
+  "curated": "SCS 近年发文量激增，审稿速度尚可，但要注意自引率，别被学校预警名单挂上。",
+  "sourceUrl": "https://www.sciencedirect.com/journal/sustainable-cities-and-society",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-11-10",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "1f0756603e6613ae5d6dc028a68f7f6e",
+  "type": "special",
+  "title": "《城市规划》专栏征稿：气候适应型城市",
+  "org": "《城市规划》杂志社",
+  "region": "国家",
+  "disciplines": [
+   "城乡规划",
+   "城市气候"
+  ],
+  "startAt": "2026-10-15",
+  "deadline": "2026-11-28",
+  "deadlineText": "2026年11月28日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "不收版面费，付稿酬",
+   "target": "规划研究者与实践者",
+   "quota": "不限投",
+   "channel": "杂志社在线投稿系统"
+  },
+  "conditions": [
+   "中文原创，未公开发表",
+   "字数 8000–12000 字",
+   "需有中国本土案例或数据"
+  ],
+  "files": [
+   {
+    "name": "专栏征稿启事.pdf"
+   },
+   {
+    "name": "投稿须知.pdf"
+   }
+  ],
+  "summary": "国内规划学科顶级期刊的专栏，气候适应方向的政策与实证研究均可。",
+  "curated": "《城市规划》不收版面费还付稿酬，但审稿周期长（3–6 个月），急着毕业或评职称的别指望它赶上时间。",
+  "sourceUrl": "http://www.cityplanning.com.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-10-15",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "c011bb7da554a916e65f2d881c4cc1cb",
+  "type": "special",
+  "title": "《中国园林》专题征稿：健康景观",
+  "org": "《中国园林》杂志社",
+  "region": "国家",
+  "disciplines": [
+   "风景园林",
+   "环境健康",
+   "环境设计"
+  ],
+  "startAt": "2026-11-01",
+  "deadline": "2027-01-10",
+  "deadlineText": "2027年1月10日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "版面费按杂志社标准",
+   "target": "风景园林研究者与设计师",
+   "quota": "不限投",
+   "channel": "杂志社投稿系统（注明专题）"
+  },
+  "conditions": [
+   "中文原创论文",
+   "字数 6000–9000 字",
+   "需附中英文摘要与关键词"
+  ],
+  "files": [
+   {
+    "name": "专题征稿函.pdf"
+   },
+   {
+    "name": "论文格式规范.pdf"
+   }
+  ],
+  "summary": "园林学科核心期刊，健康景观、疗愈环境、绿地与公共健康方向对口。",
+  "curated": "投稿时在标题页注明「健康景观专题」，否则会被当常规稿件排队，等更久。",
+  "sourceUrl": "http://www.jchla.com",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-11-01",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "465a0bdca488e09282d78b3b9f9189f4",
+  "type": "competition",
+  "title": "2027 园冶杯大学生国际竞赛",
+  "org": "园冶杯组委会",
+  "region": "国际",
+  "disciplines": [
+   "风景园林",
+   "环境设计",
+   "城乡规划"
+  ],
+  "startAt": "2026-11-15",
+  "deadline": "2027-03-31",
+  "deadlineText": "2027年3月31日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "设一等奖、二等奖、三等奖及优秀指导教师奖",
+   "target": "国内外高校风景园林及相关专业学生",
+   "quota": "每组限投 1 件作品，指导教师不超过 2 人",
+   "channel": "园冶杯官网在线报名与作品提交"
+  },
+  "conditions": [
+   "作品须为课程设计或毕业设计，未获省级以上奖项",
+   "需提交图纸、说明与原创声明",
+   "团队人数不超过 4 人"
+  ],
+  "files": [
+   {
+    "name": "竞赛章程.pdf"
+   },
+   {
+    "name": "作品提交要求.pdf"
+   },
+   {
+    "name": "原创声明模板.docx"
+   }
+  ],
+  "summary": "风景园林学科规模最大的学生竞赛之一，毕业设计可直接转化参赛。",
+  "curated": "这个奖在保研和求职简历里认，指导教师的「优秀指导教师」证书在部分学校算教学成果，值得带一队。",
+  "sourceUrl": "http://www.yuanyebei.com",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-11-15",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "af5a6f9bd219ccf6eb8c4388f0a78f48",
+  "type": "competition",
+  "title": "2027 艾景奖国际园林景观规划设计大赛",
+  "org": "艾景奖组委会",
+  "region": "国际",
+  "disciplines": [
+   "风景园林",
+   "环境设计"
+  ],
+  "startAt": "2026-12-01",
+  "deadline": "2027-04-30",
+  "deadlineText": "2027年4月30日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "设年度大奖、金奖、银奖、铜奖",
+   "target": "高校学生与职业设计师（分学生组与专业组）",
+   "quota": "每人限报 2 件",
+   "channel": "艾景奖官网报名系统"
+  },
+  "conditions": [
+   "原创设计作品，未公开发表或获奖",
+   "需提交展板与设计说明",
+   "学生组须提供在校证明"
+  ],
+  "files": [
+   {
+    "name": "参赛手册.pdf"
+   },
+   {
+    "name": "展板模板.psd"
+   }
+  ],
+  "summary": "景观设计领域国际化程度较高的竞赛，学生组与专业组分开评审。",
+  "curated": "艾景奖有商业味，但在景观圈知名度足够，学生简历上写得出效果；教师组获奖含金量一般，别投入太多。",
+  "sourceUrl": "http://www.idea-king.org",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-12-01",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "df1ee214b418ee67d8f95f002b15280a",
+  "type": "competition",
+  "title": "霍普杯 2027 国际大学生建筑设计竞赛",
+  "org": "《城市·环境·设计》(UED) 杂志社",
+  "region": "国际",
+  "disciplines": [
+   "建筑",
+   "环境设计"
+  ],
+  "startAt": "2026-12-15",
+  "deadline": "2027-05-20",
+  "deadlineText": "2027年5月20日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "一等奖 10 万元，二等奖 3 万元，三等奖 1 万元",
+   "target": "全球建筑类专业在校学生",
+   "quota": "每组限投 1 件，团队不超过 4 人",
+   "channel": "霍普杯官网注册报名"
+  },
+  "conditions": [
+   "在读本科生或研究生",
+   "作品须围绕当年竞赛题目",
+   "需提交 2 张 A1 图纸，英文说明"
+  ],
+  "files": [
+   {
+    "name": "竞赛任务书.pdf"
+   },
+   {
+    "name": "图纸提交规范.pdf"
+   }
+  ],
+  "summary": "国内奖金最高的建筑学生竞赛之一，题目每年更换，国际化评审。",
+  "curated": "霍普杯评委偏概念与叙事，纯技术流方案不吃香；带学生冲这个奖，重点练的是表达而不是画图。",
+  "sourceUrl": "http://www.uabb.com.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-12-15",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "c337800ed2ffe403a50095061e8b5f58",
+  "type": "competition",
+  "title": "第十届「天作奖」国际大学生建筑设计竞赛",
+  "org": "天作奖组委会",
+  "region": "国际",
+  "disciplines": [
+   "建筑"
+  ],
+  "startAt": "2026-11-20",
+  "deadline": "2027-03-10",
+  "deadlineText": "2027年3月10日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "一等奖 5 万元，二等奖 2 万元，三等奖 1 万元",
+   "target": "国内外建筑类专业学生",
+   "quota": "每组限投 1 件",
+   "channel": "天作奖官网报名"
+  },
+  "conditions": [
+   "在校学生，团队不超过 3 人",
+   "需提交设计图纸与说明",
+   "作品须原创未发表"
+  ],
+  "files": [
+   {
+    "name": "竞赛公告.pdf"
+   },
+   {
+    "name": "图纸要求.pdf"
+   }
+  ],
+  "summary": "建筑学科老牌学生竞赛，评审看重设计逻辑的完整性。",
+  "curated": "天作奖规模比霍普杯小，竞争相对没那么惨烈，作为学生第一个国际竞赛的练手选择更合适。",
+  "sourceUrl": "http://www.tianzuoaward.com",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-11-20",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "06d383a5613fc522f6db812a0015edbf",
+  "type": "competition",
+  "title": "中国研究生智慧城市技术与创意设计大赛",
+  "org": "教育部学位与研究生教育发展中心",
+  "region": "国家",
+  "disciplines": [
+   "城乡规划",
+   "城市气候",
+   "环境健康"
+  ],
+  "startAt": "2026-10-20",
+  "deadline": "2026-11-08",
+  "deadlineText": "2026年11月8日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "设一等奖、二等奖、三等奖，获奖可计入研究生创新实践学分",
+   "target": "全国高校在读研究生",
+   "quota": "每队 3–5 人，指导教师 1–2 人",
+   "channel": "中国研究生创新实践系列大赛官网"
+  },
+  "conditions": [
+   "在读硕士或博士研究生",
+   "作品须为智慧城市相关的技术、产品或方案",
+   "需提交作品文档与演示视频"
+  ],
+  "files": [
+   {
+    "name": "大赛通知.pdf"
+   },
+   {
+    "name": "作品提交模板.docx"
+   },
+   {
+    "name": "评审规则.pdf"
+   }
+  ],
+  "summary": "与城市数据、热环境监测、健康城市交叉度高的研究生赛事，属于国家级学科竞赛目录。",
+  "curated": "这个赛事在研究生评奖评优和部分高校的毕业要求里被认可，比一般商业竞赛含金量高，值得组织学生参加。",
+  "sourceUrl": "https://cpipc.acge.org.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-10-20",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ },
+ {
+  "hash": "cb962cc0e59263c33ccbe05400b11930",
+  "type": "competition",
+  "title": "「挑战杯」陕西省大学生课外学术科技作品竞赛",
+  "org": "共青团陕西省委",
+  "region": "陕西省",
+  "disciplines": [
+   "城乡规划",
+   "建筑",
+   "风景园林",
+   "环境设计"
+  ],
+  "startAt": "2026-11-01",
+  "deadline": "2026-12-01",
+  "deadlineText": "2026年12月1日",
+  "deadlineEstimated": false,
+  "info": {
+   "amount": "设特等奖、一等奖、二等奖、三等奖",
+   "target": "陕西省高校在校学生",
+   "quota": "每校限额推荐，具体名额由校团委分配",
+   "channel": "校团委统一组织申报"
+  },
+  "conditions": [
+   "作品须为近两年内完成的学生课外学术科技或社会实践成果",
+   "需有指导教师推荐意见",
+   "集体作品作者不超过 8 人"
+  ],
+  "files": [
+   {
+    "name": "竞赛通知.pdf"
+   },
+   {
+    "name": "作品申报书.doc"
+   }
+  ],
+  "summary": "省级挑战杯，是国赛的选拔通道，社科类调查报告与科技发明制作均可申报。",
+  "curated": "校内名额靠抢，通常 9 月就要开始组队；教师想带学生出成果，别等通知发下来才动。",
+  "sourceUrl": "http://www.sxgqt.org.cn",
+  "sourceName": "内置示例",
+  "sourceId": "",
+  "publishedAt": "2026-11-01",
+  "status": "curated",
+  "createdAt": 1793503158723,
+  "updatedAt": 1793503158723
+ }
+]

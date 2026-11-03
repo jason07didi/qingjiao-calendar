@@ -1,0 +1,18 @@
+{
+  "name": "qingjiao-calendar",
+  "version": "1.0.0",
+  "private": true,
+  "description": "青椒的日历 —— 高校青年教师科研申报截止日提醒小程序",
+  "scripts": {
+    "crawl": "node tools/local_spider.js",
+    "pack": "node tools/build_pack.js",
+    "build": "node tools/local_spider.js && node tools/build_pack.js",
+    "upload": "node scripts/upload_ci.js"
+  },
+  "devDependencies": {
+    "miniprogram-ci": "^2.1.31"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
