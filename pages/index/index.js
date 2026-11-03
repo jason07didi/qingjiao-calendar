@@ -181,7 +181,11 @@ Page({
       all: live,
       past: past,
       stats: { week: week, month: month, total: live.length, mine: 0 },
-      updatedAt: (from === 'local') ? lib.DATA_UPDATED_AT : D.stampLabel(at || lib.FETCHED_AT)
+      // 本地模式显示「数据整理于 X」：优先用每日自动抓取的整理日（每天都在变），
+      // 没接自动数据时退回人工整理的日期常量
+      updatedAt: (from === 'local')
+        ? (lib.AUTO_UPDATED_AT || lib.DATA_UPDATED_AT)
+        : D.stampLabel(at || lib.FETCHED_AT)
     }, this.applyFilter)
   },
 

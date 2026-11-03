@@ -100,8 +100,9 @@ function monthGrid (year, month, dayMeta) {
 }
 
 // 倒计时紧急度：urgent 3天内 / soon 7天内 / normal 30天内 / later
+// 注意：日期待定的条目 daysLeft 返回 null，绝不能因为 '' <= 3 被误判成「紧急」
 function level (days) {
-  if (days === null) return 'later'
+  if (typeof days !== 'number' || isNaN(days)) return 'later'
   if (days <= 3) return 'urgent'
   if (days <= 7) return 'soon'
   if (days <= 30) return 'normal'
