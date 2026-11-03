@@ -17,12 +17,11 @@ module.exports = {
   enableRemote: true,
 
   // 依次尝试，第一个成功的就用。同一域名下多个路径 → 后台只配一条域名。
-  // 第 1 条：icat-radar 仓库已经在跑 Pages，把 docs/data/notices.json 拖到它的
-  //         data/ 目录下即可立刻生效（不用新建仓库、不用配 Pages）。
-  // 第 2 条：青椒自己的专用仓库，等仓库建好、Pages 开好之后把它挪到第一位。
+  // 第 1 条：青椒的日历专用仓库（main 分支 /docs 目录），每天 07:30 由 Actions 自动更新。
+  // 第 2 条：备用。icat-radar 也在跑 Pages，若专用仓库异常可临时顶上。
   remoteUrls: [
-    'https://jason07didi.github.io/icat-radar/data/notices.json',
-    'https://jason07didi.github.io/qingjiao-calendar/data/notices.json'
+    'https://jason07didi.github.io/qingjiao-calendar/data/notices.json',
+    'https://jason07didi.github.io/icat-radar/data/notices.json'
   ],
 
   // 远程数据自己的有效期：比云端缓存短，这样每天打开都能看到新内容。

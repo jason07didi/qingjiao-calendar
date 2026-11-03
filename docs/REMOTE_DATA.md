@@ -52,12 +52,13 @@ https://jason07didi.github.io/qingjiao-calendar/data/notices.json
 
 ```js
 remoteUrls: [
-  'https://jason07didi.github.io/icat-radar/data/notices.json',
-  'https://jason07didi.github.io/qingjiao-calendar/data/notices.json'
+  'https://jason07didi.github.io/qingjiao-calendar/data/notices.json',
+  'https://jason07didi.github.io/icat-radar/data/notices.json'
 ]
 ```
 
-> 第一条是已经在跑 Pages 的老仓库，把文件拖进去就能立刻验证通路，不用等新仓库。
+> 第一条是青椒的日历专用仓库（main 分支 /docs 目录），每天 07:30 自动更新。
+> 第二条仅作备份：icat-radar 也在跑 Pages，万一专用仓库异常可临时顶上。
 
 ---
 
