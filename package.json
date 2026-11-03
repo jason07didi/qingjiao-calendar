@@ -7,10 +7,15 @@
     "crawl": "node tools/local_spider.js",
     "pack": "node tools/build_pack.js",
     "build": "node tools/local_spider.js && node tools/build_pack.js",
+    "sync": "node scripts/push_to_cloud.js",
+    "sync:all": "node scripts/push_to_cloud.js --all",
     "upload": "node scripts/upload_ci.js"
   },
   "devDependencies": {
     "miniprogram-ci": "^2.1.31"
+  },
+  "dependencies": {
+    "@cloudbase/node-sdk": "^2.9.0"
   },
   "engines": {
     "node": ">=18"

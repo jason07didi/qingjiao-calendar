@@ -33,6 +33,10 @@
         "type": "folder"
       },
       {
+        "value": ".git",
+        "type": "folder"
+      },
+      {
         "value": "README.md",
         "type": "file"
       },

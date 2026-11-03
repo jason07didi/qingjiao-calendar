@@ -1,10 +1,15 @@
 name: 每日抓取科研通知
 
-# 流程：抓官方列表页 → 生成小程序包内数据 → 提交 → （可选）自动上传体验版
+# 流程：抓官方列表页 → 生成小程序包内数据 → 提交 → 同步云数据库 → （可选）自动上传体验版
+#
+# 两条到达用户手机的路径：
+#  1) 云数据库（推荐，配了 TCB_* 密钥才走）：写入 notices 集合，小程序运行时直接读到，
+#     不用重新上传版本、不用等审核。这是唯一能做到「每天自动更新」的路。
+#  2) 包内数据（兜底）：写进 utils/data_crawl.js 随版本更新，需要重新上传 + 审核。
 #
 # 说明：
 #  - 小程序正式版不能 wx.request 到 github.io（域名未 ICP 备案），
-#    所以数据不"实时拉取"，而是打进包随版本更新。
+#    所以云端走微信云开发数据库，不走任何自建接口。
 #  - 截止日铁律：列表页日期是「发布日」，不是「截止日」，
 #    抓到的条目 deadline 一律留空，落在首页「日期待定」段，等人工核实。
 
@@ -52,6 +57,22 @@ jobs:
             exit 1
           fi
           node -e "const d=require('./utils/data_crawl.js');console.log('整理日期',d.UPDATED_AT,'条目',(d.ITEMS||[]).length)"
+
+      - name: 同步到云数据库
+        id: tcb
+        run: |
+          if [ -z "${{ secrets.TCB_ENV }}" ] || [ -z "${{ secrets.TCB_SECRET_ID }}" ] || [ -z "${{ secrets.TCB_SECRET_KEY }}" ]; then
+            echo "has_tcb=false" >> "$GITHUB_OUTPUT"
+            echo "未配置 TCB_ENV / TCB_SECRET_ID / TCB_SECRET_KEY，跳过云数据库同步"
+            echo "（小程序仍会打包最新数据，但要重新上传版本才能看到）"
+            exit 0
+          fi
+          echo "has_tcb=true" >> "$GITHUB_OUTPUT"
+          npm install @cloudbase/node-sdk --no-audit --no-fund
+          TCB_ENV="${{ secrets.TCB_ENV }}" \
+          TCB_SECRET_ID="${{ secrets.TCB_SECRET_ID }}" \
+          TCB_SECRET_KEY="${{ secrets.TCB_SECRET_KEY }}" \
+          node scripts/push_to_cloud.js
 
       - name: 提交数据变更
         run: |
