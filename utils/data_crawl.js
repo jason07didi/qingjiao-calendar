@@ -3,9 +3,49 @@
 // 铁律：这里只有「通知发布日」，没有「申报截止日」——deadline 全为空，
 //       条目会落在小程序首页「日期待定」段，待人工核实后再补精确日期。
 
-const UPDATED_AT = '2026-11-04'
+const UPDATED_AT = '2026-11-05'
 
 const ITEMS = [
+  {
+    "id": "cw1nare06",
+    "type": "talent",
+    "title": "中国科协关于举办2026亚太金属成型技术大会的公告",
+    "org": "中国科协（青年人才托举）",
+    "region": "国家",
+    "level": "国家级",
+    "disciplines": [
+      "城乡规划",
+      "建筑",
+      "环境科学",
+      "社会科学"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年11月4日（截止日待核实）",
+    "publishedAt": "2026-11-04",
+    "sourceUrl": "https://www.cast.org.cn/xw/tzgg/DWHZ/art/2026/art_277ceb5e97ad40538daad3904160bdb1.html",
+    "sourceName": "中国科协（青年人才托举）",
+    "summary": ""
+  },
+  {
+    "id": "cw1acpe84",
+    "type": "talent",
+    "title": "中国科协 教育部 生态环境部 中央精神文明建设办公室 共青团中央关于开展2026年青少年科学调查体验活动的通知",
+    "org": "中国科协（青年人才托举）",
+    "region": "国家",
+    "level": "国家级",
+    "disciplines": [
+      "城乡规划",
+      "建筑",
+      "环境科学",
+      "社会科学"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年11月4日（截止日待核实）",
+    "publishedAt": "2026-11-04",
+    "sourceUrl": "https://www.cast.org.cn/xw/tzgg/KXPJ/art/2026/art_bd8f8d34989e4e6bba94558a0f94955e.html",
+    "sourceName": "中国科协（青年人才托举）",
+    "summary": ""
+  },
   {
     "id": "cw1yfk2lb",
     "type": "project",
@@ -176,26 +216,6 @@ const ITEMS = [
     "summary": ""
   },
   {
-    "id": "cw1nare06",
-    "type": "talent",
-    "title": "中国科协关于举办2026亚太金属成型技术大会的公告",
-    "org": "中国科协（青年人才托举）",
-    "region": "国家",
-    "level": "国家级",
-    "disciplines": [
-      "城乡规划",
-      "建筑",
-      "环境科学",
-      "社会科学"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年11月2日（截止日待核实）",
-    "publishedAt": "2026-11-02",
-    "sourceUrl": "https://www.cast.org.cn/xw/tzgg/DWHZ/art/2026/art_277ceb5e97ad40538daad3904160bdb1.html",
-    "sourceName": "中国科协（青年人才托举）",
-    "summary": ""
-  },
-  {
     "id": "cw1m6s68h",
     "type": "talent",
     "title": "中国科协关于举办2026国际有色金属新材料大会的公告",
@@ -269,8 +289,8 @@ const ITEMS = [
       "社会科学"
     ],
     "deadline": "",
-    "deadlineText": "通知发布日 2026年10月31日（截止日待核实）",
-    "publishedAt": "2026-10-31",
+    "deadlineText": "通知发布日 2026年10月30日（截止日待核实）",
+    "publishedAt": "2026-10-30",
     "sourceUrl": "https://www.cast.org.cn/xw/KXYW/art/2026/art_fcc63a18d51e4fcba8b9d8ac4f67bb7f.html",
     "sourceName": "中国科协（青年人才托举）",
     "summary": ""
@@ -750,8 +770,8 @@ const ITEMS = [
       "社会科学"
     ],
     "deadline": "",
-    "deadlineText": "通知发布日 2026年10月21日（截止日待核实）",
-    "publishedAt": "2026-10-21",
+    "deadlineText": "通知发布日 2026年10月22日（截止日待核实）",
+    "publishedAt": "2026-10-22",
     "sourceUrl": "https://www.cast.org.cn/xw/TZGG/index.html",
     "sourceName": "中国科协（青年人才托举）",
     "summary": ""
@@ -1230,26 +1250,6 @@ const ITEMS = [
     "deadlineText": "通知发布日 2026年10月12日（截止日待核实）",
     "publishedAt": "2026-10-12",
     "sourceUrl": "https://www.most.gov.cn/202609/t20260929_197447.html",
-    "sourceName": "科技部",
-    "summary": ""
-  },
-  {
-    "id": "cwv92aui",
-    "type": "project",
-    "title": "人体蛋白质组导航国际大科学计划全球日活动在新加坡成功举办",
-    "org": "科技部",
-    "region": "国家",
-    "level": "国家级",
-    "disciplines": [
-      "环境科学",
-      "遥感",
-      "生态学",
-      "社会科学"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年10月11日（截止日待核实）",
-    "publishedAt": "2026-10-11",
-    "sourceUrl": "https://www.most.gov.cn/202610/t20261012_197472.html",
     "sourceName": "科技部",
     "summary": ""
   }
