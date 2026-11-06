@@ -3,7 +3,7 @@
 // 铁律：这里只有「通知发布日」，没有「申报截止日」——deadline 全为空，
 //       条目会落在小程序首页「日期待定」段，待人工核实后再补精确日期。
 
-const UPDATED_AT = '2026-11-05'
+const UPDATED_AT = '2026-11-06'
 
 const ITEMS = [
   {
@@ -777,6 +777,46 @@ const ITEMS = [
     "summary": ""
   },
   {
+    "id": "cw1dapv00",
+    "type": "project",
+    "title": "关于发布国家生态环境标准《难测试化学物质水生毒性测试技术指南》的公告",
+    "org": "生态环境部",
+    "region": "国家",
+    "level": "国家级",
+    "disciplines": [
+      "环境科学",
+      "生态学",
+      "大气科学",
+      "环境健康"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年10月22日（截止日待核实）",
+    "publishedAt": "2026-10-22",
+    "sourceUrl": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk01/202610/t20261023_1184566.html",
+    "sourceName": "生态环境部",
+    "summary": ""
+  },
+  {
+    "id": "cwji1fgq",
+    "type": "project",
+    "title": "关于发布国家生态环境标准《非道路移动机械环保信息公开技术规范》的公告",
+    "org": "生态环境部",
+    "region": "国家",
+    "level": "国家级",
+    "disciplines": [
+      "环境科学",
+      "生态学",
+      "大气科学",
+      "环境健康"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年10月22日（截止日待核实）",
+    "publishedAt": "2026-10-22",
+    "sourceUrl": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk01/202611/t20261105_1185602.html",
+    "sourceName": "生态环境部",
+    "summary": ""
+  },
+  {
     "id": "cw1jfyo3r",
     "type": "project",
     "title": "2026年“中国—新西兰科学家交流计划”顺利启动",
@@ -794,26 +834,6 @@ const ITEMS = [
     "publishedAt": "2026-10-21",
     "sourceUrl": "https://www.most.gov.cn/202610/t20261020_197533.html",
     "sourceName": "科技部",
-    "summary": ""
-  },
-  {
-    "id": "cw1dapv00",
-    "type": "project",
-    "title": "关于发布国家生态环境标准《难测试化学物质水生毒性测试技术指南》的公告",
-    "org": "生态环境部",
-    "region": "国家",
-    "level": "国家级",
-    "disciplines": [
-      "环境科学",
-      "生态学",
-      "大气科学",
-      "环境健康"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年10月21日（截止日待核实）",
-    "publishedAt": "2026-10-21",
-    "sourceUrl": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk01/202610/t20261023_1184566.html",
-    "sourceName": "生态环境部",
     "summary": ""
   },
   {
@@ -1231,26 +1251,6 @@ const ITEMS = [
     "publishedAt": "2026-10-12",
     "sourceUrl": "http://gi.mnr.gov.cn/202610/t20261010_2939755.html",
     "sourceName": "自然资源部",
-    "summary": ""
-  },
-  {
-    "id": "cw1sia5ok",
-    "type": "project",
-    "title": "中巴经济走廊联委会科技联合工作组第五次会议召开",
-    "org": "科技部",
-    "region": "国家",
-    "level": "国家级",
-    "disciplines": [
-      "环境科学",
-      "遥感",
-      "生态学",
-      "社会科学"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年10月12日（截止日待核实）",
-    "publishedAt": "2026-10-12",
-    "sourceUrl": "https://www.most.gov.cn/202609/t20260929_197447.html",
-    "sourceName": "科技部",
     "summary": ""
   }
 ]
