@@ -3,9 +3,49 @@
 // 铁律：这里只有「通知发布日」，没有「申报截止日」——deadline 全为空，
 //       条目会落在小程序首页「日期待定」段，待人工核实后再补精确日期。
 
-const UPDATED_AT = '2026-11-06'
+const UPDATED_AT = '2026-11-07'
 
 const ITEMS = [
+  {
+    "id": "cw749yvv",
+    "type": "talent",
+    "title": "中国科协关于举办2026亚太固体力学大会的公告",
+    "org": "中国科协（青年人才托举）",
+    "region": "国家",
+    "level": "国家级",
+    "disciplines": [
+      "城乡规划",
+      "建筑",
+      "环境科学",
+      "社会科学"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年11月7日（截止日待核实）",
+    "publishedAt": "2026-11-07",
+    "sourceUrl": "https://www.cast.org.cn/xw/tzgg/DWHZ/art/2026/art_6c60335d139f426fa8f8de54ce13782c.html",
+    "sourceName": "中国科协（青年人才托举）",
+    "summary": ""
+  },
+  {
+    "id": "cwq4y2nl",
+    "type": "talent",
+    "title": "中国科协关于举办2026年国际地质力学大会的公告",
+    "org": "中国科协（青年人才托举）",
+    "region": "国家",
+    "level": "国家级",
+    "disciplines": [
+      "城乡规划",
+      "建筑",
+      "环境科学",
+      "社会科学"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年11月7日（截止日待核实）",
+    "publishedAt": "2026-11-07",
+    "sourceUrl": "https://www.cast.org.cn/xw/tzgg/DWHZ/art/2026/art_a86497b05714432a90163a6d55357137.html",
+    "sourceName": "中国科协（青年人才托举）",
+    "summary": ""
+  },
   {
     "id": "cw1nare06",
     "type": "talent",
@@ -1207,50 +1247,6 @@ const ITEMS = [
     "publishedAt": "2026-10-14",
     "sourceUrl": "https://www.most.gov.cn/202610/t20261011_197475.html",
     "sourceName": "科技部",
-    "summary": ""
-  },
-  {
-    "id": "cw1cze84i",
-    "type": "project",
-    "title": "中共自然资源部党组关于董庆吉等27名同志试用期满正式任职的通知",
-    "org": "自然资源部",
-    "region": "国家",
-    "level": "国家级",
-    "disciplines": [
-      "城乡规划",
-      "环境科学",
-      "生态学",
-      "遥感",
-      "地理学",
-      "风景园林"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年10月13日（截止日待核实）",
-    "publishedAt": "2026-10-13",
-    "sourceUrl": "http://gi.mnr.gov.cn/202610/t20261012_2939850.html",
-    "sourceName": "自然资源部",
-    "summary": ""
-  },
-  {
-    "id": "cwotf5ic",
-    "type": "project",
-    "title": "关于地质灾害防治项目审核专家库遴选审核结果的公示",
-    "org": "自然资源部",
-    "region": "国家",
-    "level": "国家级",
-    "disciplines": [
-      "城乡规划",
-      "环境科学",
-      "生态学",
-      "遥感",
-      "地理学",
-      "风景园林"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年10月12日（截止日待核实）",
-    "publishedAt": "2026-10-12",
-    "sourceUrl": "http://gi.mnr.gov.cn/202610/t20261010_2939755.html",
-    "sourceName": "自然资源部",
     "summary": ""
   }
 ]
