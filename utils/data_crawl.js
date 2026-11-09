@@ -3,9 +3,29 @@
 // 铁律：这里只有「通知发布日」，没有「申报截止日」——deadline 全为空，
 //       条目会落在小程序首页「日期待定」段，待人工核实后再补精确日期。
 
-const UPDATED_AT = '2026-11-08'
+const UPDATED_AT = '2026-11-09'
 
 const ITEMS = [
+  {
+    "id": "cwutr0pf",
+    "type": "talent",
+    "title": "【中国科学报】刘徽主题展览即将亮相2026顶科论坛",
+    "org": "中国科协（青年人才托举）",
+    "region": "国家",
+    "level": "国家级",
+    "disciplines": [
+      "城乡规划",
+      "建筑",
+      "环境科学",
+      "社会科学"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年11月9日（截止日待核实）",
+    "publishedAt": "2026-11-09",
+    "sourceUrl": "https://www.cast.org.cn/xw/MTBD/art/2026/art_6628ad61824d472ba27b66ec7a6d38c2.html",
+    "sourceName": "中国科协（青年人才托举）",
+    "summary": ""
+  },
   {
     "id": "cw749yvv",
     "type": "talent",
@@ -1226,26 +1246,6 @@ const ITEMS = [
     "deadlineText": "通知发布日 2026年10月14日（截止日待核实）",
     "publishedAt": "2026-10-14",
     "sourceUrl": "https://www.most.gov.cn/202610/t20261014_197509.html",
-    "sourceName": "科技部",
-    "summary": ""
-  },
-  {
-    "id": "cwb65az0",
-    "type": "project",
-    "title": "第八次全国科技援疆工作会议在乌鲁木齐召开",
-    "org": "科技部",
-    "region": "国家",
-    "level": "国家级",
-    "disciplines": [
-      "环境科学",
-      "遥感",
-      "生态学",
-      "社会科学"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年10月14日（截止日待核实）",
-    "publishedAt": "2026-10-14",
-    "sourceUrl": "https://www.most.gov.cn/202610/t20261011_197475.html",
     "sourceName": "科技部",
     "summary": ""
   }
