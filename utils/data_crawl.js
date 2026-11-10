@@ -3,9 +3,29 @@
 // 铁律：这里只有「通知发布日」，没有「申报截止日」——deadline 全为空，
 //       条目会落在小程序首页「日期待定」段，待人工核实后再补精确日期。
 
-const UPDATED_AT = '2026-11-09'
+const UPDATED_AT = '2026-11-10'
 
 const ITEMS = [
+  {
+    "id": "cw5sts7l",
+    "type": "project",
+    "title": "内地与澳门科技合作委员会第二十次会议成功召开",
+    "org": "科技部",
+    "region": "国家",
+    "level": "国家级",
+    "disciplines": [
+      "环境科学",
+      "遥感",
+      "生态学",
+      "社会科学"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年11月10日（截止日待核实）",
+    "publishedAt": "2026-11-10",
+    "sourceUrl": "https://www.most.gov.cn/202611/t20261031_197639.html",
+    "sourceName": "科技部",
+    "summary": ""
+  },
   {
     "id": "cwutr0pf",
     "type": "talent",
@@ -480,26 +500,6 @@ const ITEMS = [
     "summary": ""
   },
   {
-    "id": "cw5sts7l",
-    "type": "project",
-    "title": "内地与澳门科技合作委员会第二十次会议成功召开",
-    "org": "科技部",
-    "region": "国家",
-    "level": "国家级",
-    "disciplines": [
-      "环境科学",
-      "遥感",
-      "生态学",
-      "社会科学"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年10月30日（截止日待核实）",
-    "publishedAt": "2026-10-30",
-    "sourceUrl": "https://www.most.gov.cn/202611/t20261031_197639.html",
-    "sourceName": "科技部",
-    "summary": ""
-  },
-  {
     "id": "cwawuxw2",
     "type": "project",
     "title": "中国和白俄罗斯政府间合作委员会科技合作分委会第六次会议成功举行",
@@ -538,6 +538,26 @@ const ITEMS = [
     "publishedAt": "2026-10-30",
     "sourceUrl": "https://kjt.shaanxi.gov.cn/kjdt/szyw/202610/t20261030_3708190.html",
     "sourceName": "陕西省科学技术厅",
+    "summary": ""
+  },
+  {
+    "id": "cwvbec6r",
+    "type": "project",
+    "title": "中国—新加坡政府间科技合作联委会第17次会议在新加坡召开",
+    "org": "科技部",
+    "region": "国家",
+    "level": "国家级",
+    "disciplines": [
+      "环境科学",
+      "遥感",
+      "生态学",
+      "社会科学"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年10月30日（截止日待核实）",
+    "publishedAt": "2026-10-30",
+    "sourceUrl": "https://www.most.gov.cn/202611/t20261110_197688.html",
+    "sourceName": "科技部",
     "summary": ""
   },
   {
@@ -1227,26 +1247,6 @@ const ITEMS = [
     "publishedAt": "2026-10-14",
     "sourceUrl": "https://www.mohurd.gov.cn/gongkai/zc/wjk/art/2026/art_eef51316a79140a6acb3968867a9b661.html",
     "sourceName": "住房和城乡建设部",
-    "summary": ""
-  },
-  {
-    "id": "cw1uwh08d",
-    "type": "project",
-    "title": "2026年科技部科技创新助力乡村振兴培训班在浙江湖州举办",
-    "org": "科技部",
-    "region": "国家",
-    "level": "国家级",
-    "disciplines": [
-      "环境科学",
-      "遥感",
-      "生态学",
-      "社会科学"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年10月14日（截止日待核实）",
-    "publishedAt": "2026-10-14",
-    "sourceUrl": "https://www.most.gov.cn/202610/t20261014_197509.html",
-    "sourceName": "科技部",
     "summary": ""
   }
 ]
