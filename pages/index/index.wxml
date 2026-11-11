@@ -152,7 +152,8 @@
           <text class="date" wx:if="{{item.days === 9999 && item.estHint}}">{{item.estHint}}</text>
           <text class="date" wx:elif="{{item.days === 9999}}">无固定截止</text>
           <text class="open-tag" wx:if="{{item.openApply}}">开放·全国可申</text>
-          <text class="est" wx:if="{{item.estimated}}">参考日期</text>
+          <!-- 只在真有日期时才挂来源标签：日期待定的条目挂「参考日期」等于自相矛盾 -->
+          <text class="est {{item.fromDetail ? 'est-quote' : ''}}" wx:if="{{item.estimated && item.days !== 9999}}">{{item.estText || '参考日期'}}</text>
           <block wx:if="{{item.amountShort && !item.isConf}}">
             <text class="sep">·</text>
             <text class="amount ell">{{item.amountShort}}</text>
@@ -186,7 +187,7 @@
 
   <!-- 数据口径说明：不能让人误以为每一条都是官方已发布的准确日期 -->
   <view class="foot-note" wx:if="{{sections.length > 0}}">
-    <text>共 {{stats.total}} 条在申报。标「参考日期」的条目按往年发布规律推算，请以官方通知为准。</text>
+    <text>共 {{stats.total}} 条在申报。标「原文截止」的日期从通知正文摘录，标「参考日期」的按往年规律推算，两者都要以官方原文为准。</text>
   </view>
 
   <view class="loading" wx:if="{{loading && sections.length === 0}}">

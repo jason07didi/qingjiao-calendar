@@ -19,12 +19,14 @@ function keepByRegion (n, prefs) {
 // 学科可见性。返回 true = 保留。
 // 注意：首页 build() 出来的卡片用 disAll 字段，日历页原始条目用 disciplines 字段，
 // 这里两个都兼容，保证共享函数对两个页面都正确。
+// disciplines 为空 = 跨学科/通用条目（如泛研网聚合源），按「宁可多看到」放行。
 function keepByDiscipline (n, prefs) {
   const mineDis = prefs.disciplines || []
   if (!mineDis.length) return true
   if (n.openApply) return true
   if (EXEMPT.test(n.type)) return true
   const dis = n.disciplines || n.disAll || []
+  if (!dis.length) return true
   for (let i = 0; i < mineDis.length; i++) {
     if (dis.indexOf(mineDis[i]) > -1) return true
   }

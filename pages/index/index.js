@@ -165,6 +165,11 @@ Page({
         hasDetail: (n.conditions || []).length > 0 || (n.files || []).length > 0,
         crawl: n.source === 'crawl',
         estimated: !!n.deadlineEstimated,
+        // 截止日到底怎么来的，卡片上要分清：
+        //   detail = 从通知正文里摘的（真实但机器摘）
+        //   其余   = 按往年规律推算
+        estText: n.deadlineFrom === 'detail' ? '原文截止' : '参考日期',
+        fromDetail: n.deadlineFrom === 'detail',
         openApply: !!n.openApply,
         estHint: D.estHint(n.freq),
         maxAge: el.maxAge,

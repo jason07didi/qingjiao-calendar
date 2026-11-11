@@ -853,8 +853,10 @@ function mergeList () {
   })
 
   // 3) 自动抓取候选：只提供「通知已发布」的线索
-  //    铁律：列表页日期是发布日不是截止日 → deadline 为空，卡片会落入「日期待定」段
+  //    铁律：列表页日期是发布日不是截止日 → 没摘到原文截止的条目 deadline 为空，落「日期待定」段
   //    与人工条目重名的已在 tools/build_pack.js 剔除，这里再兜一次底
+  //    截止日来源分三档，前端靠他们决定标「原文截止」还是「参考日期」：
+  //      detail = 部署的爬虫从通知正文里摘的；freq = 按往年规律推算；其余按未核实处理
   ;(AUTO_LIB.ITEMS || []).forEach(function (n) {
     const k = normKey(n.title)
     if (!k || idx[k] !== undefined) return
@@ -864,7 +866,7 @@ function mergeList () {
       auto: true,
       level: guessLevel(n),
       rank: rank.of(n),
-      deadlineEstimated: true
+      deadlineEstimated: n.deadlineEstimated !== false
     }))
   })
 

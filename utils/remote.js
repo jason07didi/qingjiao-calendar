@@ -68,6 +68,9 @@ function clean (n) {
     deadline: n.deadline || '',
     deadlineText: n.deadlineText || '',
     deadlineEstimated: !!n.deadlineEstimated,
+    // 截止日来源：detail = 从通知正文摘录（真实但需核对）/ freq = 按往年规律推算
+    deadlineFrom: n.deadlineFrom || '',
+    deadlineSnippet: n.deadlineSnippet || '',
     openApply: !!n.openApply,
     info: n.info || {},
     conditions: Array.isArray(n.conditions) ? n.conditions : [],

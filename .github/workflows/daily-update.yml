@@ -11,16 +11,16 @@ name: 每日抓取科研通知
 #  3) 包内数据（兜底）：写进 utils/data_crawl.js，需要重新上传 + 审核。
 #
 # 说明：
-#  - 截止日铁律：列表页日期是「发布日」，不是「截止日」，
-#    抓到的条目 deadline 一律留空，落在首页「日期待定」段，等人工核实。
+#  - 截止日铁律：政府列表页日期是「发布日」，不是「截止日」，deadline 留空等人工核实；
+#    泛研网(funresearch.cn)的截止日是其对官方通知的结构化收录，有据可依，直接保留。
 #  - Pages 源要设成 main 分支 /docs 目录，否则 docs/data/notices.json 不会被发布。
 
 on:
-  # 每天一次（GitHub cron 用 UTC）：北京 07:30 = 前一日 23:30 UTC。
-  # 免费版共用 runner 会排队，实测常被推迟到北京 11:00 前后才跑完 —— 每天一次够用，不追求准点。
+  # 每 4 小时一次（GitHub cron 用 UTC）：北京 00:17/04:17/08:17/12:17/16:17/20:17。
+  # 分钟刻意错开整点：免费版共用 runner 在整点最拥堵，实测整点任务能被推迟 3 小时以上。
   # 想手动立刻跑一次：仓库 Actions 页 → 每日抓取科研通知 → Run workflow。
   schedule:
-    - cron: "30 23 * * *"
+    - cron: "17 */4 * * *"
 
   # 支持手动触发（改完爬虫逻辑想立刻验证时用）
   workflow_dispatch:
@@ -50,6 +50,11 @@ jobs:
 
       - name: 抓取官方通知列表页
         run: node tools/local_spider.js
+
+      # 泛研网申报信息库：唯一免费可拿「真实截止日」的聚合源。
+      # 失败不阻断主流程（官方源照常）。
+      - name: 抓取泛研网申报信息
+        run: node tools/funresearch.js
 
       - name: 生成小程序包内数据
         run: node tools/build_pack.js

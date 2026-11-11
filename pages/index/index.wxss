@@ -410,6 +410,11 @@
   border-radius: 4rpx;
   margin-left: 8rpx;
 }
+/* 「原文截止」是摘录而非推算，用冷静的蓝区分开，避免和「参考日期」混为一谈 */
+.est-quote {
+  color: #2E6FA8;
+  background: #EDF3F9;
+}
 .open-tag {
   font-size: 18rpx;
   color: #1D7A5F;

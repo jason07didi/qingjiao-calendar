@@ -320,17 +320,18 @@ Page({
   about () {
     wx.showModal({
       title: '关于本小程序',
-      content: '面向城乡规划、建筑、风景园林、环境设计的科研申报聚合工具。信息由后台定时抓取各省厅、国家部委与学会的官方通知，抽取标题、截止时间与申报要点，最终以官方原文为准。',
+      content: '科研申报信息聚合工具。定时抓取官方通知，标注截止时间与申报要点，最终以官方原文为准。',
       confirmText: '知道了',
       showCancel: false
     })
   },
 
+  /* 联系我们：统一引导关注公众号【创艺喵】反馈 */
   feedback () {
     const name = '创艺喵'
     wx.showModal({
       title: '联系我们',
-      content: '公众号：「' + name + '」\n信息报错、数据补充或合作洽谈，都可以到公众号后台留言，看到后会尽快回复。',
+      content: '请关注公众号【' + name + '】向我们反馈\n\n信息报错、数据补充、功能建议或合作洽谈，都可以在公众号后台留言，看到后会尽快回复。',
       confirmText: '复制公众号名',
       cancelText: '关闭',
       success: function (res) {

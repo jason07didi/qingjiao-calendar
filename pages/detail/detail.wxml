@@ -77,6 +77,12 @@
     <text class="warn-text">{{dateWarn}}</text>
   </view>
 
+  <!-- 原文摘录：截止日是从这句里摘出来的，用户可自行核对 -->
+  <view class="date-quote" wx:if="{{dateQuote}}">
+    <text class="quote-label">通知原文</text>
+    <text class="quote-text">「{{dateQuote}}」</text>
+  </view>
+
   <view class="raw-tip" wx:if="{{isRaw}}">
     <text class="raw-tag">自动抓取</text>
     <text class="raw-text">资助额度与申报条件正在整理，以原文为准。</text>
@@ -249,7 +255,7 @@
     <text>信息为结构化摘要，最终以官方通知原文为准。</text>
   </view>
 
-  <view class="feedback-link" bindtap="onFeedback">信息有误或已过期？点此反馈公众号「创艺喵」</view>
+  <view class="feedback-link" bindtap="onFeedback">信息有误或已过期？点此关注公众号【创艺喵】反馈</view>
 
   <!-- 广告位：放在正文末尾随页面滚动，不遮挡上方任何按钮。
        未配广告位、会员用户、加载失败时整块不渲染 -->

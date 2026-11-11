@@ -19,6 +19,7 @@ const OUT_FILE = path.join(OUT_DIR, 'notices.json')
 const FIELDS = [
   'id', 'type', 'title', 'org', 'region', 'level', 'rank',
   'disciplines', 'startAt', 'deadline', 'deadlineText', 'deadlineEstimated',
+  'deadlineFrom', 'deadlineSnippet',
   'openApply', 'info', 'conditions', 'files', 'summary', 'curated',
   'peerNote', 'freq', 'sourceUrl', 'sourceName', 'source', 'auto'
 ]

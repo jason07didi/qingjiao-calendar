@@ -49,6 +49,8 @@ function mapCloud (d) {
     deadline: d.deadline || '',
     deadlineText: d.deadlineText || '',
     deadlineEstimated: !!d.deadlineEstimated,
+    deadlineFrom: d.deadlineFrom || '',
+    deadlineSnippet: d.deadlineSnippet || '',
     // 开放课题/开放基金：穿透省份与学科过滤，全国可申
     openApply: !!d.openApply,
     info: d.info || {},
@@ -84,6 +86,8 @@ function mapLocal (n) {
     deadlineText: n.deadlineText || '',
     // 必须原样保留：结构化库的日期是按往年惯例推算的，标错会误导用户
     deadlineEstimated: !!n.deadlineEstimated,
+    deadlineFrom: n.deadlineFrom || '',
+    deadlineSnippet: n.deadlineSnippet || '',
     openApply: !!n.openApply,
     info: n.info || {},
     conditions: n.conditions || [],

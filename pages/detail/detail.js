@@ -247,6 +247,7 @@ Page({
     freq: '',
     peerNote: '',
     dateWarn: '',
+    dateQuote: '',
     typeName: '',
     loading: true,
     isRaw: false,
@@ -342,7 +343,12 @@ Page({
       })
 
       let dateWarn = ''
-      if (n.deadlineEstimated) {
+      let dateQuote = ''
+      if (n.deadlineFrom === 'detail') {
+        // 截止日是从通知正文里摘的：真实，但机器摘的、可能只摘到其中一轮
+        dateWarn = '截止日摘自通知原文，若正文有多轮节点（如先系统填报、后纸质材料），请以原文为准'
+        dateQuote = n.deadlineSnippet || ''
+      } else if (n.deadlineEstimated) {
         dateWarn = n.freq
           ? '日期按往年规律推算（' + n.freq + '），今年以官方通知为准'
           : '日期由正文推断或按往年规律推算，请以官方通知为准'
@@ -389,6 +395,7 @@ Page({
         peerNote: n.peerNote || n.curated || '',
         confNote: (conf && conf.note && conf.note !== n.peerNote && conf.note !== n.curated) ? conf.note : '',
         dateWarn: dateWarn,
+        dateQuote: dateQuote,
         typeName: t ? t.name : '',
         loading: false,
         err: '',
@@ -441,7 +448,7 @@ Page({
     const name = '创艺喵'
     wx.showModal({
       title: '信息报错 / 补充',
-      content: '发现截止时间有误、信息过期，或漏了某条申报？关注公众号「' + name + '」发消息反馈，核实后会上架或更正。',
+      content: '请关注公众号【' + name + '】向我们反馈\n\n发现截止时间有误、信息过期，或漏了某条申报，都可以在公众号后台留言，核实后会上架或更正。',
       confirmText: '复制公众号名',
       cancelText: '知道了',
       success: function (res) {

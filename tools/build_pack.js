@@ -7,8 +7,10 @@
  * 输出：utils/data_crawl.js       （小程序 require 的静态数据，无需域名/云开发）
  *
  * 铁律：
- *  1. 列表页拿到的是「通知发布日」，不是「申报截止日」→ deadline 一律留空，
+ *  1. 政府列表页拿到的是「通知发布日」，不是「申报截止日」→ deadline 留空，
  *     卡片会落在「日期待定」段，绝不冒充截止日。
+ *     例外：泛研网(fr_candidates.json)的截止日来自其对官方通知的结构化收录，
+ *     有据可依，直接保留。
  *  2. 与人工核实条目（notices.js / notices_extra.js）标题重复的一律剔掉，
  *     人工条目的字段更全，不能被粗糙的抓取版覆盖。
  *  3. id 由 sourceUrl 哈希生成，稳定不变 —— 用户收藏了不会因为重新生成而丢。
@@ -25,7 +27,9 @@ function argLimit () {
     const n = parseInt(a.split('=')[1], 10)
     if (n > 0) return n
   }
-  return 60
+  // 2026-11-11 起：官方源详情页可摘到真实截止日 + 泛研网自带截止日，
+  // 60 的旧上限会把带日期的条目挤掉（提醒事项只剩一个月），提到 140。
+  return 140
 }
 
 // 保鲜期：上一版自动条目超过这么多天就自然淘汰
@@ -74,7 +78,19 @@ function main () {
   }
 
   const raw = JSON.parse(fs.readFileSync(srcPath, 'utf8'))
-  const items = Array.isArray(raw) ? raw : (raw.items || [])
+  let items = Array.isArray(raw) ? raw : (raw.items || [])
+
+  // 泛研网候选（带真实截止日）并进来：同一套去重/合并逻辑
+  const frPath = path.join(ROOT, 'data', 'fr_candidates.json')
+  if (fs.existsSync(frPath)) {
+    try {
+      const fr = JSON.parse(fs.readFileSync(frPath, 'utf8'))
+      const frItems = Array.isArray(fr) ? fr : (fr.items || [])
+      console.log('泛研网候选:', frItems.length, '条（含真实截止日 ' + frItems.filter(function (x) { return x.deadline }).length + ' 条）')
+      items = items.concat(frItems)
+    } catch (e) { console.log('⚠️ fr_candidates.json 解析失败，跳过') }
+  }
+
   if (!items.length) {
     console.error('✗ 候选为空，本次不覆盖已有数据文件（保留上一版，避免线上内容被清空）')
     process.exit(0)
@@ -123,8 +139,28 @@ function main () {
     kept.push(n)
   })
 
-  // ---- 3. 排序：新的优先，同日期看匹配分 ----
+  // ---- 2.5 截止日已过的直接丢弃（申报中才有提醒价值）----
+  const nowD = new Date()
+  const todayStr = nowD.getFullYear() + '-' +
+    String(nowD.getMonth() + 1).padStart(2, '0') + '-' +
+    String(nowD.getDate()).padStart(2, '0')
+  let pastDeadline = 0
+  items = items.filter(function (n) {
+    if (n && /^\d{4}-\d{2}-\d{2}$/.test(String(n.deadline || '')) && n.deadline < todayStr) {
+      pastDeadline++
+      return false
+    }
+    return true
+  })
+
+  // ---- 3. 排序：带真实截止日的优先（提醒日历的核心价值），同级再看新旧 ----
+  const datedFirst = function (x) {
+    return /^\d{4}-\d{2}-\d{2}$/.test(String(x.deadline || '')) ? 1 : 0
+  }
   kept.sort(function (a, b) {
+    const ha = datedFirst(a)
+    const hb = datedFirst(b)
+    if (ha !== hb) return hb - ha
     const da = String(a.publishedAt || '')
     const db = String(b.publishedAt || '')
     if (da !== db) return db.localeCompare(da)
@@ -142,11 +178,20 @@ function main () {
   let carried = 0
   let expired = 0
 
+  // 上一版里标题可能带日期后缀（如「…的通知2026-11-04」），清洗规则升级后
+  // 同一个 URL 会以两种标题同时存在 → 生成两条相同 id 的条目，build_remote 自检会直接拦下。
+  // 所以按 sourceUrl 再挡一次：本次抓到的优先，同链接的旧版一律不沿用。
+  const newUrls = {}
+  kept.forEach(function (n) { if (n && n.sourceUrl) newUrls[n.sourceUrl] = true })
+
   prevItems.forEach(function (it) {
     if (!it || !it.title || !it.sourceUrl) return
+    if (newUrls[it.sourceUrl]) { expired++; return }
     const k = normKey(it.title)
     if (!k || manualKeys[k]) return
     if (daysAgo(it.publishedAt) > freshDays) { expired++; return }
+    // 上一版截止日已过的也不沿用
+    if (/^\d{4}-\d{2}-\d{2}$/.test(String(it.deadline || '')) && it.deadline < todayStr) { expired++; return }
     merged[k] = {
       id: it.id,
       type: it.type || 'project',
@@ -155,8 +200,11 @@ function main () {
       region: it.region || '国家',
       level: it.level || '国家级',
       disciplines: it.disciplines || [],
-      deadline: '',
+      deadline: /^\d{4}-\d{2}-\d{2}$/.test(String(it.deadline || '')) ? it.deadline : '',
       deadlineText: it.deadlineText || ('通知发布日 ' + (it.publishedAt || '') + '（截止日待核实）'),
+      deadlineEstimated: !!it.deadlineEstimated,
+      deadlineFrom: it.deadlineFrom || '',
+      deadlineSnippet: it.deadlineSnippet || '',
       publishedAt: it.publishedAt || '',
       sourceUrl: it.sourceUrl,
       sourceName: it.sourceName || it.org || '',
@@ -169,6 +217,9 @@ function main () {
   kept.forEach(function (n) {
     const k = normKey(n.title)
     if (!k) return
+    // 泛研网等聚合源自带结构化截止日（来自官方通知收录），不是编造 → 保留；
+    // 政府列表页只有发布日 → deadline 留空走「待定」
+    const dl = /^\d{4}-\d{2}-\d{2}$/.test(String(n.deadline || '')) ? n.deadline : ''
     merged[k] = {
       id: hashId(n.sourceUrl),
       type: n.type || 'project',
@@ -177,8 +228,11 @@ function main () {
       region: n.region || '国家',
       level: n.level || '国家级',
       disciplines: n.disciplines || [],
-      deadline: '',
-      deadlineText: n.deadlineText || ('通知发布日 ' + (n.publishedAt || '') + '（截止日待核实）'),
+      deadline: dl,
+      deadlineText: dl ? (n.deadlineText || ('官方通知截止 ' + dl)) : (n.deadlineText || ('通知发布日 ' + (n.publishedAt || '') + '（截止日待核实）')),
+      deadlineEstimated: dl ? !!n.deadlineEstimated : true,
+      deadlineFrom: n.deadlineFrom || '',
+      deadlineSnippet: n.deadlineSnippet || '',
       publishedAt: n.publishedAt || '',
       sourceUrl: n.sourceUrl,
       sourceName: n.sourceName || n.org || '',
@@ -188,6 +242,9 @@ function main () {
 
   const unionList = Object.keys(merged).map(function (k) { return merged[k] })
   unionList.sort(function (a, b) {
+    const ha = /^\d{4}-\d{2}-\d{2}$/.test(String(a.deadline || '')) ? 1 : 0
+    const hb = /^\d{4}-\d{2}-\d{2}$/.test(String(b.deadline || '')) ? 1 : 0
+    if (ha !== hb) return hb - ha
     return String(b.publishedAt || '').localeCompare(String(a.publishedAt || ''))
   })
 
@@ -205,13 +262,17 @@ function main () {
       region: n.region,
       level: n.level,
       disciplines: n.disciplines,
-      deadline: '',
+      deadline: n.deadline || '',
       deadlineText: n.deadlineText,
       publishedAt: n.publishedAt,
       sourceUrl: n.sourceUrl,
       sourceName: n.sourceName,
       summary: ''
     }
+    if (n.deadlineEstimated !== undefined) o.deadlineEstimated = n.deadlineEstimated
+    // 截止日来源与原文摘录：详情页要能自证「这个日期是从哪句摘的」
+    if (n.deadlineFrom) o.deadlineFrom = n.deadlineFrom
+    if (n.deadlineSnippet) o.deadlineSnippet = n.deadlineSnippet
     return o
   })
 
@@ -222,9 +283,9 @@ function main () {
 
   const head = [
     '// ⚠️ 本文件由 tools/build_pack.js 自动生成，请勿手改（下次生成会被覆盖）',
-    '// 数据来源：GitHub Actions 每日爬取官方通知列表页',
-    '// 铁律：这里只有「通知发布日」，没有「申报截止日」——deadline 全为空，',
-    '//       条目会落在小程序首页「日期待定」段，待人工核实后再补精确日期。',
+    '// 数据来源：GitHub Actions 定时爬取官方通知列表页 + 泛研网申报信息库',
+    '// 截止日说明：泛研网条目带结构化截止日（官方通知收录）；其余条目只有发布日，',
+    '//           deadline 为空走「日期待定」，待人工核实后再补精确日期。',
     '',
     "const UPDATED_AT = '" + stamp + "'",
     '',
@@ -241,7 +302,8 @@ function main () {
   fs.writeFileSync(outPath, head, 'utf8')
 
   console.log('—'.repeat(50))
-  console.log('候选总数   :', items.length)
+  console.log('候选总数   :', items.length + pastDeadline)
+  console.log('截止日已过 :', pastDeadline, '（直接剔除）')
   console.log('缺链接/标题:', noUrl)
   console.log('与人工重复 :', dupManual)
   console.log('自身重复   :', dupSelf)
