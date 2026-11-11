@@ -3,7 +3,7 @@
 // 铁律：这里只有「通知发布日」，没有「申报截止日」——deadline 全为空，
 //       条目会落在小程序首页「日期待定」段，待人工核实后再补精确日期。
 
-const UPDATED_AT = '2026-11-10'
+const UPDATED_AT = '2026-11-11'
 
 const ITEMS = [
   {
@@ -27,6 +27,46 @@ const ITEMS = [
     "summary": ""
   },
   {
+    "id": "cw749yvv",
+    "type": "talent",
+    "title": "中国科协关于举办2026亚太固体力学大会的公告",
+    "org": "中国科协（青年人才托举）",
+    "region": "国家",
+    "level": "国家级",
+    "disciplines": [
+      "城乡规划",
+      "建筑",
+      "环境科学",
+      "社会科学"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年11月10日（截止日待核实）",
+    "publishedAt": "2026-11-10",
+    "sourceUrl": "https://www.cast.org.cn/xw/tzgg/DWHZ/art/2026/art_6c60335d139f426fa8f8de54ce13782c.html",
+    "sourceName": "中国科协（青年人才托举）",
+    "summary": ""
+  },
+  {
+    "id": "cw13uom74",
+    "type": "talent",
+    "title": "关于组织中国科协主管在京出版单位开展中华优秀出版物暨韬奋出版奖推荐工作的通知",
+    "org": "中国科协（青年人才托举）",
+    "region": "国家",
+    "level": "国家级",
+    "disciplines": [
+      "城乡规划",
+      "建筑",
+      "环境科学",
+      "社会科学"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年11月10日（截止日待核实）",
+    "publishedAt": "2026-11-10",
+    "sourceUrl": "https://www.cast.org.cn/xw/tzgg/KJCX/art/2026/art_a21fdf6c070849d78f36d45c7b77f769.html",
+    "sourceName": "中国科协（青年人才托举）",
+    "summary": ""
+  },
+  {
     "id": "cwutr0pf",
     "type": "talent",
     "title": "【中国科学报】刘徽主题展览即将亮相2026顶科论坛",
@@ -43,26 +83,6 @@ const ITEMS = [
     "deadlineText": "通知发布日 2026年11月9日（截止日待核实）",
     "publishedAt": "2026-11-09",
     "sourceUrl": "https://www.cast.org.cn/xw/MTBD/art/2026/art_6628ad61824d472ba27b66ec7a6d38c2.html",
-    "sourceName": "中国科协（青年人才托举）",
-    "summary": ""
-  },
-  {
-    "id": "cw749yvv",
-    "type": "talent",
-    "title": "中国科协关于举办2026亚太固体力学大会的公告",
-    "org": "中国科协（青年人才托举）",
-    "region": "国家",
-    "level": "国家级",
-    "disciplines": [
-      "城乡规划",
-      "建筑",
-      "环境科学",
-      "社会科学"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年11月7日（截止日待核实）",
-    "publishedAt": "2026-11-07",
-    "sourceUrl": "https://www.cast.org.cn/xw/tzgg/DWHZ/art/2026/art_6c60335d139f426fa8f8de54ce13782c.html",
     "sourceName": "中国科协（青年人才托举）",
     "summary": ""
   },
@@ -1225,27 +1245,6 @@ const ITEMS = [
     "deadlineText": "通知发布日 2026年10月14日（截止日待核实）",
     "publishedAt": "2026-10-14",
     "sourceUrl": "https://www.mohurd.gov.cn/gongkai/zc/wjk/art/2026/art_4d8bd90d30844e769e3af2ac2f31eb6a.html",
-    "sourceName": "住房和城乡建设部",
-    "summary": ""
-  },
-  {
-    "id": "cwjkin77",
-    "type": "project",
-    "title": "住房城乡建设部关于发布国家标准《河流流量测验标准》的公告",
-    "org": "住房和城乡建设部",
-    "region": "国家",
-    "level": "国家级",
-    "disciplines": [
-      "城乡规划",
-      "建筑",
-      "风景园林",
-      "土木",
-      "结构工程"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年10月14日（截止日待核实）",
-    "publishedAt": "2026-10-14",
-    "sourceUrl": "https://www.mohurd.gov.cn/gongkai/zc/wjk/art/2026/art_eef51316a79140a6acb3968867a9b661.html",
     "sourceName": "住房和城乡建设部",
     "summary": ""
   }
