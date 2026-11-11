@@ -26,7 +26,9 @@ Page({
     disciplines: noticesLib.DISCIPLINES,
     provinces: noticesLib.PROVINCES,
     titleOptions: ['不限', '助教', '讲师', '副教授', '教授'],
-    prefs: { disciplines: [], provinces: [], age: '', title: '' },
+    identityOptions: ['不限', '高校教师', '博士后'],
+    identityText: '',
+    prefs: { disciplines: [], provinces: [], age: '', title: '', identity: '' },
     favCount: 0,
     appliedCount: 0,
     totalCount: 0,
@@ -49,6 +51,7 @@ Page({
       prefs: prefs,
       disText: (prefs.disciplines || []).join('、'),
       provText: (prefs.provinces || []).join('、'),
+      identityText: prefs.identity === 'postdoc' ? '博士后' : (prefs.identity === 'teacher' ? '高校教师' : ''),
       favCount: store.getFavorites().length,
       appliedCount: store.getApplied().length,
       vip: vip.status()
@@ -271,6 +274,18 @@ Page({
     this.commitPrefs(prefs)
   },
 
+  /* 身份：教师 / 博士后（首页据此标注「跟我有关」） */
+  onIdentityChange (e) {
+    const v = this.data.identityOptions[parseInt(e.detail.value, 10)] || '不限'
+    const prefs = this.data.prefs
+    prefs.identity = v === '高校教师' ? 'teacher' : (v === '博士后' ? 'postdoc' : '')
+    store.savePrefs(prefs)
+    this.setData({
+      prefs: prefs,
+      identityText: prefs.identity === 'postdoc' ? '博士后' : (prefs.identity === 'teacher' ? '高校教师' : '')
+    })
+  },
+
   /* 个人条件：年龄 / 职称 */
   onAgeInput (e) {
     const v = String(e.detail.value || '').replace(/\D/g, '').slice(0, 2)
@@ -292,12 +307,14 @@ Page({
     const prefs = this.data.prefs
     prefs.age = ''
     prefs.title = ''
+    prefs.identity = ''
     store.savePrefs(prefs)
-    this.setData({ prefs: prefs })
+    this.setData({ prefs: prefs, identityText: '' })
   },
 
   goFavorites () {
-    wx.switchTab({ url: '/pages/favorites/favorites' })
+    // 收藏已从 tabBar 移到「我的」里，不再是 tab 页，用 navigateTo 打开
+    wx.navigateTo({ url: '/pages/favorites/favorites' })
   },
 
   about () {
@@ -309,13 +326,14 @@ Page({
     })
   },
 
+  /* 联系我们：统一引导关注公众号【创艺喵】反馈 */
   feedback () {
     const name = '创艺喵'
     wx.showModal({
-      title: '信息报错 / 补充',
-      content: '发现截止时间有误，或漏掉了某条申报？把官网链接发到公众号「' + name + '」，核实后会上架或更正。',
+      title: '联系我们',
+      content: '请关注公众号【' + name + '】向我们反馈\n\n信息报错、数据补充、功能建议或合作洽谈，都可以在公众号后台留言，看到后会尽快回复。',
       confirmText: '复制公众号名',
-      cancelText: '知道了',
+      cancelText: '关闭',
       success: function (res) {
         if (res.confirm) {
           wx.setClipboardData({
