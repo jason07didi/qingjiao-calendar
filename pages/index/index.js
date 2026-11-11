@@ -15,6 +15,15 @@ const FROM_TEXT = {
 
 const GOV = { national: '国家级', province: '省级', city: '市级' }
 
+// 数据文件的生成时间（ISO，北京时间）→「11月3日 22:50」。
+// 更新时间必须精确到分钟：只写日期会让用户以为「今天没更新」。
+function isoTimeLabel (s) {
+  if (!s) return ''
+  const m = /(\d{4})-(\d{2})-(\d{2})[T ](\d{2}):(\d{2})/.exec(String(s))
+  if (!m) return ''
+  return parseInt(m[2], 10) + '月' + parseInt(m[3], 10) + '日 ' + m[4] + ':' + m[5]
+}
+
 Page({
   data: {
     types: lib.TYPES,
@@ -86,9 +95,20 @@ Page({
     this.setData({ loading: true })
     api.getList({ force: force }).then(function (r) {
       self._loaded = true
-      self.build(r.list, r.from, r.at, r.dataUpdatedAt)
+      self.build(r.list, r.from, r.at, r.dataUpdatedAt, r.generatedAt)
       self.setData({ loading: false, from: r.from, fromText: (r.from === 'local') ? '本地数据 · 未连接云端' : (FROM_TEXT[r.from] || '') })
       wx.stopPullDownRefresh()
+
+      // 静默后台刷新：秒开缓存后，再悄悄拉一次远程。
+      // 拿到更新的数据（生成时间变了）就无缝重渲染，用户不用等、不用下拉。
+      if (!force && typeof api.refreshRemote === 'function') {
+        api.refreshRemote().then(function (r2) {
+          if (!r2 || !r2.generatedAt) return
+          if (r2.generatedAt === r.generatedAt) return
+          self.build(r2.list, r2.from, r2.at, r2.dataUpdatedAt, r2.generatedAt)
+          self.setData({ from: r2.from, fromText: FROM_TEXT[r2.from] || '' })
+        })
+      }
     }).catch(function () {
       const fallback = lib.getAll().map(function (n) {
         return Object.assign({}, n, { id: String(n.id) })
@@ -100,7 +120,7 @@ Page({
   },
 
   // 把原始数据展开成卡片所需的全部字段（卡片要能自证「跟我有关」）
-  build (raw, from, at, dataUpdatedAt) {
+  build (raw, from, at, dataUpdatedAt, generatedAt) {
     const live = []
     const past = []
 
@@ -118,6 +138,7 @@ Page({
         title: n.title || '（无标题）',
         org: n.org || '',
         region: n.region || '',
+        audience: n.audience || '',
         regionShort: String(n.region || '').replace(/省$/, '').replace(/市$/, ''),
         type: n.type,
         typeName: t ? t.name : '',
@@ -184,9 +205,9 @@ Page({
       stats: { week: week, month: month, total: live.length, mine: 0 },
       // 本地模式显示「数据整理于 X」：优先用每日自动抓取的整理日（每天都在变），
       // 没接自动数据时退回人工整理的日期常量。
-      // 远程模式直接用数据文件自己带的 updatedAt —— 服务器更新到哪天，界面就显示哪天。
-      updatedAt: (from === 'remote')
-        ? (dataUpdatedAt || D.stampLabel(at || Date.now()))
+      // 远程/缓存模式用数据文件自带的生成时间（精确到分）；没有就退回日期，再退回本次拉取时间。
+      updatedAt: (from === 'remote' || from === 'cache')
+        ? (isoTimeLabel(generatedAt) || dataUpdatedAt || D.stampLabel(at || Date.now()))
         : (from === 'local')
           ? (lib.AUTO_UPDATED_AT || lib.DATA_UPDATED_AT)
           : D.stampLabel(at || lib.FETCHED_AT)
@@ -202,6 +223,7 @@ Page({
     const mineProv = prefs.provinces || []
     const myAge = parseInt(prefs.age, 10) || 0
     const myTier = EL.TIER[prefs.title || ''] || 0
+    const myIdentity = prefs.identity || ''   // '' 不限 | 'teacher' 高校教师 | 'postdoc' 博士后
     const range = this.data.range
 
     // 省份 scope：国家级永远保留、开放类保留、勾选省份保留 —— 与日历页共用 filter.keepByRegion
@@ -234,6 +256,21 @@ Page({
       const o = Object.assign({}, item)
       o.matchText = ''
       o.matchCls = ''
+      // 身份匹配：博士后身份高亮博士后通道（其余不打扰），教师身份提示博士后专属条目
+      if (myIdentity === 'postdoc') {
+        if (item.type === 'postdoc' || (item.audience || '').indexOf('博士后') > -1) {
+          o.matchText = '博士后可申报'
+          o.matchCls = 'ok'
+          return o
+        }
+      }
+      if (myIdentity === 'teacher') {
+        if (item.type === 'postdoc' || ((item.audience || '').indexOf('博士后') > -1 && (item.audience || '').indexOf('教师') === -1)) {
+          o.matchText = '面向博士后身份'
+          o.matchCls = 'warn'
+          return o
+        }
+      }
       if (myAge && item.maxAge && myAge > item.maxAge) {
         o.matchText = '限 ' + item.maxAge + ' 周岁以下'
         o.matchCls = 'warn'

@@ -277,6 +277,17 @@
   color: #1B2733;
 }
 
+/* 菜单行右侧的计数徽标（如「我的收藏 N」） */
+.menu-count {
+  font-size: 22rpx;
+  color: #FFFFFF;
+  background: #2E6FA8;
+  border-radius: 999rpx;
+  padding: 2rpx 16rpx;
+  margin-right: 14rpx;
+  font-weight: 600;
+}
+
 .menu-arrow {
   color: #C6CFD8;
   font-size: 32rpx;

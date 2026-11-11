@@ -114,7 +114,7 @@ function readCache () {
     try {
       meta = wx.getStorageSync(KEY_CACHE_META) || {}
     } catch (e) {}
-    return { at: at, list: list, from: meta.from || '', dataUpdatedAt: meta.dataUpdatedAt || '' }
+    return { at: at, list: list, from: meta.from || '', dataUpdatedAt: meta.dataUpdatedAt || '', generatedAt: meta.generatedAt || '' }
   } catch (e) {
     return null
   }
@@ -165,6 +165,24 @@ async function fetchCloudList () {
   return out
 }
 
+// 后台静默刷新远程数据：成功返回新列表，失败返回 null（不打扰当前页面）。
+// 用途：「先秒开缓存渲染，再后台拉最新」——用户打开就能看到内容，
+// 最新数据到了无缝替换，不用干等、也不用下拉刷新。
+async function refreshRemote () {
+  if (!CFG.enableRemote) return null
+  try {
+    // 1 分钟内刚拉过远程就不再拉，避免同一秒内重复请求
+    if (remote.cacheAge() >= 0 && remote.cacheAge() < 60 * 1000) return null
+    const r = await remote.load()
+    const list = mergeWithLocal(r.items)
+    if (!list.length) return null
+    writeCache(list, { from: 'remote', dataUpdatedAt: r.updatedAt || '', generatedAt: r.generatedAt || '' })
+    return { list: list, from: 'remote', at: Date.now(), dataUpdatedAt: r.updatedAt || '', generatedAt: r.generatedAt || '' }
+  } catch (e) {
+    return null
+  }
+}
+
 /**
  * 取列表
  * 顺序：远程静态数据(GitHub Pages) → 云数据库 → 缓存 → 包内数据
@@ -184,9 +202,9 @@ async function getList (opts) {
       const r = await remote.load()
       const list = mergeWithLocal(r.items)
       if (list.length) {
-        const meta = { from: 'remote', dataUpdatedAt: r.updatedAt || '' }
+        const meta = { from: 'remote', dataUpdatedAt: r.updatedAt || '', generatedAt: r.generatedAt || '' }
         writeCache(list, meta)
-        return { list: list, from: 'remote', at: Date.now(), dataUpdatedAt: r.updatedAt || '', remoteUrl: r.url || '' }
+        return { list: list, from: 'remote', at: Date.now(), dataUpdatedAt: r.updatedAt || '', generatedAt: r.generatedAt || '', remoteUrl: r.url || '' }
       }
     } catch (e) {
       // 静默降级：域名没配好 / 断网 / 文件路径错，都继续往下走
@@ -194,7 +212,7 @@ async function getList (opts) {
   }
 
   if (!force && cache && age < CFG.cacheTTL) {
-    return { list: cache.list, from: cache.from || 'cache', at: cache.at, dataUpdatedAt: cache.dataUpdatedAt || '' }
+    return { list: cache.list, from: cache.from || 'cache', at: cache.at, dataUpdatedAt: cache.dataUpdatedAt || '', generatedAt: cache.generatedAt || '' }
   }
 
   if (initCloud()) {
@@ -205,16 +223,16 @@ async function getList (opts) {
         return { list: list, from: 'cloud', at: Date.now() }
       }
       // 云端为空：可能是还没导入数据，退回缓存或本地，别给用户看空页面
-      if (cache && cache.list.length) return { list: cache.list, from: cache.from || 'cache', at: cache.at, dataUpdatedAt: cache.dataUpdatedAt || '' }
+      if (cache && cache.list.length) return { list: cache.list, from: cache.from || 'cache', at: cache.at, dataUpdatedAt: cache.dataUpdatedAt || '', generatedAt: cache.generatedAt || '' }
       return { list: localList(), from: 'local', at: Date.now() }
     } catch (e) {
-      if (cache && cache.list.length) return { list: cache.list, from: cache.from || 'cache', at: cache.at, dataUpdatedAt: cache.dataUpdatedAt || '' }
+      if (cache && cache.list.length) return { list: cache.list, from: cache.from || 'cache', at: cache.at, dataUpdatedAt: cache.dataUpdatedAt || '', generatedAt: cache.generatedAt || '' }
       return { list: localList(), from: 'local', at: Date.now() }
     }
   }
 
   if (cache && cache.list.length) {
-    return { list: cache.list, from: cache.from || 'cache', at: cache.at, dataUpdatedAt: cache.dataUpdatedAt || '' }
+    return { list: cache.list, from: cache.from || 'cache', at: cache.at, dataUpdatedAt: cache.dataUpdatedAt || '', generatedAt: cache.generatedAt || '' }
   }
 
   return { list: localList(), from: 'local', at: Date.now() }
@@ -325,6 +343,7 @@ module.exports = {
   cloudEnabled: function () { return initCloud() },
   cloudReady: function () { return cloudOK },
   getList: getList,
+  refreshRemote: refreshRemote,
   getById: getById,
   getMeta: getMeta,
   subscribe: subscribe,

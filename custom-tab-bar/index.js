@@ -11,7 +11,7 @@ Component({
     list: [
       { pagePath: '/pages/index/index', icon: '📋', text: '今日' },
       { pagePath: '/pages/calendar/calendar', icon: '🗓', text: '日历' },
-      { pagePath: '/pages/favorites/favorites', icon: '⭐', text: '收藏' },
+      { pagePath: '/pages/fund/fund', icon: '🔍', text: '基金' },
       { pagePath: '/pages/mine/mine', icon: '👤', text: '我的' }
     ]
   },

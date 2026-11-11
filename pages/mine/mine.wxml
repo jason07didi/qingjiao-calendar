@@ -65,13 +65,23 @@
     </view>
   </view>
 
-  <!-- 个人条件 -->
+  <!-- 身份 -->
   <view class="block">
     <view class="block-head">
-      <text class="block-title">个人条件</text>
-      <text class="block-act" bindtap="clearCond" wx:if="{{prefs.age || prefs.title}}">清空</text>
+      <text class="block-title">身份</text>
+      <text class="block-act" bindtap="clearCond" wx:if="{{prefs.age || prefs.title || prefs.identity}}">清空</text>
     </view>
-    <view class="block-hint">设置后首页只显示「你能申报」的信息；不设置则显示全部</view>
+    <view class="block-hint">选「博士后」后，首页会标注哪些是博士后专属通道</view>
+
+    <view class="cond-row">
+      <text class="cond-lab">身份</text>
+      <picker mode="selector" range="{{identityOptions}}" bindchange="onIdentityChange">
+        <view class="cond-val">
+          <text class="cond-input cond-text {{prefs.identity ? '' : 'cond-ph'}}">{{identityText || '不限（点击选择）'}}</text>
+          <text class="cond-arrow">›</text>
+        </view>
+      </picker>
+    </view>
 
     <view class="cond-row">
       <text class="cond-lab">年龄</text>
@@ -101,9 +111,16 @@
 
   <!-- 菜单 -->
   <view class="menu">
+    <view class="menu-item" bindtap="goFavorites">
+      <text class="menu-icon">⭐</text>
+      <text class="menu-text">我的收藏</text>
+      <text class="menu-count">{{favCount}}</text>
+      <text class="menu-arrow">›</text>
+    </view>
+
     <view class="menu-item" bindtap="feedback">
       <text class="menu-icon">✉️</text>
-      <text class="menu-text">信息报错 / 补充（公众号）</text>
+      <text class="menu-text">联系我们（公众号）</text>
       <text class="menu-arrow">›</text>
     </view>
 

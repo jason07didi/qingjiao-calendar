@@ -19,8 +19,8 @@
 | | 抓取在哪跑 | 数据存在哪 | 小程序怎么读 | 要不要腾讯云密钥 | 前端要不要改 |
 |---|---|---|---|---|---|
 | **A（最短，推荐）** | 云函数 `spider` 定时器，每天 0/6/12/18 点 | 云数据库 `notices` | `wx.cloud.database()` | 不需要 | **不用改** |
-| **B（你要的形态）** | GitHub Actions 每天 07:30 | GitHub 仓库里的 JSON | 云函数当代理去拉 | 不需要 | 要加一层代理 |
-| **C（GitHub 直写库）** | GitHub Actions 每天 07:30 | 云数据库 `notices` | `wx.cloud.database()` | 需要 SecretId/SecretKey | **不用改** |
+| **B（你要的形态）** | GitHub Actions 每 4 小时 | GitHub 仓库里的 JSON | 云函数当代理去拉 | 不需要 | 要加一层代理 |
+| **C（GitHub 直写库）** | GitHub Actions 每 4 小时 | 云数据库 `notices` | `wx.cloud.database()` | 需要 SecretId/SecretKey | **不用改** |
 
 三条路都卡在同一个前提：**云开发得先开通**。
 

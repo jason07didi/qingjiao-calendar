@@ -2,8 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/calendar/calendar",
-    "pages/favorites/favorites",
+    "pages/fund/fund",
     "pages/mine/mine",
+    "pages/favorites/favorites",
     "pages/detail/detail"
   ],
   "window": {
@@ -22,10 +23,20 @@
     "list": [
       { "pagePath": "pages/index/index", "text": "今日" },
       { "pagePath": "pages/calendar/calendar", "text": "日历" },
-      { "pagePath": "pages/favorites/favorites", "text": "收藏" },
+      { "pagePath": "pages/fund/fund", "text": "基金" },
       { "pagePath": "pages/mine/mine", "text": "我的" }
     ]
   },
+  "subpackages": [
+    {
+      "root": "packages/funddata",
+      "pages": ["pages/empty/empty"]
+    },
+    {
+      "root": "packages/nsfcdata",
+      "pages": ["pages/empty/empty"]
+    }
+  ],
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

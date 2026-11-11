@@ -1,0 +1,233 @@
+<view class="page">
+
+  <!-- 头部：说明 + 视图切换 + 搜索框（统计视图下隐藏搜索） -->
+  <view class="head">
+    <view class="head-row">
+      <view class="view-switch">
+        <view class="vs-btn {{viewMode === 'search' ? 'on' : ''}}" data-m="search" bindtap="switchView">检索</view>
+        <view class="vs-btn {{viewMode === 'stats' ? 'on' : ''}}" data-m="stats" bindtap="switchView">统计</view>
+      </view>
+      <view class="head-sub">国社科 1991-2026 · 教育部 2020-2026 · 国自然 2017-2026 · 共 {{totalAll}} 条</view>
+    </view>
+
+    <block wx:if="{{viewMode === 'search'}}">
+      <view class="search-box">
+        <input
+          class="search-input"
+          placeholder="搜课题名 / 负责人 / 单位"
+          placeholder-class="search-ph"
+          value="{{q}}"
+          confirm-type="search"
+          bindinput="onQ"
+          bindconfirm="doSearch"
+        />
+        <view class="search-btn" bindtap="doSearch">检索</view>
+      </view>
+    </block>
+    <view class="head-stats-sub" wx:else>基于全部 {{totalAll}} 条立项名单统计（数据更新后自动重算）</view>
+  </view>
+
+  <!-- ═══ 检索视图 ═══ -->
+  <block wx:if="{{viewMode === 'search'}}">
+    <!-- 筛选行：基金 / 年份 / 学科 / 类别 -->
+    <view class="filter-bar">
+      <view class="chips">
+        <view
+          class="chip {{fund === item.key ? 'on' : ''}}"
+          wx:for="{{fundOptions}}"
+          wx:key="key"
+          data-k="{{item.key}}"
+          bindtap="onFund"
+        >{{item.label}}</view>
+      </view>
+      <view class="pickers">
+        <picker mode="selector" range="{{yearLabels}}" value="{{yearIdx}}" bindchange="onYear">
+          <view class="picker {{yearKey !== '2026' ? 'picked' : ''}}">
+            <text>{{yearLabels[yearIdx]}}</text><text class="pk-arrow">▾</text>
+          </view>
+        </picker>
+        <picker mode="selector" range="{{discLabels}}" value="{{discIdx}}" bindchange="onDisc">
+          <view class="picker {{discIdx > 0 ? 'picked' : ''}}">
+            <text>{{discLabels[discIdx]}}</text><text class="pk-arrow">▾</text>
+          </view>
+        </picker>
+        <picker mode="selector" range="{{catLabels}}" value="{{catIdx}}" bindchange="onCat">
+          <view class="picker {{catIdx > 0 ? 'picked' : ''}}">
+            <text>{{catLabels[catIdx]}}</text><text class="pk-arrow">▾</text>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <!-- 状态条 -->
+    <view class="status" wx:if="{{statusText}}">{{statusText}}</view>
+
+    <!-- 错误 -->
+    <view class="err" wx:if="{{error}}">
+      <text class="err-text">{{error}}</text>
+      <view class="err-retry" bindtap="doSearch">重试</view>
+    </view>
+
+    <!-- 结果 -->
+    <view class="results" wx:if="{{!error}}">
+      <view class="r-count" wx:if="{{done && total > 0}}">共 {{total}} 条结果</view>
+      <view
+        class="r-item"
+        wx:for="{{rows}}"
+        wx:key="id"
+      >
+        <view class="r-title">{{item.title}}</view>
+        <view class="r-meta">
+          <text class="r-year">{{item.year}}</text>
+          <text class="r-tag" wx:if="{{item.cat}}">{{item.cat}}</text>
+          <text class="r-tag" wx:if="{{item.disc}}">{{item.disc}}</text>
+        </view>
+        <view class="r-person" wx:if="{{item.person || item.org}}">
+          <text class="r-p">{{item.person}}</text>
+          <text wx:if="{{item.person && item.org}}"> · </text>
+          <text>{{item.org}}</text>
+        </view>
+      </view>
+
+      <view class="r-empty" wx:if="{{done && total === 0 && !loading}}">没有匹配的立项记录，换个关键词试试</view>
+      <view class="r-more" wx:if="{{hasMore}}" bindtap="loadMore">加载更多（还有 {{total - rows.length}} 条）</view>
+      <view class="r-tip" wx:if="{{!hasMore && total > 20}}">· 已全部展示 ·</view>
+    </view>
+  </block>
+
+  <!-- ═══ 统计视图 ═══ -->
+  <block wx:if="{{viewMode === 'stats'}}">
+    <view class="filter-bar">
+      <view class="chips">
+        <view class="chip {{statsFund === 'nssf' ? 'on' : ''}}" data-k="nssf" bindtap="onStatsFund">国社科（1991-2026）</view>
+        <view class="chip {{statsFund === 'moe' ? 'on' : ''}}" data-k="moe" bindtap="onStatsFund">教育部（2020-2026）</view>
+        <view class="chip {{statsFund === 'nsfc' ? 'on' : ''}}" data-k="nsfc" bindtap="onStatsFund">国自然（2017-2026）</view>
+      </view>
+    </view>
+
+    <view class="stats-loading" wx:if="{{statsLoading}}">正在加载统计…</view>
+
+    <block wx:if="{{!statsLoading}}">
+      <!-- 学科分布条形图 -->
+      <view class="stat-card">
+        <view class="stat-title">哪个学科立项最多？Top 15</view>
+        <view class="bar-row" wx:for="{{statsDiscs}}" wx:key="k">
+          <text class="bar-label">{{item.k}}</text>
+          <view class="bar-track">
+            <view class="bar-fill" style="width: {{item.pct}}%"></view>
+          </view>
+          <text class="bar-num">{{item.v}}</text>
+        </view>
+        <view class="stat-note">横条长度 = 立项数占第一名的比例，数字 = 立项条数</view>
+      </view>
+
+      <!-- 关键词 Top20（可点，点击直接检索该词；支持按学科/学部切换） -->
+      <view class="stat-card">
+        <view class="stat-head">
+          <view class="stat-title">大家都在研究什么关键词？Top 20</view>
+          <view class="stat-more" wx:if="{{statsKws.length}}" bindtap="onKwMore">更多 ›</view>
+        </view>
+        <scroll-view class="kw-disc-scroll" scroll-x wx:if="{{statsKwDiscs.length > 1}}">
+          <view class="kw-disc-row">
+            <view
+              class="kw-disc {{statsKwDiscIdx === index ? 'on' : ''}}"
+              wx:for="{{statsKwDiscs}}"
+              wx:key="*this"
+              data-i="{{index}}"
+              bindtap="onKwDiscTap"
+            >{{item}}</view>
+          </view>
+        </scroll-view>
+        <view class="kw-grid" wx:if="{{statsKws.length}}">
+          <view
+            class="kw-chip"
+            wx:for="{{statsKws}}"
+            wx:key="k"
+            data-w="{{item.k}}"
+            bindtap="onKwTap"
+          >
+            <text class="kw-word">{{item.k}}</text>
+            <text class="kw-num">{{item.v}}</text>
+            <view class="kw-bar" style="width: {{item.pct}}%"></view>
+          </view>
+        </view>
+        <view class="stat-note" wx:else>暂无关键词统计（数据更新后自动生成）</view>
+        <view class="stat-note">数字 = 含该词的课题数{{statsKwDisc ? '（当前：' + statsKwDisc + '）' : ''}} · 点标签可直接检索</view>
+      </view>
+
+      <!-- 近三年热点词 Top20 -->
+      <view class="stat-card" wx:if="{{statsKwsRecent.length}}">
+        <view class="stat-title">最近三年（{{statsRecentSpan}}）在热什么？Top 20</view>
+        <view class="stat-note" wx:if="{{statsKwDisc}}">当前学科：{{statsKwDisc}}（切上面一排可换）</view>
+        <view class="kw-grid">
+          <view
+            class="kw-chip hot"
+            wx:for="{{statsKwsRecent}}"
+            wx:key="k"
+            data-w="{{item.k}}"
+            bindtap="onKwTap"
+          >
+            <text class="kw-word">{{item.k}}</text>
+            <text class="kw-num">{{item.v}}</text>
+            <view class="kw-bar hot" style="width: {{item.pct}}%"></view>
+          </view>
+        </view>
+        <view class="stat-note">按近三年立项课题名统计 · 点标签可直接检索</view>
+      </view>
+
+      <!-- 单位 Top20 -->
+      <view class="stat-card">
+        <view class="stat-title">哪些单位立项最多？Top 20</view>
+        <view class="bar-row" wx:for="{{statsOrgs}}" wx:key="k">
+          <text class="bar-rank">{{index + 1}}</text>
+          <text class="bar-label org">{{item.k}}</text>
+          <view class="bar-track">
+            <view class="bar-fill" style="width: {{item.pct}}%"></view>
+          </view>
+          <text class="bar-num">{{item.v}}</text>
+        </view>
+        <view class="stat-note">数字 = 该单位全部年份立项总数</view>
+      </view>
+
+      <!-- 年度趋势 -->
+      <view class="stat-card">
+        <view class="stat-title">每年立项多少？{{statsYearsSpan}}</view>
+        <view class="trend">
+          <view class="t-col" wx:for="{{statsYears}}" wx:key="y">
+            <view class="t-bar" style="height: {{item.pct}}%"></view>
+            <text class="t-lab">{{item.y - 2000 >= 10 ? item.y % 100 : "0" + (item.y - 2000)}}</text>
+          </view>
+        </view>
+        <view class="stat-note">柱高 = 当年立项数；底部数字为年份后两位（如 26 = 2026 年）{{statsEarly > 0 ? '；2011 年前合计 ' + statsEarly + ' 条' : ''}}</view>
+      </view>
+    </block>
+  </block>
+
+  <!-- 关键词「更多」全量弹层 -->
+  <view class="kw-mask" wx:if="{{kwSheetShow}}" bindtap="closeKwSheet"></view>
+  <view class="kw-sheet" wx:if="{{kwSheetShow}}">
+    <view class="kw-sheet-head">
+      <text class="kw-sheet-title">{{kwSheetTitle}}</text>
+      <view class="kw-sheet-close" bindtap="closeKwSheet">收起</view>
+    </view>
+    <scroll-view scroll-y class="kw-sheet-list">
+      <view
+        class="kw-row"
+        wx:for="{{kwSheetList}}"
+        wx:key="k"
+        data-w="{{item.k}}"
+        bindtap="onKwSheetTap"
+      >
+        <text class="kw-row-rank">{{index + 1}}</text>
+        <text class="kw-row-word">{{item.k}}</text>
+        <view class="kw-row-track">
+          <view class="kw-row-fill" style="width: {{item.pct}}%"></view>
+        </view>
+        <text class="kw-row-num">{{item.v}}</text>
+      </view>
+      <view class="kw-sheet-note">点任意词可查看所有含该词的课题 · 按课题名分词统计</view>
+    </scroll-view>
+  </view>
+
+</view>
+

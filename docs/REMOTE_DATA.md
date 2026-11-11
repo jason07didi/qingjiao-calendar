@@ -7,7 +7,7 @@
 ## 一句话原理
 
 ```
-GitHub Actions 每天 07:30 抓官方通知
+GitHub Actions 每 4 小时抓官方通知
         ↓ 生成 docs/data/notices.json 并提交
 GitHub Pages 把它发布成一个静态地址
         ↓
@@ -57,7 +57,7 @@ remoteUrls: [
 ]
 ```
 
-> 第一条是青椒的日历专用仓库（main 分支 /docs 目录），每天 07:30 自动更新。
+> 第一条是青椒的日历专用仓库（main 分支 /docs 目录），每 4 小时自动更新。
 > 第二条仅作备份：icat-radar 也在跑 Pages，万一专用仓库异常可临时顶上。
 
 ---

@@ -3,149 +3,9 @@
 // 铁律：这里只有「通知发布日」，没有「申报截止日」——deadline 全为空，
 //       条目会落在小程序首页「日期待定」段，待人工核实后再补精确日期。
 
-const UPDATED_AT = '2026-11-11'
+const UPDATED_AT = '2026-11-03'
 
 const ITEMS = [
-  {
-    "id": "cw5sts7l",
-    "type": "project",
-    "title": "内地与澳门科技合作委员会第二十次会议成功召开",
-    "org": "科技部",
-    "region": "国家",
-    "level": "国家级",
-    "disciplines": [
-      "环境科学",
-      "遥感",
-      "生态学",
-      "社会科学"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年11月10日（截止日待核实）",
-    "publishedAt": "2026-11-10",
-    "sourceUrl": "https://www.most.gov.cn/202611/t20261031_197639.html",
-    "sourceName": "科技部",
-    "summary": ""
-  },
-  {
-    "id": "cw749yvv",
-    "type": "talent",
-    "title": "中国科协关于举办2026亚太固体力学大会的公告",
-    "org": "中国科协（青年人才托举）",
-    "region": "国家",
-    "level": "国家级",
-    "disciplines": [
-      "城乡规划",
-      "建筑",
-      "环境科学",
-      "社会科学"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年11月10日（截止日待核实）",
-    "publishedAt": "2026-11-10",
-    "sourceUrl": "https://www.cast.org.cn/xw/tzgg/DWHZ/art/2026/art_6c60335d139f426fa8f8de54ce13782c.html",
-    "sourceName": "中国科协（青年人才托举）",
-    "summary": ""
-  },
-  {
-    "id": "cw13uom74",
-    "type": "talent",
-    "title": "关于组织中国科协主管在京出版单位开展中华优秀出版物暨韬奋出版奖推荐工作的通知",
-    "org": "中国科协（青年人才托举）",
-    "region": "国家",
-    "level": "国家级",
-    "disciplines": [
-      "城乡规划",
-      "建筑",
-      "环境科学",
-      "社会科学"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年11月10日（截止日待核实）",
-    "publishedAt": "2026-11-10",
-    "sourceUrl": "https://www.cast.org.cn/xw/tzgg/KJCX/art/2026/art_a21fdf6c070849d78f36d45c7b77f769.html",
-    "sourceName": "中国科协（青年人才托举）",
-    "summary": ""
-  },
-  {
-    "id": "cwutr0pf",
-    "type": "talent",
-    "title": "【中国科学报】刘徽主题展览即将亮相2026顶科论坛",
-    "org": "中国科协（青年人才托举）",
-    "region": "国家",
-    "level": "国家级",
-    "disciplines": [
-      "城乡规划",
-      "建筑",
-      "环境科学",
-      "社会科学"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年11月9日（截止日待核实）",
-    "publishedAt": "2026-11-09",
-    "sourceUrl": "https://www.cast.org.cn/xw/MTBD/art/2026/art_6628ad61824d472ba27b66ec7a6d38c2.html",
-    "sourceName": "中国科协（青年人才托举）",
-    "summary": ""
-  },
-  {
-    "id": "cwq4y2nl",
-    "type": "talent",
-    "title": "中国科协关于举办2026年国际地质力学大会的公告",
-    "org": "中国科协（青年人才托举）",
-    "region": "国家",
-    "level": "国家级",
-    "disciplines": [
-      "城乡规划",
-      "建筑",
-      "环境科学",
-      "社会科学"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年11月7日（截止日待核实）",
-    "publishedAt": "2026-11-07",
-    "sourceUrl": "https://www.cast.org.cn/xw/tzgg/DWHZ/art/2026/art_a86497b05714432a90163a6d55357137.html",
-    "sourceName": "中国科协（青年人才托举）",
-    "summary": ""
-  },
-  {
-    "id": "cw1nare06",
-    "type": "talent",
-    "title": "中国科协关于举办2026亚太金属成型技术大会的公告",
-    "org": "中国科协（青年人才托举）",
-    "region": "国家",
-    "level": "国家级",
-    "disciplines": [
-      "城乡规划",
-      "建筑",
-      "环境科学",
-      "社会科学"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年11月4日（截止日待核实）",
-    "publishedAt": "2026-11-04",
-    "sourceUrl": "https://www.cast.org.cn/xw/tzgg/DWHZ/art/2026/art_277ceb5e97ad40538daad3904160bdb1.html",
-    "sourceName": "中国科协（青年人才托举）",
-    "summary": ""
-  },
-  {
-    "id": "cw1acpe84",
-    "type": "talent",
-    "title": "中国科协 教育部 生态环境部 中央精神文明建设办公室 共青团中央关于开展2026年青少年科学调查体验活动的通知",
-    "org": "中国科协（青年人才托举）",
-    "region": "国家",
-    "level": "国家级",
-    "disciplines": [
-      "城乡规划",
-      "建筑",
-      "环境科学",
-      "社会科学"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年11月4日（截止日待核实）",
-    "publishedAt": "2026-11-04",
-    "sourceUrl": "https://www.cast.org.cn/xw/tzgg/KXPJ/art/2026/art_bd8f8d34989e4e6bba94558a0f94955e.html",
-    "sourceName": "中国科协（青年人才托举）",
-    "summary": ""
-  },
   {
     "id": "cw1yfk2lb",
     "type": "project",
@@ -316,6 +176,26 @@ const ITEMS = [
     "summary": ""
   },
   {
+    "id": "cw1nare06",
+    "type": "talent",
+    "title": "中国科协关于举办2026亚太金属成型技术大会的公告",
+    "org": "中国科协（青年人才托举）",
+    "region": "国家",
+    "level": "国家级",
+    "disciplines": [
+      "城乡规划",
+      "建筑",
+      "环境科学",
+      "社会科学"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年11月2日（截止日待核实）",
+    "publishedAt": "2026-11-02",
+    "sourceUrl": "https://www.cast.org.cn/xw/tzgg/DWHZ/art/2026/art_277ceb5e97ad40538daad3904160bdb1.html",
+    "sourceName": "中国科协（青年人才托举）",
+    "summary": ""
+  },
+  {
     "id": "cw1m6s68h",
     "type": "talent",
     "title": "中国科协关于举办2026国际有色金属新材料大会的公告",
@@ -389,8 +269,8 @@ const ITEMS = [
       "社会科学"
     ],
     "deadline": "",
-    "deadlineText": "通知发布日 2026年10月30日（截止日待核实）",
-    "publishedAt": "2026-10-30",
+    "deadlineText": "通知发布日 2026年10月31日（截止日待核实）",
+    "publishedAt": "2026-10-31",
     "sourceUrl": "https://www.cast.org.cn/xw/KXYW/art/2026/art_fcc63a18d51e4fcba8b9d8ac4f67bb7f.html",
     "sourceName": "中国科协（青年人才托举）",
     "summary": ""
@@ -520,6 +400,26 @@ const ITEMS = [
     "summary": ""
   },
   {
+    "id": "cw5sts7l",
+    "type": "project",
+    "title": "内地与澳门科技合作委员会第二十次会议成功召开",
+    "org": "科技部",
+    "region": "国家",
+    "level": "国家级",
+    "disciplines": [
+      "环境科学",
+      "遥感",
+      "生态学",
+      "社会科学"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年10月30日（截止日待核实）",
+    "publishedAt": "2026-10-30",
+    "sourceUrl": "https://www.most.gov.cn/202611/t20261031_197639.html",
+    "sourceName": "科技部",
+    "summary": ""
+  },
+  {
     "id": "cwawuxw2",
     "type": "project",
     "title": "中国和白俄罗斯政府间合作委员会科技合作分委会第六次会议成功举行",
@@ -558,26 +458,6 @@ const ITEMS = [
     "publishedAt": "2026-10-30",
     "sourceUrl": "https://kjt.shaanxi.gov.cn/kjdt/szyw/202610/t20261030_3708190.html",
     "sourceName": "陕西省科学技术厅",
-    "summary": ""
-  },
-  {
-    "id": "cwvbec6r",
-    "type": "project",
-    "title": "中国—新加坡政府间科技合作联委会第17次会议在新加坡召开",
-    "org": "科技部",
-    "region": "国家",
-    "level": "国家级",
-    "disciplines": [
-      "环境科学",
-      "遥感",
-      "生态学",
-      "社会科学"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年10月30日（截止日待核实）",
-    "publishedAt": "2026-10-30",
-    "sourceUrl": "https://www.most.gov.cn/202611/t20261110_197688.html",
-    "sourceName": "科技部",
     "summary": ""
   },
   {
@@ -870,50 +750,10 @@ const ITEMS = [
       "社会科学"
     ],
     "deadline": "",
-    "deadlineText": "通知发布日 2026年10月22日（截止日待核实）",
-    "publishedAt": "2026-10-22",
+    "deadlineText": "通知发布日 2026年10月21日（截止日待核实）",
+    "publishedAt": "2026-10-21",
     "sourceUrl": "https://www.cast.org.cn/xw/TZGG/index.html",
     "sourceName": "中国科协（青年人才托举）",
-    "summary": ""
-  },
-  {
-    "id": "cw1dapv00",
-    "type": "project",
-    "title": "关于发布国家生态环境标准《难测试化学物质水生毒性测试技术指南》的公告",
-    "org": "生态环境部",
-    "region": "国家",
-    "level": "国家级",
-    "disciplines": [
-      "环境科学",
-      "生态学",
-      "大气科学",
-      "环境健康"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年10月22日（截止日待核实）",
-    "publishedAt": "2026-10-22",
-    "sourceUrl": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk01/202610/t20261023_1184566.html",
-    "sourceName": "生态环境部",
-    "summary": ""
-  },
-  {
-    "id": "cwji1fgq",
-    "type": "project",
-    "title": "关于发布国家生态环境标准《非道路移动机械环保信息公开技术规范》的公告",
-    "org": "生态环境部",
-    "region": "国家",
-    "level": "国家级",
-    "disciplines": [
-      "环境科学",
-      "生态学",
-      "大气科学",
-      "环境健康"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年10月22日（截止日待核实）",
-    "publishedAt": "2026-10-22",
-    "sourceUrl": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk01/202611/t20261105_1185602.html",
-    "sourceName": "生态环境部",
     "summary": ""
   },
   {
@@ -934,6 +774,26 @@ const ITEMS = [
     "publishedAt": "2026-10-21",
     "sourceUrl": "https://www.most.gov.cn/202610/t20261020_197533.html",
     "sourceName": "科技部",
+    "summary": ""
+  },
+  {
+    "id": "cw1dapv00",
+    "type": "project",
+    "title": "关于发布国家生态环境标准《难测试化学物质水生毒性测试技术指南》的公告",
+    "org": "生态环境部",
+    "region": "国家",
+    "level": "国家级",
+    "disciplines": [
+      "环境科学",
+      "生态学",
+      "大气科学",
+      "环境健康"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年10月21日（截止日待核实）",
+    "publishedAt": "2026-10-21",
+    "sourceUrl": "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk01/202610/t20261023_1184566.html",
+    "sourceName": "生态环境部",
     "summary": ""
   },
   {
@@ -1246,6 +1106,151 @@ const ITEMS = [
     "publishedAt": "2026-10-14",
     "sourceUrl": "https://www.mohurd.gov.cn/gongkai/zc/wjk/art/2026/art_4d8bd90d30844e769e3af2ac2f31eb6a.html",
     "sourceName": "住房和城乡建设部",
+    "summary": ""
+  },
+  {
+    "id": "cwjkin77",
+    "type": "project",
+    "title": "住房城乡建设部关于发布国家标准《河流流量测验标准》的公告",
+    "org": "住房和城乡建设部",
+    "region": "国家",
+    "level": "国家级",
+    "disciplines": [
+      "城乡规划",
+      "建筑",
+      "风景园林",
+      "土木",
+      "结构工程"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年10月14日（截止日待核实）",
+    "publishedAt": "2026-10-14",
+    "sourceUrl": "https://www.mohurd.gov.cn/gongkai/zc/wjk/art/2026/art_eef51316a79140a6acb3968867a9b661.html",
+    "sourceName": "住房和城乡建设部",
+    "summary": ""
+  },
+  {
+    "id": "cw1uwh08d",
+    "type": "project",
+    "title": "2026年科技部科技创新助力乡村振兴培训班在浙江湖州举办",
+    "org": "科技部",
+    "region": "国家",
+    "level": "国家级",
+    "disciplines": [
+      "环境科学",
+      "遥感",
+      "生态学",
+      "社会科学"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年10月14日（截止日待核实）",
+    "publishedAt": "2026-10-14",
+    "sourceUrl": "https://www.most.gov.cn/202610/t20261014_197509.html",
+    "sourceName": "科技部",
+    "summary": ""
+  },
+  {
+    "id": "cwb65az0",
+    "type": "project",
+    "title": "第八次全国科技援疆工作会议在乌鲁木齐召开",
+    "org": "科技部",
+    "region": "国家",
+    "level": "国家级",
+    "disciplines": [
+      "环境科学",
+      "遥感",
+      "生态学",
+      "社会科学"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年10月14日（截止日待核实）",
+    "publishedAt": "2026-10-14",
+    "sourceUrl": "https://www.most.gov.cn/202610/t20261011_197475.html",
+    "sourceName": "科技部",
+    "summary": ""
+  },
+  {
+    "id": "cw1cze84i",
+    "type": "project",
+    "title": "中共自然资源部党组关于董庆吉等27名同志试用期满正式任职的通知",
+    "org": "自然资源部",
+    "region": "国家",
+    "level": "国家级",
+    "disciplines": [
+      "城乡规划",
+      "环境科学",
+      "生态学",
+      "遥感",
+      "地理学",
+      "风景园林"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年10月13日（截止日待核实）",
+    "publishedAt": "2026-10-13",
+    "sourceUrl": "http://gi.mnr.gov.cn/202610/t20261012_2939850.html",
+    "sourceName": "自然资源部",
+    "summary": ""
+  },
+  {
+    "id": "cwotf5ic",
+    "type": "project",
+    "title": "关于地质灾害防治项目审核专家库遴选审核结果的公示",
+    "org": "自然资源部",
+    "region": "国家",
+    "level": "国家级",
+    "disciplines": [
+      "城乡规划",
+      "环境科学",
+      "生态学",
+      "遥感",
+      "地理学",
+      "风景园林"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年10月12日（截止日待核实）",
+    "publishedAt": "2026-10-12",
+    "sourceUrl": "http://gi.mnr.gov.cn/202610/t20261010_2939755.html",
+    "sourceName": "自然资源部",
+    "summary": ""
+  },
+  {
+    "id": "cw1sia5ok",
+    "type": "project",
+    "title": "中巴经济走廊联委会科技联合工作组第五次会议召开",
+    "org": "科技部",
+    "region": "国家",
+    "level": "国家级",
+    "disciplines": [
+      "环境科学",
+      "遥感",
+      "生态学",
+      "社会科学"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年10月12日（截止日待核实）",
+    "publishedAt": "2026-10-12",
+    "sourceUrl": "https://www.most.gov.cn/202609/t20260929_197447.html",
+    "sourceName": "科技部",
+    "summary": ""
+  },
+  {
+    "id": "cwv92aui",
+    "type": "project",
+    "title": "人体蛋白质组导航国际大科学计划全球日活动在新加坡成功举办",
+    "org": "科技部",
+    "region": "国家",
+    "level": "国家级",
+    "disciplines": [
+      "环境科学",
+      "遥感",
+      "生态学",
+      "社会科学"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年10月11日（截止日待核实）",
+    "publishedAt": "2026-10-11",
+    "sourceUrl": "https://www.most.gov.cn/202610/t20261012_197472.html",
+    "sourceName": "科技部",
     "summary": ""
   }
 ]

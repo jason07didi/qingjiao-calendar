@@ -8,6 +8,28 @@
 const fs = require('fs')
 const { execSync } = require('child_process')
 
+// git 可能不在 PATH 里（本机实测），按顺序找一个能用的
+const GIT_CANDIDATES = [
+  '',
+  'C:/Users/Administrator/.workbuddy/binaries/PortableGit/versions/1.2.0/cmd/git.exe',
+  'C:/Program Files/Git/cmd/git.exe'
+]
+function gitCmd (args) {
+  let last = ''
+  for (let i = 0; i < GIT_CANDIDATES.length; i++) {
+    const g = GIT_CANDIDATES[i] ? '"' + GIT_CANDIDATES[i] + '"' : 'git'
+    try {
+      const o = execSync(g + ' ' + args, { encoding: 'utf8', stdio: 'pipe', maxBuffer: 40 * 1024 * 1024 })
+      return { ok: true, out: o }
+    } catch (e) {
+      // 命令不存在时 Windows 中文环境报的是 GBK 文案、status 也可能是 1，
+      // 所以不做文案判断，一律换下一个候选（踩过）。
+      last = ((e.stdout || '') + (e.stderr || '')).trim() || String(e.message)
+    }
+  }
+  return { ok: false, out: last }
+}
+
 const FILE = 'docs/data/notices.json'
 const RATIO = 0.7        // 低于上次的 70% 视为退化
 const MIN_ABS = 20       // 上次自动条目至少 20 条才启用比较
@@ -28,12 +50,9 @@ const nowAuto = Number(now.autoCount || (now.items || []).filter(x => x.auto).le
 const nowAll = Number(now.count || (now.items || []).length || 0)
 
 let prev = null
-try {
-  const prevText = execSync('git show HEAD:' + FILE, { encoding: 'utf8', stdio: 'pipe', maxBuffer: 40 * 1024 * 1024 })
-  prev = readJSON(prevText)
-} catch (e) {
-  console.log('守卫：没有上一版可比（首次运行），放行')
-}
+const prevRes = gitCmd('show HEAD:' + FILE)
+if (prevRes.ok) prev = readJSON(prevRes.out)
+else console.log('守卫：没有上一版可比（首次运行），放行')
 
 if (!prev) {
   console.log('守卫：上次无数据，本次自动 ' + nowAuto + ' / 共 ' + nowAll + ' 条，放行')
@@ -46,8 +65,8 @@ console.log('守卫：上次自动 ' + prevAuto + ' 条 → 本次自动 ' + now
 if (prevAuto >= MIN_ABS && nowAuto < prevAuto * RATIO) {
   console.log('守卫：抓取量退化（低于上次 ' + Math.round(RATIO * 100) + '%），丢弃本次数据，保留上一版')
   try {
-    execSync('git checkout -- ' + FILE, { stdio: 'pipe' })
-    console.log('守卫：已恢复 ' + FILE + ' 到上一版')
+    const r = gitCmd('checkout -- ' + FILE)
+    console.log(r.ok ? '守卫：已恢复 ' + FILE + ' 到上一版' : '守卫：恢复失败 ' + r.out)
   } catch (e) {
     console.log('守卫：恢复失败 ' + e.message)
   }

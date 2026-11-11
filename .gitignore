@@ -15,3 +15,11 @@ data/crawl_report.md
 
 # 微信开发者工具本地私有配置
 project.private.config.json
+
+# 本机调试产物与工作台内部数据（不入库）
+data/_raw/
+data/_probe/
+data/_git_*.txt
+data/_probe
+.workbuddy/
+dist/

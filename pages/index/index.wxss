@@ -8,37 +8,6 @@
   background: linear-gradient(160deg, #123B5B 0%, #1B4C71 100%);
   color: #FFFFFF;
 }
-.hero::after {
-  content: '';
-  position: absolute;
-  right: -70rpx;
-  top: -70rpx;
-  width: 230rpx;
-  height: 230rpx;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  right: 130rpx;
-  top: 90rpx;
-  width: 130rpx;
-  height: 130rpx;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-}
-.hero-deco {
-  position: absolute;
-  right: 20rpx;
-  top: 20rpx;
-  width: 150rpx;
-  height: 150rpx;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.18);
-  padding: 10rpx;
-  box-sizing: border-box;
-}
 
 .brand-small {
   font-size: 19rpx;

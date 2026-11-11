@@ -14,8 +14,7 @@ Page({
   },
 
   onShow () {
-    const tb = typeof this.getTabBar === 'function' ? this.getTabBar() : null
-    if (tb) tb.setData({ selected: 2 })
+    // 收藏已不是 tab 页（移到「我的」入口进入），不再操作 tabBar
     this.load()
   },
 

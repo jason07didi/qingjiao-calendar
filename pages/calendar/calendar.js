@@ -51,6 +51,8 @@ Page({
     api.getList({ force: force }).then(function (r) {
       self._all = r.list || []
       const t = D.today()
+      // 默认蓝框落在今天：打开日历就能看到「当前是哪天」，
+      // 用户点别的日期时蓝框跟着走（onPick）。
       self.render(t.getFullYear(), t.getMonth(), D.todayStr())
       self.setData({ loading: false })
       wx.stopPullDownRefresh()
@@ -92,16 +94,16 @@ Page({
       if (ds.indexOf(prefix) === 0) monthCount++
     }
 
-    let selected = keepSelected || ''
-    // 若选中日期不在当前月、或当月已无截止（被筛选掉了），默认选中本月第一个有截止的日期
-    if (!selected || selected.indexOf(prefix) !== 0 || !(dayMeta[selected] && dayMeta[selected].count)) {
-      const keys = Object.keys(dayMeta).sort()
-      selected = ''
-      for (let i = 0; i < keys.length; i++) {
-        if (keys[i].indexOf(prefix) === 0) {
-          selected = keys[i]
-          break
-        }
+    // 蓝框含义：默认是今天，用户点过的那天也用蓝框标出（同一时刻只有一个蓝框）。
+    // 翻月后：选中的日期不在该月就不画框；回到当前月且没点过别的日期 → 蓝框落回今天。
+    let selected = ''
+    if (keepSelected && keepSelected.indexOf(prefix) === 0) {
+      selected = keepSelected
+    } else {
+      const tk = D.today()
+      const tkStr = D.todayStr()
+      if (tk.getFullYear() === year && tk.getMonth() === month) {
+        selected = tkStr
       }
     }
 
@@ -128,36 +130,58 @@ Page({
       todayLabel: todayLabel
     })
 
-    this.fillDay(selected)
+    this.fillDay(selected, prefix)
   },
 
-  fillDay (dateStr) {
+  // dateStr 为空 = 没有选中某天 → 列出本月全部截止（按日期升序，行首带日期）。
+  // 这样翻月时下面不会空着，也不必靠「凭空选中一个日期」来撑起清单。
+  fillDay (dateStr, prefix) {
+    const prefs = store.getPrefs()
+    const raw = (this._all || []).filter(function (n) { return filter.keepByPrefs(n, prefs) })
+    const self = this
+
     if (!dateStr) {
-      this.setData({ dayList: [], selectedLabel: '' })
+      const p = prefix || ''
+      const monthList = []
+      for (let i = 0; i < raw.length; i++) {
+        const n = raw[i]
+        if (!n.deadline || n.deadline.indexOf(p) !== 0) continue
+        monthList.push(self._row(n, D.shortDate(n.deadline)))
+      }
+      monthList.sort(function (a, b) {
+        if (a.deadline === b.deadline) return 0
+        return a.deadline < b.deadline ? -1 : 1
+      })
+      this.setData({ dayList: monthList, selectedLabel: '' })
       return
     }
 
-    const prefs = store.getPrefs()
-    const raw = (this._all || []).filter(function (n) { return filter.keepByPrefs(n, prefs) })
     const out = []
     for (let i = 0; i < raw.length; i++) {
       const n = raw[i]
       if (n.deadline !== dateStr) continue
-      const t = noticesLib.TYPE_MAP[n.type]
-      out.push({
-        id: n.id,
-        title: n.title,
-        org: n.org,
-        type: n.type,
-        typeName: t ? t.name : '',
-        amountShort: n.info && n.info.amount ? n.info.amount.split('，')[0] : ''
-      })
+      out.push(this._row(n, ''))
     }
 
     this.setData({
       dayList: out,
       selectedLabel: D.shortDate(dateStr)
     })
+  },
+
+  // 清单行数据：两种模式共用。dateLabel 有值就显示在单位前面（本月一览模式）
+  _row (n, dateLabel) {
+    const t = noticesLib.TYPE_MAP[n.type]
+    return {
+      id: n.id,
+      deadline: n.deadline || '',
+      title: n.title,
+      org: n.org,
+      type: n.type,
+      typeName: t ? t.name : '',
+      dateLabel: dateLabel || '',
+      amountShort: n.info && n.info.amount ? n.info.amount.split('，')[0] : ''
+    }
   },
 
   prevMonth () {
@@ -194,7 +218,9 @@ Page({
   goToday () {
     if (!this._all || !this._all.length) return
     const t = D.today()
-    this.render(t.getFullYear(), t.getMonth(), D.todayStr())
+    const ds = D.todayStr()
+    // 回到今天：蓝框始终落回今天（不管今天有没有截止事项）
+    this.render(t.getFullYear(), t.getMonth(), ds)
   },
 
   // 把当前选中的那天带到首页列表去看「当日全部」（打通日历与列表，符合「导航明确」）

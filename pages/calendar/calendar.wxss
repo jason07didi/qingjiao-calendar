@@ -102,44 +102,6 @@
   color: #A7B2BE;
 }
 
-/* 图例：解释日历里的颜色紧急度与数字含义，做到「清晰明确」 */
-.legend {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  background: #FFFFFF;
-  padding: 16rpx 20rpx 20rpx;
-  font-size: 20rpx;
-  color: #6B7884;
-}
-
-.lg {
-  display: flex;
-  align-items: center;
-  margin: 0 14rpx;
-}
-
-.lg-dot {
-  width: 16rpx;
-  height: 16rpx;
-  border-radius: 50%;
-  margin-right: 7rpx;
-}
-
-.lg-dot.lv-urgent { background: #E54D42; }
-.lg-dot.lv-soon   { background: #F2820A; }
-.lg-dot.lv-normal { background: #2E6DB4; }
-.lg-dot.lv-later  { background: #B0BAC4; }
-
-.lg-note {
-  width: 100%;
-  text-align: center;
-  margin-top: 10rpx;
-  font-size: 19rpx;
-  color: #A7B2BE;
-}
-
 /* 日格 */
 .grid {
   display: flex;
@@ -152,7 +114,11 @@
 }
 
 .cell {
+  position: relative;
   width: 14.285%;
+  /* 必须 border-box：7 格刚好占满 100%，任何多余 1rpx 的内边距/边框
+     都会把第七格挤到下一行，导致整排错位到错误的星期列。 */
+  box-sizing: border-box;
   height: 92rpx;
   display: flex;
   flex-direction: column;
@@ -172,55 +138,43 @@
   color: #D2D9E0;
 }
 
-.cell.today {
-  background: #EAF2FA;
-  border: 2rpx solid #2E6FA8;
-}
-
-.cell.today {
-  background: #EAF2FA;
-  border: 2rpx solid #2E6FA8;
-}
-
+/* 今天：只把数字加粗标深，不再铺底色和边框 —— 顶部已经有「今天 X月X日」文字，
+   格子上再来一大块深蓝填充是重复强调，视觉太重。 */
 .cell.today .cell-day {
   color: #123B5B;
   font-weight: 700;
 }
 
+/* 点选某天：浅蓝底 + 细边框，足够看出「当前在看这天」，又不压过数字徽标。
+   边框用 inset 阴影实现（不占位），避免 border 撑宽格子把整排日期挤歪。 */
 .cell.sel {
-  background: #123B5B;
+  background: #EAF2FA;
+  box-shadow: inset 0 0 0 2rpx #2E6FA8;
 }
 
 .cell.sel .cell-day {
-  color: #FFFFFF;
+  color: #123B5B;
   font-weight: 600;
 }
 
-/* 底部数量角标：直接显示当天截止条数，替代原来不易看清的小圆点。
-   颜色按当天最紧急级别：红=3天内、橙=7天内、蓝=30天内、灰=更远期。 */
-.badge {
-  margin-top: 4rpx;
-  min-width: 30rpx;
-  height: 28rpx;
-  line-height: 28rpx;
-  padding: 0 7rpx;
-  border-radius: 14rpx;
-  font-size: 18rpx;
-  color: #FFFFFF;
-  text-align: center;
+/* 有截止的日子：仅在数字下方点一个小圆点。
+   用绝对定位而不是参与流式布局，这样加不加点都不会推动数字 —— 
+   否则「有提醒的日子」数字会比同排高出一截，整排数字高低不齐。 */
+.dot {
+  position: absolute;
+  left: 50%;
+  bottom: 12rpx;
+  width: 10rpx;
+  height: 10rpx;
+  margin-left: -5rpx;
+  border-radius: 50%;
   background: #B0BAC4;
 }
 
-.badge.lv-urgent { background: #E54D42; }
-.badge.lv-soon   { background: #F2820A; }
-.badge.lv-normal { background: #2E6DB4; }
-.badge.lv-later  { background: #B0BAC4; }
-
-/* 选中当天：蓝底上用白底深字反色，保证清晰 */
-.cell.sel .badge {
-  background: #FFFFFF;
-  color: #123B5B;
-}
+.dot.lv-urgent { background: #E54D42; }
+.dot.lv-soon   { background: #F2820A; }
+.dot.lv-normal { background: #2E6DB4; }
+.dot.lv-later  { background: #B0BAC4; }
 
 /* 当日清单 */
 .day-panel {
@@ -290,6 +244,12 @@
   font-size: 21rpx;
   color: #93A1AF;
   margin-top: 6rpx;
+}
+
+/* 本月一览模式下，单位前面带上截止日，一眼看出哪天更急 */
+.di-date {
+  color: #2E6FA8;
+  font-weight: 600;
 }
 
 .di-arrow {

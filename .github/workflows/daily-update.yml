@@ -16,7 +16,9 @@ name: 每日抓取科研通知
 #  - Pages 源要设成 main 分支 /docs 目录，否则 docs/data/notices.json 不会被发布。
 
 on:
-  # 每天北京时间 07:30（GitHub cron 用 UTC，07:30 CST = 前一日 23:30 UTC）
+  # 每天一次（GitHub cron 用 UTC）：北京 07:30 = 前一日 23:30 UTC。
+  # 免费版共用 runner 会排队，实测常被推迟到北京 11:00 前后才跑完 —— 每天一次够用，不追求准点。
+  # 想手动立刻跑一次：仓库 Actions 页 → 每日抓取科研通知 → Run workflow。
   schedule:
     - cron: "30 23 * * *"
 

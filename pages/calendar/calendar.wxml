@@ -17,14 +17,14 @@
 
   <view class="grid">
     <view
-      class="cell {{item.inMonth ? '' : 'out'}} {{item.dateStr === selected ? 'sel' : ''}} {{item.isToday ? 'today' : ''}}"
+      class="cell {{item.inMonth ? '' : 'out'}} {{item.inMonth && item.dateStr === selected ? 'sel' : ''}} {{item.isToday ? 'today' : ''}}"
       wx:for="{{cells}}"
       wx:key="index"
       data-ds="{{item.dateStr}}"
       bindtap="onPick"
     >
       <text class="cell-day">{{item.day}}</text>
-      <view class="badge lv-{{item.level}}" wx:if="{{item.count > 0}}">{{item.count > 99 ? '99+' : item.count}}</view>
+      <view class="dot lv-{{item.level}}" wx:if="{{item.count > 0}}"></view>
     </view>
   </view>
 
@@ -33,22 +33,15 @@
     <view class="lg"><view class="lg-dot lv-soon"></view><text>≤7天</text></view>
     <view class="lg"><view class="lg-dot lv-normal"></view><text>≤30天</text></view>
     <view class="lg"><view class="lg-dot lv-later"></view><text>更远期</text></view>
-    <text class="lg-note">数字＝当天截止项数</text>
-  </view>
-
-  <view class="legend">
-    <view class="lg"><view class="lg-dot lv-urgent"></view><text>≤3天</text></view>
-    <view class="lg"><view class="lg-dot lv-soon"></view><text>≤7天</text></view>
-    <view class="lg"><view class="lg-dot lv-normal"></view><text>≤30天</text></view>
-    <view class="lg"><view class="lg-dot lv-later"></view><text>更远期</text></view>
-    <text class="lg-note">数字＝当天截止项数</text>
+    <text class="lg-note">小圆点＝当天有截止，越红越急 · 蓝框＝今天（默认）或你点中的那天</text>
   </view>
 
   <view class="day-panel">
     <view class="day-head">
       <text class="day-title" wx:if="{{selectedLabel}}">{{selectedLabel}} 截止</text>
+      <text class="day-title" wx:elif="{{dayList.length > 0}}">本月截止一览</text>
       <text class="day-title" wx:else>本月暂无截止事项</text>
-      <text class="day-count day-go" wx:if="{{dayList.length > 0}}" bindtap="openDayInList">{{dayList.length}} 项 · 看全部 ›</text>
+      <text class="day-count day-go" wx:if="{{selectedLabel && dayList.length > 0}}" bindtap="openDayInList">{{dayList.length}} 项 · 看全部 ›</text>
     </view>
 
     <view
@@ -63,7 +56,7 @@
       </view>
       <view class="di-body">
         <view class="di-title ell2">{{item.title}}</view>
-        <view class="di-org ell">{{item.org}}</view>
+        <view class="di-org ell"><text class="di-date" wx:if="{{item.dateLabel}}">{{item.dateLabel}} · </text>{{item.org}}</view>
       </view>
       <text class="di-arrow">›</text>
     </view>
