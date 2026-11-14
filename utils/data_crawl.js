@@ -199,31 +199,6 @@ const ITEMS = [
     "deadlineEstimated": false
   },
   {
-    "id": "cw1usb69l",
-    "type": "project",
-    "title": "关于组织申报“三峡水运新通道数智增效”重点专项2026年度公开竞争项目的通知",
-    "org": "贵州省科学技术厅",
-    "region": "贵州",
-    "level": "province",
-    "disciplines": [
-      "城乡规划",
-      "建筑",
-      "风景园林",
-      "环境设计",
-      "城市气候",
-      "环境健康"
-    ],
-    "deadline": "2026-12-30",
-    "deadlineText": "12月30日截止（原文摘录，请核对）",
-    "publishedAt": "2026-11-11",
-    "sourceUrl": "http://kjt.guizhou.gov.cn/xwzx/tzgg_73876/202611/t20261111_91095837.html",
-    "sourceName": "贵州省科学技术厅 · 通知公告",
-    "summary": "",
-    "deadlineEstimated": true,
-    "deadlineFrom": "detail",
-    "deadlineSnippet": "…年11月11日8:00至12月30日16:00前在国家科技管理信息系统公共服务平台进行网上申报。省科技厅将按照程序对"
-  },
-  {
     "id": "cw1dfi8hp",
     "type": "project",
     "title": "关于征集2027年度自治区专家顾问团决策研究选题的通知",
@@ -270,6 +245,31 @@ const ITEMS = [
     "deadlineEstimated": true,
     "deadlineFrom": "detail",
     "deadlineSnippet": "…位盖章后，于2026年12月11日前报送至中国科协科学技术创新部科技期刊处（北京市复兴路3号1621室），申报材料电"
+  },
+  {
+    "id": "cw2jxacc",
+    "type": "project",
+    "title": "关于开展2026年辽宁省“一带一路”（国际）联合实验室申报工作的通知",
+    "org": "辽宁省科学技术厅",
+    "region": "辽宁",
+    "level": "province",
+    "disciplines": [
+      "城乡规划",
+      "建筑",
+      "风景园林",
+      "环境设计",
+      "城市气候",
+      "环境健康"
+    ],
+    "deadline": "2026-11-30",
+    "deadlineText": "11月30日截止（原文摘录，请核对）",
+    "publishedAt": "2026-11-10",
+    "sourceUrl": "https://kjt.ln.gov.cn/kjt/tztg/gztz/2026111109213038349/index.shtml",
+    "sourceName": "辽宁省科学技术厅 · 通知公告",
+    "summary": "",
+    "deadlineEstimated": true,
+    "deadlineFrom": "detail",
+    "deadlineSnippet": "…荐单位推荐报送截止时间为11月30日24:00。推荐单位须在截止时间前组织完成审核，按限额择优确定推荐对象，并将正式"
   },
   {
     "id": "cwecx1vz",
@@ -334,31 +334,6 @@ const ITEMS = [
     "sourceName": "泛研网",
     "summary": "",
     "deadlineEstimated": false
-  },
-  {
-    "id": "cw2jxacc",
-    "type": "project",
-    "title": "关于开展2026年辽宁省“一带一路”（国际）联合实验室申报工作的通知",
-    "org": "辽宁省科学技术厅",
-    "region": "辽宁",
-    "level": "province",
-    "disciplines": [
-      "城乡规划",
-      "建筑",
-      "风景园林",
-      "环境设计",
-      "城市气候",
-      "环境健康"
-    ],
-    "deadline": "2026-11-30",
-    "deadlineText": "11月30日截止（原文摘录，请核对）",
-    "publishedAt": "2026-11-10",
-    "sourceUrl": "https://kjt.ln.gov.cn/kjt/tztg/gztz/2026111109213038349/index.shtml",
-    "sourceName": "辽宁省科学技术厅 · 通知公告",
-    "summary": "",
-    "deadlineEstimated": true,
-    "deadlineFrom": "detail",
-    "deadlineSnippet": "…荐单位推荐报送截止时间为11月30日24:00。推荐单位须在截止时间前组织完成审核，按限额择优确定推荐对象，并将正式"
   },
   {
     "id": "cw1xvj6lz",
@@ -728,22 +703,6 @@ const ITEMS = [
     "deadlineEstimated": false
   },
   {
-    "id": "cwhyly9g",
-    "type": "project",
-    "title": "关于开展2026年度日照市科技创新成果提名工作的通知",
-    "org": "日照市科学技术局",
-    "region": "山东省",
-    "level": "省级",
-    "disciplines": [],
-    "deadline": "2026-12-04",
-    "deadlineText": "官方通知：发布 2026-11-05，截止 2026-12-04（泛研网收录，原文以官方为准）",
-    "publishedAt": "2026-11-05",
-    "sourceUrl": "https://www.funresearch.cn/award/ZDcyNzYzZWUtZGJlZi00ODVlLThiNTQtOTE5MzRiMmY1MDMx",
-    "sourceName": "泛研网",
-    "summary": "",
-    "deadlineEstimated": false
-  },
-  {
     "id": "cwsda4xn",
     "type": "project",
     "title": "关于组织申报国家重点研发计划“尖刀”技术攻关工程重点专项2026年度项目的通知",
@@ -767,6 +726,22 @@ const ITEMS = [
     "deadlineEstimated": true,
     "deadlineFrom": "detail",
     "deadlineSnippet": "…于2026年11月28日17:00前在国家科技管理信息系统公共服务平台进行网上申报。省科技厅将按照程序对申报项目进行"
+  },
+  {
+    "id": "cwhyly9g",
+    "type": "project",
+    "title": "关于开展2026年度日照市科技创新成果提名工作的通知",
+    "org": "日照市科学技术局",
+    "region": "山东省",
+    "level": "省级",
+    "disciplines": [],
+    "deadline": "2026-12-04",
+    "deadlineText": "官方通知：发布 2026-11-05，截止 2026-12-04（泛研网收录，原文以官方为准）",
+    "publishedAt": "2026-11-05",
+    "sourceUrl": "https://www.funresearch.cn/award/ZDcyNzYzZWUtZGJlZi00ODVlLThiNTQtOTE5MzRiMmY1MDMx",
+    "sourceName": "泛研网",
+    "summary": "",
+    "deadlineEstimated": false
   },
   {
     "id": "cwr6c220",
@@ -879,31 +854,6 @@ const ITEMS = [
     "sourceName": "泛研网",
     "summary": "",
     "deadlineEstimated": false
-  },
-  {
-    "id": "cw56zmcf",
-    "type": "project",
-    "title": "北京市科学技术委员会、中关村科技园区管理委员会关于转发智能电网国家科技重大专项专题攻关公开项目申报指南的通知",
-    "org": "北京市科学技术委员会",
-    "region": "北京",
-    "level": "province",
-    "disciplines": [
-      "城乡规划",
-      "建筑",
-      "风景园林",
-      "环境设计",
-      "城市气候",
-      "环境健康"
-    ],
-    "deadline": "2026-12-07",
-    "deadlineText": "12月7日截止（原文摘录，请核对）",
-    "publishedAt": "2026-11-03",
-    "sourceUrl": "https://kw.beijing.gov.cn/zwgk/zcwj/202611/t20261103_4929879.html",
-    "sourceName": "北京市科学技术委员会 · 通知公告",
-    "summary": "",
-    "deadlineEstimated": true,
-    "deadlineFrom": "detail",
-    "deadlineSnippet": "…材料的截止时间为2026年12月7日16:00。 三、联系方式 联系人:高老师，马老师 电话:010-6615056"
   },
   {
     "id": "cwzprz7k",
@@ -1362,22 +1312,6 @@ const ITEMS = [
     "deadlineEstimated": false
   },
   {
-    "id": "cwc801a4",
-    "type": "project",
-    "title": "厦门市科学技术奖励委员会办公室关于开展2026年度厦门市科学技术奖提名工作的通知",
-    "org": "厦门市科学技术奖励委员会办公室",
-    "region": "福建省",
-    "level": "省级",
-    "disciplines": [],
-    "deadline": "2026-11-30",
-    "deadlineText": "官方通知：发布 2026-10-08，截止 2026-11-30（泛研网收录，原文以官方为准）",
-    "publishedAt": "2026-10-08",
-    "sourceUrl": "https://www.funresearch.cn/award/MGVmZjQ1YmQtZTNkNS00ZmMxLTk3NTItMzM1ZWI5MzdjNTc0",
-    "sourceName": "泛研网",
-    "summary": "",
-    "deadlineEstimated": false
-  },
-  {
     "id": "cw16ojps1",
     "type": "project",
     "title": "福建省科学技术厅 福建社会科学院关于组织申报2026年福建省创新战略研究计划联合项目的通知",
@@ -1401,6 +1335,22 @@ const ITEMS = [
     "deadlineEstimated": true,
     "deadlineFrom": "detail",
     "deadlineSnippet": "…推荐截止时间为2026年11月24日。 五、项目经费管理与结题要求 （一）项目经费管理 项目经费参照《福建省级科技计"
+  },
+  {
+    "id": "cwc801a4",
+    "type": "project",
+    "title": "厦门市科学技术奖励委员会办公室关于开展2026年度厦门市科学技术奖提名工作的通知",
+    "org": "厦门市科学技术奖励委员会办公室",
+    "region": "福建省",
+    "level": "省级",
+    "disciplines": [],
+    "deadline": "2026-11-30",
+    "deadlineText": "官方通知：发布 2026-10-08，截止 2026-11-30（泛研网收录，原文以官方为准）",
+    "publishedAt": "2026-10-08",
+    "sourceUrl": "https://www.funresearch.cn/award/MGVmZjQ1YmQtZTNkNS00ZmMxLTk3NTItMzM1ZWI5MzdjNTc0",
+    "sourceName": "泛研网",
+    "summary": "",
+    "deadlineEstimated": false
   },
   {
     "id": "cw1dw2ess",
@@ -1522,31 +1472,6 @@ const ITEMS = [
     "deadlineEstimated": true
   },
   {
-    "id": "cwtz075d",
-    "type": "project",
-    "title": "国家自然科学基金委员会医学科学部关于征集2026年度重大非共识项目立项建议的通告",
-    "org": "国家自然科学基金委员会",
-    "region": "国家",
-    "level": "national",
-    "disciplines": [
-      "城乡规划",
-      "建筑",
-      "环境科学",
-      "生态学",
-      "遥感",
-      "地理学"
-    ],
-    "deadline": "2026-10-10",
-    "deadlineText": "10月10日截止（原文摘录，请核对）",
-    "publishedAt": "2026-09-18",
-    "sourceUrl": "https://www.nsfc.gov.cn/p1/3381/2822/142421.html",
-    "sourceName": "国家自然科学基金委（通知通告）",
-    "summary": "",
-    "deadlineEstimated": true,
-    "deadlineFrom": "detail",
-    "deadlineSnippet": "… （一）请于2026年10月10日前向国家自然科学基金委员会医学科学部提交重大非共识项目立项建议书（附件1）和重大非"
-  },
-  {
     "id": "cw1adht80",
     "type": "project",
     "title": "关于征集2026年国家社科基金中华学术外译项目选题的通知",
@@ -1589,56 +1514,6 @@ const ITEMS = [
     "deadlineEstimated": true,
     "deadlineFrom": "detail",
     "deadlineSnippet": "…征集系统从8月26日至9月10日开放，在此期间各单位和专家学者可登陆该平台的“选题征集”板块，以实名信息注册登录，按"
-  },
-  {
-    "id": "cw1y953g4",
-    "type": "project",
-    "title": "国家自然科学基金委员会交叉科学部关于征集2026年度重大非共识项目立项建议的通告",
-    "org": "国家自然科学基金委员会",
-    "region": "国家",
-    "level": "national",
-    "disciplines": [
-      "城乡规划",
-      "建筑",
-      "环境科学",
-      "生态学",
-      "遥感",
-      "地理学"
-    ],
-    "deadline": "2026-10-07",
-    "deadlineText": "10月7日截止（原文摘录，请核对）",
-    "publishedAt": "2026-09-09",
-    "sourceUrl": "https://www.nsfc.gov.cn/p1/3381/2822/141902.html",
-    "sourceName": "国家自然科学基金委（通知通告）",
-    "summary": "",
-    "deadlineEstimated": true,
-    "deadlineFrom": "detail",
-    "deadlineSnippet": "…序 （一）请于2026年10月7日前向国家自然科学基金委员会交叉科学部提交重大非共识项目立项建议（附件），逾期提交或"
-  },
-  {
-    "id": "cwgay2lu",
-    "type": "project",
-    "title": "国家自然科学基金委员会信息科学部关于征集2026年度重大非共识项目立项建议的通告",
-    "org": "国家自然科学基金委员会",
-    "region": "国家",
-    "level": "national",
-    "disciplines": [
-      "城乡规划",
-      "建筑",
-      "环境科学",
-      "生态学",
-      "遥感",
-      "地理学"
-    ],
-    "deadline": "2026-09-19",
-    "deadlineText": "9月19日截止（原文摘录，请核对）",
-    "publishedAt": "2026-09-04",
-    "sourceUrl": "https://www.nsfc.gov.cn/p1/3381/2822/141603.html",
-    "sourceName": "国家自然科学基金委（通知通告）",
-    "summary": "",
-    "deadlineEstimated": true,
-    "deadlineFrom": "detail",
-    "deadlineSnippet": "…序 （一）请于2026年9月19日前向国家自然科学基金委员会信息科学部提交重大非共识项目立项建议（附件），逾期提交或"
   },
   {
     "id": "cw8dfhyv",
@@ -1699,6 +1574,75 @@ const ITEMS = [
     "publishedAt": "2026-11-13",
     "sourceUrl": "https://rst.shaanxi.gov.cn/sy/tzgg/202611/t20261106_3712783.html",
     "sourceName": "陕西省人社厅（职称/博士后）",
+    "summary": "",
+    "deadlineEstimated": true
+  },
+  {
+    "id": "cw1ghabln",
+    "type": "project",
+    "title": "福建省科学技术厅关于征集科技专家库专家和开展在库专家信息更新工作的通知",
+    "org": "福建省科学技术厅",
+    "region": "福建",
+    "level": "province",
+    "disciplines": [
+      "城乡规划",
+      "建筑",
+      "风景园林",
+      "环境设计",
+      "城市气候",
+      "环境健康"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年11月13日（截止日待核实）",
+    "publishedAt": "2026-11-13",
+    "sourceUrl": "http://kjt.fujian.gov.cn/xxgk/tzgg/202611/t20261113_7249281.htm",
+    "sourceName": "福建省科学技术厅 · 通知公告",
+    "summary": "",
+    "deadlineEstimated": true
+  },
+  {
+    "id": "cwe0dzh9",
+    "type": "project",
+    "title": "福建省科学技术厅关于开展实验动物安全生产专项检查的通知",
+    "org": "福建省科学技术厅",
+    "region": "福建",
+    "level": "province",
+    "disciplines": [
+      "城乡规划",
+      "建筑",
+      "风景园林",
+      "环境设计",
+      "城市气候",
+      "环境健康"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年11月13日（截止日待核实）",
+    "publishedAt": "2026-11-13",
+    "sourceUrl": "http://kjt.fujian.gov.cn/xxgk/tzgg/202611/t20261111_7248286.htm",
+    "sourceName": "福建省科学技术厅 · 通知公告",
+    "summary": "",
+    "deadlineEstimated": true
+  },
+  {
+    "id": "cw97pbq5",
+    "type": "project",
+    "title": "福建省科学技术厅关于2025年度企业研发经费投入拟奖补名单的公示",
+    "org": "福建省科学技术厅",
+    "region": "福建",
+    "level": "province",
+    "disciplines": [
+      "城乡规划",
+      "建筑",
+      "风景园林",
+      "环境设计",
+      "城市气候",
+      "环境健康"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年11月13日（截止日待核实）",
+    "publishedAt": "2026-11-13",
+    "sourceUrl": "http://kjt.fujian.gov.cn/xxgk/tzgg/202611/t20261113_7249076.htm",
+    "sourceName": "福建省科学技术厅 · 通知公告",
     "summary": "",
     "deadlineEstimated": true
   },
@@ -1764,29 +1708,6 @@ const ITEMS = [
     "publishedAt": "2026-11-13",
     "sourceUrl": "https://www.cast.org.cn/xw/tzgg/ZZRC/art/2026/art_23473e8c1a1b4bc6b3d644fcf3d1598d.html",
     "sourceName": "中国科协（青年人才托举）",
-    "summary": "",
-    "deadlineEstimated": true
-  },
-  {
-    "id": "cw1ghabln",
-    "type": "project",
-    "title": "福建省科学技术厅关于征集科技专家库专家和开展在库专家信息更新工作的通知",
-    "org": "福建省科学技术厅",
-    "region": "福建",
-    "level": "province",
-    "disciplines": [
-      "城乡规划",
-      "建筑",
-      "风景园林",
-      "环境设计",
-      "城市气候",
-      "环境健康"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年11月13日（截止日待核实）",
-    "publishedAt": "2026-11-13",
-    "sourceUrl": "http://kjt.fujian.gov.cn/xxgk/tzgg/202611/t20261113_7249281.htm",
-    "sourceName": "福建省科学技术厅 · 通知公告",
     "summary": "",
     "deadlineEstimated": true
   },
@@ -1948,29 +1869,6 @@ const ITEMS = [
     "deadlineEstimated": true
   },
   {
-    "id": "cwe0dzh9",
-    "type": "project",
-    "title": "福建省科学技术厅关于开展实验动物安全生产专项检查的通知",
-    "org": "福建省科学技术厅",
-    "region": "福建",
-    "level": "province",
-    "disciplines": [
-      "城乡规划",
-      "建筑",
-      "风景园林",
-      "环境设计",
-      "城市气候",
-      "环境健康"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年11月13日（截止日待核实）",
-    "publishedAt": "2026-11-13",
-    "sourceUrl": "http://kjt.fujian.gov.cn/xxgk/tzgg/202611/t20261111_7248286.htm",
-    "sourceName": "福建省科学技术厅 · 通知公告",
-    "summary": "",
-    "deadlineEstimated": true
-  },
-  {
     "id": "cw1o33kex",
     "type": "project",
     "title": "关于拟废止《山东省技术市场条例》《山东省高新技术发展条例》公开征求意见的公告",
@@ -2086,29 +1984,6 @@ const ITEMS = [
     "deadlineEstimated": true
   },
   {
-    "id": "cw97pbq5",
-    "type": "project",
-    "title": "福建省科学技术厅关于2025年度企业研发经费投入拟奖补名单的公示",
-    "org": "福建省科学技术厅",
-    "region": "福建",
-    "level": "province",
-    "disciplines": [
-      "城乡规划",
-      "建筑",
-      "风景园林",
-      "环境设计",
-      "城市气候",
-      "环境健康"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年11月13日（截止日待核实）",
-    "publishedAt": "2026-11-13",
-    "sourceUrl": "http://kjt.fujian.gov.cn/xxgk/tzgg/202611/t20261113_7249076.htm",
-    "sourceName": "福建省科学技术厅 · 通知公告",
-    "summary": "",
-    "deadlineEstimated": true
-  },
-  {
     "id": "cw1gz7cm7",
     "type": "project",
     "title": "自治区科技厅关于组织申报2027年自治区技术转移机构的通知",
@@ -2178,6 +2053,29 @@ const ITEMS = [
     "deadlineEstimated": true
   },
   {
+    "id": "cw1xnaytk",
+    "type": "project",
+    "title": "2026年省技术创新中心拟立项目公示",
+    "org": "江苏省科学技术厅",
+    "region": "江苏",
+    "level": "province",
+    "disciplines": [
+      "城乡规划",
+      "建筑",
+      "风景园林",
+      "环境设计",
+      "城市气候",
+      "环境健康"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年11月12日（截止日待核实）",
+    "publishedAt": "2026-11-12",
+    "sourceUrl": "https://kxjst.jiangsu.gov.cn/art/2026/11/12/art_82540_11859152.html",
+    "sourceName": "江苏省科学技术厅 · 通知公告",
+    "summary": "",
+    "deadlineEstimated": true
+  },
+  {
     "id": "cw1l61amw",
     "type": "project",
     "title": "关于上海市2026年度关键技术研发计划“超导”项目立项的通知",
@@ -2220,29 +2118,6 @@ const ITEMS = [
     "publishedAt": "2026-11-12",
     "sourceUrl": "https://gdstc.gd.gov.cn/zwgk_n/tzgg/content/post_4977403.html",
     "sourceName": "广东省科学技术厅 · 通知公告",
-    "summary": "",
-    "deadlineEstimated": true
-  },
-  {
-    "id": "cw1xnaytk",
-    "type": "project",
-    "title": "2026年省技术创新中心拟立项目公示",
-    "org": "江苏省科学技术厅",
-    "region": "江苏",
-    "level": "province",
-    "disciplines": [
-      "城乡规划",
-      "建筑",
-      "风景园林",
-      "环境设计",
-      "城市气候",
-      "环境健康"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年11月12日（截止日待核实）",
-    "publishedAt": "2026-11-12",
-    "sourceUrl": "https://kxjst.jiangsu.gov.cn/art/2026/11/12/art_82540_11859152.html",
-    "sourceName": "江苏省科学技术厅 · 通知公告",
     "summary": "",
     "deadlineEstimated": true
   },
@@ -2404,6 +2279,29 @@ const ITEMS = [
     "deadlineEstimated": true
   },
   {
+    "id": "cw1fclq70",
+    "type": "project",
+    "title": "福建省科学技术厅关于转发《工业和信息化部火炬高技术产业开发中心关于征集创新型产业集群建设发展专家的通知》的通知",
+    "org": "福建省科学技术厅",
+    "region": "福建",
+    "level": "province",
+    "disciplines": [
+      "城乡规划",
+      "建筑",
+      "风景园林",
+      "环境设计",
+      "城市气候",
+      "环境健康"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年11月11日（截止日待核实）",
+    "publishedAt": "2026-11-11",
+    "sourceUrl": "http://kjt.fujian.gov.cn/xxgk/tzgg/202611/t20261110_7247836.htm",
+    "sourceName": "福建省科学技术厅 · 通知公告",
+    "summary": "",
+    "deadlineEstimated": true
+  },
+  {
     "id": "cw23p2fe",
     "type": "project",
     "title": "2026年国家社会科学基金哲学社会科学学术通俗读物项目申报公告",
@@ -2467,6 +2365,29 @@ const ITEMS = [
     "deadlineEstimated": true
   },
   {
+    "id": "cw1usb69l",
+    "type": "project",
+    "title": "关于组织申报“三峡水运新通道数智增效”重点专项2026年度公开竞争项目的通知",
+    "org": "贵州省科学技术厅",
+    "region": "贵州",
+    "level": "province",
+    "disciplines": [
+      "城乡规划",
+      "建筑",
+      "风景园林",
+      "环境设计",
+      "城市气候",
+      "环境健康"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年11月11日（截止日待核实）",
+    "publishedAt": "2026-11-11",
+    "sourceUrl": "http://kjt.guizhou.gov.cn/xwzx/tzgg_73876/202611/t20261111_91095837.html",
+    "sourceName": "贵州省科学技术厅 · 通知公告",
+    "summary": "",
+    "deadlineEstimated": true
+  },
+  {
     "id": "cw1bwlym4",
     "type": "project",
     "title": "云南省科技厅关于再次征求云南省科技计划项目管理办法（征求意见稿）意见的通知",
@@ -2486,29 +2407,6 @@ const ITEMS = [
     "publishedAt": "2026-11-11",
     "sourceUrl": "https://kjt.yn.gov.cn/xwdt/tzgg/202611/t20261111_4383301.html",
     "sourceName": "云南省科学技术厅 · 通知公告",
-    "summary": "",
-    "deadlineEstimated": true
-  },
-  {
-    "id": "cw1fclq70",
-    "type": "project",
-    "title": "福建省科学技术厅关于转发《工业和信息化部火炬高技术产业开发中心关于征集创新型产业集群建设发展专家的通知》的通知",
-    "org": "福建省科学技术厅",
-    "region": "福建",
-    "level": "province",
-    "disciplines": [
-      "城乡规划",
-      "建筑",
-      "风景园林",
-      "环境设计",
-      "城市气候",
-      "环境健康"
-    ],
-    "deadline": "",
-    "deadlineText": "通知发布日 2026年11月11日（截止日待核实）",
-    "publishedAt": "2026-11-11",
-    "sourceUrl": "http://kjt.fujian.gov.cn/xxgk/tzgg/202611/t20261110_7247836.htm",
-    "sourceName": "福建省科学技术厅 · 通知公告",
     "summary": "",
     "deadlineEstimated": true
   },
@@ -2893,6 +2791,98 @@ const ITEMS = [
     "publishedAt": "2026-11-10",
     "sourceUrl": "https://gdstc.gd.gov.cn/zwgk_n/tzgg/content/post_4976557.html",
     "sourceName": "广东省科学技术厅 · 通知公告",
+    "summary": "",
+    "deadlineEstimated": true
+  },
+  {
+    "id": "cw4ghmhf",
+    "type": "project",
+    "title": "关于2026年度山东省重点研发计划（成果找市场）拟立项项目公示的通知",
+    "org": "山东省科学技术厅",
+    "region": "山东",
+    "level": "province",
+    "disciplines": [
+      "城乡规划",
+      "建筑",
+      "风景园林",
+      "环境设计",
+      "城市气候",
+      "环境健康"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年11月10日（截止日待核实）",
+    "publishedAt": "2026-11-10",
+    "sourceUrl": "http://kjt.shandong.gov.cn/art/2026/11/9/art_13360_10334490.html",
+    "sourceName": "山东省科学技术厅 · 通知公告",
+    "summary": "",
+    "deadlineEstimated": true
+  },
+  {
+    "id": "cwcosi5m",
+    "type": "project",
+    "title": "2026年农业领域部分技术创新计划项目评审专家公示",
+    "org": "湖北省科学技术厅",
+    "region": "湖北",
+    "level": "province",
+    "disciplines": [
+      "城乡规划",
+      "建筑",
+      "风景园林",
+      "环境设计",
+      "城市气候",
+      "环境健康"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年11月10日（截止日待核实）",
+    "publishedAt": "2026-11-10",
+    "sourceUrl": "https://kjt.hubei.gov.cn/kjdt/tzgg/202611/t20261110_6078692.shtml",
+    "sourceName": "湖北省科学技术厅 · 通知公告",
+    "summary": "",
+    "deadlineEstimated": true
+  },
+  {
+    "id": "cw150k51g",
+    "type": "project",
+    "title": "关于公示2026年技术转移机构建设项目拟支持名单的通知",
+    "org": "北京市科学技术委员会",
+    "region": "北京",
+    "level": "province",
+    "disciplines": [
+      "城乡规划",
+      "建筑",
+      "风景园林",
+      "环境设计",
+      "城市气候",
+      "环境健康"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年11月10日（截止日待核实）",
+    "publishedAt": "2026-11-10",
+    "sourceUrl": "https://kw.beijing.gov.cn/zwgk/tzgg/202611/t20261109_4937998.html",
+    "sourceName": "北京市科学技术委员会 · 通知公告",
+    "summary": "",
+    "deadlineEstimated": true
+  },
+  {
+    "id": "cwf31wob",
+    "type": "project",
+    "title": "2026年度技术创新中心项目论证专家公示",
+    "org": "湖北省科学技术厅",
+    "region": "湖北",
+    "level": "province",
+    "disciplines": [
+      "城乡规划",
+      "建筑",
+      "风景园林",
+      "环境设计",
+      "城市气候",
+      "环境健康"
+    ],
+    "deadline": "",
+    "deadlineText": "通知发布日 2026年11月10日（截止日待核实）",
+    "publishedAt": "2026-11-10",
+    "sourceUrl": "https://kjt.hubei.gov.cn/kjdt/tzgg/202611/t20261106_6071992.shtml",
+    "sourceName": "湖北省科学技术厅 · 通知公告",
     "summary": "",
     "deadlineEstimated": true
   }
